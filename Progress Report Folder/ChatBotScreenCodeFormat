@@ -1,0 +1,58 @@
+- ChatbotScreen:
+    Control: Screen
+    Variant: welcomeLayout_AFD_ver1.0
+    Properties:
+      Fill: =RGBA(245, 247, 247, 1)
+    Children:
+    - Copilot5:
+        Control: Copilot
+        Variant: pcfdataset
+        Properties:
+          Items: =FAQses
+          Height: =563
+          Width: =1097
+          X: =152
+          Y: =148
+        Children:
+        - Answer4:
+            Control: CopilotTemplate_dataField
+            Variant: textualColumn
+            Properties:
+              FieldDisplayName: ="Answer"
+              FieldName: ="crb40_answer"
+              FieldType: ="s"
+              Order: =2
+        - Inquiry4:
+            Control: CopilotTemplate_dataField
+            Variant: textualColumn
+            Properties:
+              FieldDisplayName: ="Inquiry"
+              FieldName: ="crb40_inquiry"
+              FieldType: ="s"
+              Order: =1
+    - UserBackIcon_1:
+        Control: Classic/Icon
+        Variant: BackArrow
+        Properties:
+          OnSelect: =Back()
+          Icon: =Icon.BackArrow
+          X: =40
+          Y: =130
+    - UserHeaderCont_1:
+        Control: GroupContainer
+        Variant: manualLayoutContainer
+        Properties:
+          Height: =75
+          Width: =1312
+          X: =26
+          Y: =27
+        Children:
+        - UserHeader_1:
+            Control: Header
+            Properties:
+              IsLogoVisible: =
+              Title: ="RAMinders"
+              UserEmail: =
+              UserImage: =
+              UserName: =
+              Width: =1312
