@@ -1,0 +1,129 @@
+- ViewDateScreen:
+    Control: GroupContainer
+    Variant: manualLayoutContainer
+    Properties:
+      Fill: =App.Theme.Colors.Primary
+      Height: =612
+      Visible: =ViewDateVisible
+      Width: =1312
+      X: =26
+      Y: =117
+    Children:
+    - ViewDateEvents:
+        Control: Gallery
+        Variant: BrowseLayout_Vertical_TwoTextVariant_ver5.0
+        Properties:
+          Items: |+
+            =Filter(
+                Events, 
+                StartDate <= varSelectedDate && EndDate >= varSelectedDate
+            )
+          DelayItemLoading: =true
+          Fill: =RGBA(255, 255, 255, 1)
+          Height: =476
+          Layout: =Layout.Vertical
+          LoadingSpinner: =LoadingSpinner.Data
+          TemplatePadding: =0
+          TemplateSize: =90
+          Width: =1191
+          X: =56
+          Y: =100
+        Children:
+        - EndDate:
+            Control: Label
+            Properties:
+              OnSelect: =Select(Parent)
+              Text: =ThisItem.'Event (crb40_event1)'
+              FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+              Height: =24
+              PaddingBottom: =0
+              PaddingLeft: =0
+              PaddingRight: =0
+              PaddingTop: =0
+              VerticalAlign: =VerticalAlign.Top
+              Width: =923
+              X: =206
+              Y: =42
+        - Rectangle18:
+            Control: Rectangle
+            Properties:
+              OnSelect: =Select(Parent)
+              Height: =90
+              Visible: =ThisItem.IsSelected
+              Width: =4
+        - Separator16:
+            Control: Rectangle
+            Properties:
+              OnSelect: =Select(Parent)
+              Fill: =RGBA(255, 255, 255, 1)
+              Height: =8
+              Width: =Parent.TemplateWidth
+              Y: =82
+        - NextArrow16:
+            Control: Classic/Icon
+            Variant: ChevronRight
+            Properties:
+              OnSelect: =Select(Parent)
+              AccessibleLabel: =Self.Tooltip
+              Tooltip: ="View item details"
+              Color: =RGBA(166, 166, 166, 1)
+              Height: =50
+              Icon: =Icon.ChevronRight
+              PaddingBottom: =16
+              PaddingLeft: =16
+              PaddingRight: =16
+              PaddingTop: =16
+              Width: =50
+              X: =Parent.TemplateWidth - Self.Width - 12
+              Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+        - StartDate:
+            Control: Label
+            Properties:
+              OnSelect: =Select(Parent)
+              Text: =ThisItem.StartDate
+              FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+              Height: =Self.Size * 1.8
+              PaddingBottom: =0
+              PaddingLeft: =0
+              PaddingRight: =0
+              PaddingTop: =0
+              VerticalAlign: =VerticalAlign.Top
+              Width: =Title16.Width
+              X: =Title16.X
+              Y: =Title16.Y + Title16.Height
+        - Title16:
+            Control: Label
+            Properties:
+              OnSelect: =Select(Parent)
+              Text: =ThisItem.EndDate
+              FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+              Height: =Self.Size * 1.8
+              PaddingBottom: =0
+              PaddingLeft: =0
+              PaddingRight: =0
+              PaddingTop: =0
+              VerticalAlign: =VerticalAlign.Top
+              Width: =Parent.TemplateWidth - 86
+              X: =16
+              Y: =20
+    - Icon1:
+        Control: Classic/Icon
+        Variant: BackArrow
+        Properties:
+          OnSelect: =Set(ViewDateVisible, false)
+          Height: =60
+          Icon: =Icon.BackArrow
+          Width: =54
+          X: =40
+          Y: =24
+    - noeventlabel:
+        Control: Label
+        Properties:
+          Text: ="No events scheduled for today"
+          Align: =Align.Center
+          Height: =98
+          Size: =21
+          Visible: =
+          Width: =406
+          X: =448
+          Y: =289
