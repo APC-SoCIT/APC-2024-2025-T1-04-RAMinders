@@ -1,0 +1,418 @@
+- EditEventDetailsContainer:
+    Control: GroupContainer
+    Variant: manualLayoutContainer
+    Properties:
+      Height: =609
+      Visible: =showediteventdetails
+      Width: =1312
+      X: =26
+      Y: =120
+    Children:
+    - AnnouncementDetailsBackground_7:
+        Control: Rectangle
+        Properties:
+          BorderColor: =RGBA(255, 255, 255, 1)
+          BorderStyle: =BorderStyle.None
+          BorderThickness: =0.25
+          Fill: =RGBA(174, 208, 221, 1)
+          Height: =544
+          TabIndex: =0
+          Width: =1312
+          Y: =65
+    - VAHeaderContainer_4:
+        Control: GroupContainer
+        Variant: manualLayoutContainer
+        Properties:
+          Height: =65
+          Width: =1310
+          X: =2
+        Children:
+        - ViewAnnouncementHeader_4:
+            Control: Header
+            Properties:
+              IsLogoVisible: =false
+              IsProfilePictureVisible: =false
+              Title: ="Edit Event Details"
+              Height: =65
+              Width: =1230
+              X: =80
+        - Rectangle6_8:
+            Control: Rectangle
+            Properties:
+              BorderStyle: =BorderStyle.None
+              Fill: =RGBA(91, 95, 199, 1)
+              Height: =65
+              Width: =92
+        - Icon1_3:
+            Control: Classic/Icon
+            Variant: BackArrow
+            Properties:
+              OnSelect: =Set(showediteventdetails,false)
+              Height: =60
+              Icon: =Icon.BackArrow
+              Width: =40
+              X: =40
+              Y: =5
+    - Form1_4:
+        Control: Form
+        Variant: PowerApps_CoreControls_Form
+        Layout: vertical
+        Properties:
+          DataSource: =Events_1
+          Item: =ViewDateEvents.Selected
+          Height: =511
+          Width: =1185
+          X: =64
+          Y: =81
+        Children:
+        - EventName_DataCard1_1:
+            Control: TypedDataCard
+            Variant: fluentV9TextualEditCard
+            Properties:
+              DataField: ="crb40_eventcolumn"
+              Default: =ThisItem.EventName
+              DisplayName: ="Event Name"
+              MaxLength: =DataSourceInfo([@Events_1], DataSourceInfo.MaxLength, EventName)
+              Required: =true
+              Update: =DataCardValue1_4.Value
+              DisplayMode: =Parent.DisplayMode
+              Height: =70
+              Width: =1185
+            Children:
+            - StarVisible2_4:
+                Control: Text
+                Properties:
+                  Align: ='TextCanvas.Align'.Center
+                  Text: ="*"
+                  Height: =30
+                  Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                  Width: =30
+                  Y: =DataCardKey2_4.Y
+            - ErrorMessage2_4:
+                Control: Text
+                Properties:
+                  Text: =Parent.Error
+                  Height: =30
+                  Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                  Width: =Parent.Width - 48
+                  X: =24
+                  Y: =DataCardValue1_4.Y + DataCardValue1_4.Height
+            - DataCardValue1_4:
+                Control: TextInput
+                Properties:
+                  AccessibleLabel: =Parent.DisplayName
+                  Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                  Required: =Parent.Required
+                  ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                  Value: =Parent.Default
+                  DisplayMode: =Parent.DisplayMode
+                  Width: =Parent.Width - 48
+                  X: =24
+                  Y: =DataCardKey2_4.Y + DataCardKey2_4.Height + 4
+            - DataCardKey2_4:
+                Control: Text
+                Properties:
+                  Text: =Parent.DisplayName
+                  Weight: ='TextCanvas.Weight'.Semibold
+                  Wrap: =false
+                  Height: =22
+                  Width: =Parent.Width - 48
+                  X: =24
+                  Y: =10
+        - StartDate_DataCard1_1:
+            Control: TypedDataCard
+            Variant: fluentV9DateTimeEditCard
+            Properties:
+              DataField: ="crb40_startdate"
+              Default: =ThisItem.StartDate
+              DisplayName: ="Start Date"
+              Required: =true
+              Update: =If(Not IsBlank(DateValue2_1.SelectedDate), DateTime(Year(DateValue2_1.SelectedDate), Month(DateValue2_1.SelectedDate), Day(DateValue2_1.SelectedDate), Value(HourValue2_1.Selected.Value), Value(MinuteValue2_1.Selected.Value), Second(DateValue2_1.SelectedDate)))
+              DisplayMode: =Parent.DisplayMode
+              Height: =70
+              Width: =395
+              Y: =1
+            Children:
+            - StarVisible15_1:
+                Control: Text
+                Properties:
+                  Align: ='TextCanvas.Align'.Center
+                  Text: ="*"
+                  Height: =20
+                  Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                  Width: =30
+                  Y: =DataCardKey15_1.Y
+            - ErrorMessage15_1:
+                Control: Text
+                Properties:
+                  Text: =Parent.Error
+                  Height: =30
+                  Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                  Width: =Parent.Width - 48
+                  X: =24
+                  Y: =DateValue2_1.Y + DateValue2_1.Height
+            - MinuteValue2_1:
+                Control: DropDown
+                Variant: pcfdataset
+                Properties:
+                  AccessibleLabel: =If(Parent.Required, Substitute("{0}. Required.", "{0}", Parent.DisplayName), Parent.DisplayName)
+                  DefaultSelectedItems: =[Text(Minute(Parent.Default),"00")]
+                  Items: =["00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59"]
+                  ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                  DisplayMode: =Parent.DisplayMode
+                  Height: =28
+                  Width: =HourValue2_1.Width
+                  X: =HourValue2_1.X + HourValue2_1.Width + Separator7_1.Width
+                  Y: =HourValue2_1.Y + 1
+            - Separator7_1:
+                Control: Text
+                Properties:
+                  Align: ='TextCanvas.Align'.Center
+                  Text: =":"
+                  Height: =HourValue2_1.Height
+                  Width: =10
+                  X: =HourValue2_1.X + HourValue2_1.Width
+                  Y: =HourValue2_1.Y
+            - HourValue2_1:
+                Control: DropDown
+                Variant: pcfdataset
+                Properties:
+                  AccessibleLabel: =If(Parent.Required, Substitute("{0}. Required.", "{0}", Parent.DisplayName), Parent.DisplayName)
+                  DefaultSelectedItems: =[Text(Hour(Parent.Default),"00")]
+                  Items: =["00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23"]
+                  Required: =Parent.Required
+                  ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                  DisplayMode: =Parent.DisplayMode
+                  Height: =28
+                  Width: =DateValue2_1.Width / 2 - 10
+                  X: =DateValue2_1.X + DateValue2_1.Width + 10
+                  Y: =DateValue2_1.Y + 1
+            - DateValue2_1:
+                Control: DatePicker
+                Properties:
+                  AccessibleLabel: =Parent.DisplayName
+                  SelectedDate: =Parent.Default
+                  ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                  DisplayMode: =Parent.DisplayMode
+                  Width: =(Parent.Width - 48) / 2
+                  X: =24
+                  Y: =DataCardKey15_1.Y + DataCardKey15_1.Height + 4
+            - DataCardKey15_1:
+                Control: Text
+                Properties:
+                  Text: =Parent.DisplayName
+                  Weight: ='TextCanvas.Weight'.Semibold
+                  Wrap: =false
+                  Height: =22
+                  Width: =Parent.Width - 48
+                  X: =24
+                  Y: =10
+        - EndDate_DataCard1_1:
+            Control: TypedDataCard
+            Variant: fluentV9DateTimeEditCard
+            Properties:
+              DataField: ="crb40_enddate"
+              Default: =ThisItem.EndDate
+              DisplayName: ="End Date"
+              Required: =true
+              Update: =If(Not IsBlank(DateValue1_1.SelectedDate), DateTime(Year(DateValue1_1.SelectedDate), Month(DateValue1_1.SelectedDate), Day(DateValue1_1.SelectedDate), Value(HourValue1_1.Selected.Value), Value(MinuteValue1_1.Selected.Value), Second(DateValue1_1.SelectedDate)))
+              DisplayMode: =Parent.DisplayMode
+              Height: =70
+              Width: =395
+              X: =1
+              Y: =1
+            Children:
+            - StarVisible1_4:
+                Control: Text
+                Properties:
+                  Align: ='TextCanvas.Align'.Center
+                  Text: ="*"
+                  Height: =20
+                  Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                  Width: =30
+                  Y: =DataCardKey1_4.Y
+            - ErrorMessage1_4:
+                Control: Text
+                Properties:
+                  Text: =Parent.Error
+                  Height: =30
+                  Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                  Width: =Parent.Width - 48
+                  X: =24
+                  Y: =DateValue1_1.Y + DateValue1_1.Height
+            - MinuteValue1_1:
+                Control: DropDown
+                Variant: pcfdataset
+                Properties:
+                  AccessibleLabel: =If(Parent.Required, Substitute("{0}. Required.", "{0}", Parent.DisplayName), Parent.DisplayName)
+                  DefaultSelectedItems: =[Text(Minute(Parent.Default),"00")]
+                  Items: =["00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59"]
+                  ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                  DisplayMode: =Parent.DisplayMode
+                  Height: =28
+                  Width: =HourValue1_1.Width
+                  X: =HourValue1_1.X + HourValue1_1.Width + Separator1_1.Width
+                  Y: =HourValue1_1.Y + 1
+            - Separator1_1:
+                Control: Text
+                Properties:
+                  Align: ='TextCanvas.Align'.Center
+                  Text: =":"
+                  Height: =HourValue1_1.Height
+                  Width: =10
+                  X: =HourValue1_1.X + HourValue1_1.Width
+                  Y: =HourValue1_1.Y
+            - HourValue1_1:
+                Control: DropDown
+                Variant: pcfdataset
+                Properties:
+                  AccessibleLabel: =If(Parent.Required, Substitute("{0}. Required.", "{0}", Parent.DisplayName), Parent.DisplayName)
+                  DefaultSelectedItems: =[Text(Hour(Parent.Default),"00")]
+                  Items: =["00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23"]
+                  Required: =Parent.Required
+                  ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                  DisplayMode: =Parent.DisplayMode
+                  Height: =28
+                  Width: =DateValue1_1.Width / 2 - 10
+                  X: =DateValue1_1.X + DateValue1_1.Width + 10
+                  Y: =DateValue1_1.Y + 1
+            - DateValue1_1:
+                Control: DatePicker
+                Properties:
+                  AccessibleLabel: =Parent.DisplayName
+                  SelectedDate: =Parent.Default
+                  ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                  DisplayMode: =Parent.DisplayMode
+                  Width: =(Parent.Width - 48) / 2
+                  X: =24
+                  Y: =DataCardKey1_4.Y + DataCardKey1_4.Height + 4
+            - DataCardKey1_4:
+                Control: Text
+                Properties:
+                  Text: =Parent.DisplayName
+                  Weight: ='TextCanvas.Weight'.Semibold
+                  Wrap: =false
+                  Height: =22
+                  Width: =Parent.Width - 48
+                  X: =24
+                  Y: =10
+        - PHTags_DataCard1_1:
+            Control: TypedDataCard
+            Variant: fluentV9TextualMultiLineEditCard
+            Properties:
+              DataField: ="crb40_phtags"
+              Default: =ThisItem.PHTags
+              DisplayName: ="Tags"
+              Required: =true
+              Update: =DataCardValue3_1.Value
+              DisplayMode: =Parent.DisplayMode
+              Height: =95
+              Width: =395
+              X: =2
+              Y: =1
+            Children:
+            - StarVisible14_4:
+                Control: Text
+                Properties:
+                  Align: ='TextCanvas.Align'.Center
+                  Text: ="*"
+                  Height: =30
+                  Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                  Width: =30
+                  Y: =DataCardKey14_4.Y
+            - ErrorMessage14_4:
+                Control: Text
+                Properties:
+                  Text: =Parent.Error
+                  Height: =30
+                  Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                  Width: =Parent.Width - 48
+                  X: =24
+                  Y: =DataCardValue3_1.Y + DataCardValue3_1.Height
+            - DataCardValue3_1:
+                Control: TextInput
+                Properties:
+                  AccessibleLabel: =Parent.DisplayName
+                  Mode: ='TextInputCanvas.Mode'.Multiline
+                  Required: =Parent.Required
+                  ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                  Value: =Parent.Default
+                  DisplayMode: =Parent.DisplayMode
+                  Height: =34
+                  Width: =Parent.Width - 48
+                  X: =24
+                  Y: =DataCardKey14_4.Y + DataCardKey14_4.Height + 4
+            - DataCardKey14_4:
+                Control: Text
+                Properties:
+                  Text: =Parent.DisplayName
+                  Weight: ='TextCanvas.Weight'.Semibold
+                  Wrap: =false
+                  Height: =22
+                  Width: =Parent.Width - 48
+                  X: =24
+                  Y: =10
+        - EventDetail_DataCard1_1:
+            Control: TypedDataCard
+            Variant: fluentV9TextualMultiLineEditCard
+            Properties:
+              DataField: ="crb40_eventdetail"
+              Default: =ThisItem.EventDetail
+              DisplayName: ="Details"
+              Required: =true
+              Update: =DataCardValue2_4.Value
+              DisplayMode: =Parent.DisplayMode
+              Height: =294
+              Width: =1176
+              Y: =2
+            Children:
+            - StarVisible3_1:
+                Control: Text
+                Properties:
+                  Align: ='TextCanvas.Align'.Center
+                  Text: ="*"
+                  Height: =30
+                  Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                  Width: =30
+                  Y: =DataCardKey3_1.Y
+            - ErrorMessage3_1:
+                Control: Text
+                Properties:
+                  Text: =Parent.Error
+                  Height: =30
+                  Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                  Width: =Parent.Width - 48
+                  X: =24
+                  Y: =DataCardValue2_4.Y + DataCardValue2_4.Height
+            - DataCardValue2_4:
+                Control: TextInput
+                Properties:
+                  AccessibleLabel: =Parent.DisplayName
+                  Mode: ='TextInputCanvas.Mode'.Multiline
+                  Required: =Parent.Required
+                  ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                  Value: =Parent.Default
+                  DisplayMode: =Parent.DisplayMode
+                  Height: =216
+                  Width: =Parent.Width - 48
+                  X: =24
+                  Y: =40
+            - DataCardKey3_1:
+                Control: Text
+                Properties:
+                  Text: =Parent.DisplayName
+                  Weight: ='TextCanvas.Weight'.Semibold
+                  Wrap: =false
+                  Height: =22
+                  Width: =Parent.Width - 48
+                  X: =24
+                  Y: =10
+    - ButtonCanvas6:
+        Control: Button
+        Properties:
+          OnSelect: |-
+            =SubmitForm(Form1_4); 
+            Set(showediteventdetails, false)
+          Text: ="Update"
+          X: =1128
+          Y: =524
