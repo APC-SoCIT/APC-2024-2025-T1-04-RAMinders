@@ -1,0 +1,219 @@
+ComponentDefinitions:
+  SideNavigation_Compact:
+    DefinitionType: CanvasComponent
+    CustomProperties:
+      BaseIconColor:
+        PropertyKind: Input
+        DisplayName: BaseIconColor
+        Description: A custom property
+        DataType: Color
+      BasedIconColor_Text:
+        PropertyKind: Input
+        DisplayName: BasedIconColor_Text
+        Description: A custom property
+        DataType: Text
+      CurrentMenuID:
+        PropertyKind: Input
+        DisplayName: CurrentMenuID
+        Description: A custom property
+        DataType: Number
+      HoverFill:
+        PropertyKind: Input
+        DisplayName: HoverFill
+        Description: A custom property
+        DataType: Color
+      LogoPadding_Percent:
+        PropertyKind: Input
+        DisplayName: LogoPadding_Percent
+        Description: A custom property
+        DataType: Number
+      Logo_Compact:
+        PropertyKind: Input
+        DisplayName: Logo_Compact
+        Description: A custom property
+        DataType: Image
+      MenuContent:
+        PropertyKind: Input
+        DisplayName: MenuContent
+        Description: A custom property
+        DataType: Table
+      NavBG:
+        PropertyKind: Input
+        DisplayName: NavBG
+        Description: A custom property
+        DataType: Color
+      Pressfill:
+        PropertyKind: Input
+        DisplayName: Pressfill
+        Description: A custom property
+        DataType: Color
+      SelectedIconBG:
+        PropertyKind: Input
+        DisplayName: SelectedIconBG
+        Description: A custom property
+        DataType: Color
+      SelectedIconColor:
+        PropertyKind: Input
+        DisplayName: SelectedIconColor
+        Description: A custom property
+        DataType: Color
+      SelectedIconColor_Text:
+        PropertyKind: Input
+        DisplayName: SelectedIconColor_Text
+        Description: A custom property
+        DataType: Text
+    Properties:
+      Fill: =RGBA(243, 243, 243, 1)
+      Height: =768
+      Width: =70
+    Children:
+      - BaseVerticalContainer:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            DropShadow: =DropShadow.None
+            Fill: =SideNavigation_Compact.NavBG
+            Height: =Parent.Height
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+            PaddingBottom: =20
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =20
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =Parent.Width
+          Children:
+            - Logo:
+                Control: Image@2.2.3
+                Properties:
+                  AlignInContainer: =AlignInContainer.Stretch
+                  Height: =50
+                  Image: ='e5df6726-602b-4635-abd4-60d052baaf9f'
+                  LayoutMinWidth: =0
+                  PaddingBottom: =Self.Height * SideNavigation_Compact.LogoPadding_Percent
+                  PaddingTop: =Self.Height * SideNavigation_Compact.LogoPadding_Percent
+            - NavBar:
+                Control: Gallery@2.15.0
+                Variant: Vertical
+                Properties:
+                  FillPortions: =0
+                  Height: =Self.AllItemsCount * (Self.TemplateHeight+Self.TemplatePadding)
+                  Items: =SideNavigation_Compact.MenuContent
+                  LayoutMinWidth: =0
+                  TemplatePadding: =0
+                  TemplateSize: =50
+                Children:
+                  - TemplateContainer:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        Height: =Parent.TemplateHeight
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =Parent.TemplateWidth
+                      Children:
+                        - CustomButtonContainer:
+                            Control: GroupContainer@1.3.0
+                            Variant: ManualLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              Fill: |-
+                                =If(
+                                    SideNavigation_Compact.CurrentMenuID = ThisItem.MenuID,
+                                    SideNavigation_Compact.SelectedIconBG,
+                                    RGBA(0,0,0,0)
+                                )
+                              Height: =Parent.Height * 70%
+                              RadiusBottomLeft: =10
+                              RadiusBottomRight: =10
+                              RadiusTopLeft: =10
+                              RadiusTopRight: =10
+                              Width: =Self.Height
+                              X: =(Parent.Width -Self.Width)/2
+                              Y: =(Parent.Height - Self.Height)/2
+                            Children:
+                              - ButtonImage:
+                                  Control: Image@2.2.3
+                                  Properties:
+                                    Height: =Parent.Height
+                                    Image: |-
+                                      ="data:image/svg+xml;utf8, " &EncodeUrl(
+                                          Substitute(
+                                              If(
+                                                  SideNavigation_Compact.CurrentMenuID = ThisItem.MenuID,
+                                                  ThisItem.MenuIcon_Selected,
+                                                  ThisItem.MenuIcon
+                                              ),
+                                              "currentColor",
+                                              If(
+                                                  SideNavigation_Compact.CurrentMenuID = ThisItem.MenuID,
+                                                  SideNavigation_Compact.SelectedIconColor_Text,
+                                                  SideNavigation_Compact.BasedIconColor_Text
+                                              )
+                                          )
+                                      )
+                                    Width: =Parent.Width
+                              - Button:
+                                  Control: Classic/Button@2.2.0
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderStyle: =BorderStyle.None
+                                    Fill: =RGBA(0,0,0,0)
+                                    Height: =Parent.Height
+                                    HoverFill: =SideNavigation_Compact.HoverFill
+                                    OnSelect: =Navigate(ThisItem.PageNavigation)
+                                    PressedColor: =SideNavigation_Compact.Pressfill
+                                    PressedFill: =SideNavigation_Compact.Pressfill
+                                    Text: =
+                                    Width: =Parent.Width
+                                    X: |+
+                                      =0
+            - ProfileIcon:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  FillPortions: =0
+                  Height: =40
+                  LayoutAlignItems: =LayoutAlignItems.Center
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutJustifyContent: =LayoutJustifyContent.Center
+                  LayoutMinWidth: =40
+                  PaddingLeft: =5
+                  PaddingRight: =5
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                Children:
+                  - ProfileIconContainer:
+                      Control: GroupContainer@1.3.0
+                      Variant: ManualLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.Center
+                        BorderThickness: =1
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: |+
+                          =Self.Width
+                        LayoutMinHeight: =35
+                        RadiusBottomLeft: =35
+                        RadiusBottomRight: =35
+                        RadiusTopLeft: =35
+                        RadiusTopRight: =35
+                        Width: =35
+                      Children:
+                        - Image2:
+                            Control: Image@2.2.3
+                            Properties:
+                              Height: =Parent.Height
+                              Image: =User().Image
+                              Width: =Parent.Width
+                              X: =35
+                              Y: =35
