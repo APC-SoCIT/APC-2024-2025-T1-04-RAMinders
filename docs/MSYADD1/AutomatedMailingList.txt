@@ -1,0 +1,21 @@
+If
+    (IsEmpty
+        (Filter
+            (MailingLists, Email = User().Email)),
+Patch(MailingLists, Defaults(MailingLists),
+{
+    Email: User().Email,
+    Name: User().FullName
+}));
+
+If
+    (IsEmpty
+        (Filter
+            (Users_1S, UserEmail = User().Email)),
+Patch(Users_1S, Defaults(Users_1S),
+{
+    UserEmail: User().Email,
+    UserName: User().FullName,
+    Role: "User",
+    School: "SOCIT"
+}));
