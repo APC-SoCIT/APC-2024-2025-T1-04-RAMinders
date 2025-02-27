@@ -1,0 +1,21 @@
+If(
+    IsEmpty(Filter(AnnouncementData, Email = User().Email && AnnouncementID = Gallery16_3.Selected.AnnouncementID)), 
+    // If the user hasn't viewed it, update the ViewCount
+    Patch(Announcements, Gallery16_3.Selected, {ViewCount: Gallery16_3.Selected.ViewCount + 1});
+
+    // Add a record to ViewCount_DB_TESTS
+    Patch(AnnouncementData, Defaults(AnnouncementData), 
+    {
+        Email: User().Email, 
+        AnnouncementID: Gallery16_3.Selected.AnnouncementID,
+        DateandTimeViewed: Now(),
+        DateandTimeViewed_Text: Text( Now(), "mm/dd/yyyy hh:mm:ss" )
+    })
+);
+
+Set(varUserFeedback, 
+    LookUp(AnnouncementFeedbacks, 
+           AnnouncementID = ThisItem.AnnouncementID && 
+           UserEmail = User().Email
+    )
+)
