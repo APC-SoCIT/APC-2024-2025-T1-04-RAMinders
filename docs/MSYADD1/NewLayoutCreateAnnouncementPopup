@@ -1,0 +1,541 @@
+ComponentDefinitions:
+  CAPopup:
+    DefinitionType: CanvasComponent
+    AccessAppScope: true
+    Properties:
+      Fill: =RGBA(0, 0, 0, 0.1)
+      Height: =App.Height
+      Width: =App.Width
+    Children:
+      - CreateAnnouncementContainer1:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            DropShadow: =DropShadow.ExtraBold
+            Height: =718
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+            Width: =1321
+            X: =20
+            Y: =28
+          Children:
+            - CreateAnnouncementContainer2:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  Height: =183
+                  LayoutDirection: =LayoutDirection.Vertical
+                  Width: =1321
+                Children:
+                  - CAHeaderContainer2:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        LayoutDirection: =LayoutDirection.Vertical
+                      Children:
+                        - CAHeaderContainer3:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              Fill: =RGBA(231, 175, 65, 1)
+                              FillPortions: =0
+                              Height: =90
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                            Children:
+                              - CABackButtonContainer1:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    DropShadow: =DropShadow.None
+                                    FillPortions: =0
+                                    LayoutAlignItems: =LayoutAlignItems.Center
+                                    LayoutDirection: =LayoutDirection.Vertical
+                                    LayoutJustifyContent: =LayoutJustifyContent.Center
+                                    LayoutMinHeight: =90
+                                    PaddingLeft: =10
+                                    PaddingRight: =10
+                                    Width: =80
+                                  Children:
+                                    - CABackButton2:
+                                        Control: Button@0.0.44
+                                        Properties:
+                                          Appearance: ='ButtonCanvas.Appearance'.Transparent
+                                          FontColor: =RGBA(255, 255, 255, 1)
+                                          FontSize: =30
+                                          Icon: ="ArrowLeft"
+                                          Layout: ='ButtonCanvas.Layout'.IconOnly
+                                          OnSelect: =Set(showCreateAnnouncement, false)
+                                          PaddingLeft: =0
+                                          PaddingRight: =0
+                                          Width: =73
+                              - CARegistrarContainer2:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    DropShadow: =DropShadow.None
+                                    LayoutDirection: =LayoutDirection.Vertical
+                                    LayoutMinHeight: =90
+                                    LayoutMinWidth: =2
+                                    PaddingBottom: =20
+                                    PaddingLeft: =20
+                                    PaddingRight: =20
+                                    PaddingTop: =25
+                                  Children:
+                                    - CARegistrarLabel1:
+                                        Control: Text@0.0.50
+                                        Properties:
+                                          Font: =Font.Lato
+                                          FontColor: =RGBA(255, 255, 255, 1)
+                                          Height: =40
+                                          Size: =25
+                                          Text: ="Create Announcements"
+                                          Weight: ='TextCanvas.Weight'.Semibold
+                                          Width: =500
+                              - CADraftsContainer:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    DropShadow: =DropShadow.None
+                                    LayoutAlignItems: =LayoutAlignItems.End
+                                    LayoutDirection: =LayoutDirection.Vertical
+                                    LayoutMinHeight: =90
+                                    LayoutMinWidth: =2
+                                    PaddingBottom: =20
+                                    PaddingLeft: =20
+                                    PaddingRight: =20
+                                    PaddingTop: =25
+                                  Children:
+                                    - CADraftsButton:
+                                        Control: Button@0.0.44
+                                        Properties:
+                                          Appearance: ='ButtonCanvas.Appearance'.Transparent
+                                          BasePaletteColor: =RGBA(255, 255, 255, 1)
+                                          Font: =Font.Lato
+                                          FontColor: =RGBA(255, 255, 255, 1)
+                                          FontSize: =20
+                                          Text: ="Drafts"
+                        - CATabs2_5:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              Fill: =RGBA(231, 206, 124, 1)
+                              FillPortions: =0
+                              Height: =45
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              PaddingBottom: =5
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                            Children:
+                              - CATabs2_6:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    DropShadow: =DropShadow.None
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    LayoutMinHeight: =20
+                                    PaddingBottom: =5
+                                    PaddingLeft: =10
+                                  Children:
+                                    - CATabsGallery_1:
+                                        Control: Gallery@2.15.0
+                                        Variant: Horizontal
+                                        Properties:
+                                          AlignInContainer: =AlignInContainer.SetByContainer
+                                          Fill: =Color.Transparent
+                                          FillPortions: =0
+                                          Height: =40
+                                          Items: =["Message", "Insert", "Format Text", "Draw", "Options"]
+                                          TemplateSize: =110
+                                          Width: =800
+                                        Children:
+                                          - CATabsButton_1:
+                                              Control: Button@0.0.44
+                                              Properties:
+                                                BasePaletteColor: =RGBA(252, 198, 0, 1)
+                                                Font: =Font.Lato
+                                                FontWeight: =FontWeight.Semibold
+                                                Height: =30
+                                                Layout: ='ButtonCanvas.Layout'.IconBefore
+                                                OnSelect: =
+                                                PaddingBottom: =0
+                                                PaddingLeft: =0
+                                                PaddingRight: =0
+                                                PaddingTop: =0
+                                                Text: =ThisItem.Value
+                                                Width: =110
+                                                X: =4
+                                                Y: =3
+                        - CARibbon1:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              Fill: =RGBA(255, 255, 255, 1)
+                              FillPortions: =0
+                              Height: =55
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+            - CAContentSectionBG:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  Fill: =RGBA(40, 42, 126, 1)
+                  Height: =535
+                  LayoutDirection: =LayoutDirection.Vertical
+                  PaddingBottom: =20
+                  PaddingLeft: =20
+                  PaddingRight: =20
+                  PaddingTop: =20
+                  Width: =1321
+                  Y: =183
+                Children:
+                  - CAContentSection1:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        BorderColor: =RGBA(231, 175, 65, 1)
+                        Fill: =RGBA(255, 255, 255, 1)
+                        FillPortions: =0
+                        Height: =490
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutGap: =2
+                        LayoutMinWidth: =1100
+                        PaddingBottom: =10
+                        PaddingLeft: =10
+                        PaddingRight: =10
+                        PaddingTop: =10
+                      Children:
+                        - CARecipientContainer:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              BorderColor: =RGBA(231, 175, 65, 1)
+                              DropShadow: =DropShadow.None
+                              Fill: =RGBA(255, 255, 255, 1)
+                              FillPortions: =0
+                              Height: =50
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              LayoutMinHeight: =10
+                              PaddingBottom: =5
+                              PaddingLeft: =5
+                              PaddingRight: =5
+                              PaddingTop: =5
+                            Children:
+                              - CARecipientContainer1:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    DropShadow: =DropShadow.None
+                                    FillPortions: =0
+                                    LayoutAlignItems: =LayoutAlignItems.Center
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    LayoutJustifyContent: =LayoutJustifyContent.Center
+                                    LayoutMinHeight: =40
+                                    PaddingBottom: =5
+                                    PaddingLeft: =5
+                                    PaddingRight: =5
+                                    PaddingTop: =5
+                                    Width: =100
+                                  Children:
+                                    - CAReicpientLabel:
+                                        Control: Text@0.0.50
+                                        Properties:
+                                          Align: ='TextCanvas.Align'.Center
+                                          AlignInContainer: =AlignInContainer.Center
+                                          BorderColor: =RGBA(40, 42, 126, 1)
+                                          BorderRadius: =10
+                                          BorderStyle: =BorderStyle.Solid
+                                          BorderThickness: =2
+                                          Height: =30
+                                          Size: =16
+                                          Text: ="To"
+                                          Width: =70
+                              - CARecipientTextInputContainer_1:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    Height: =50
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    LayoutMinHeight: =40
+                                    LayoutMinWidth: =10
+                                  Children:
+                                    - CARecipientTextInput:
+                                        Control: TextInput@0.0.53
+                                        Properties:
+                                          FillPortions: =1
+                                          Height: =40
+                        - CACcContainer:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              BorderColor: =RGBA(231, 175, 65, 1)
+                              DropShadow: =DropShadow.None
+                              Fill: =RGBA(255, 255, 255, 1)
+                              FillPortions: =0
+                              Height: =50
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              LayoutMinHeight: =10
+                              PaddingBottom: =5
+                              PaddingLeft: =5
+                              PaddingRight: =5
+                              PaddingTop: =5
+                            Children:
+                              - CACcContainer1:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    DropShadow: =DropShadow.None
+                                    FillPortions: =0
+                                    LayoutAlignItems: =LayoutAlignItems.Center
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    LayoutJustifyContent: =LayoutJustifyContent.Center
+                                    LayoutMinHeight: =40
+                                    PaddingBottom: =5
+                                    PaddingLeft: =5
+                                    PaddingRight: =5
+                                    PaddingTop: =5
+                                    Width: =100
+                                  Children:
+                                    - CACcLabel:
+                                        Control: Text@0.0.50
+                                        Properties:
+                                          Align: ='TextCanvas.Align'.Center
+                                          AlignInContainer: =AlignInContainer.Center
+                                          BorderColor: =RGBA(40, 42, 126, 1)
+                                          BorderRadius: =10
+                                          BorderStyle: =BorderStyle.Solid
+                                          BorderThickness: =2
+                                          Height: =30
+                                          Size: =16
+                                          Text: ="Cc"
+                                          Width: =70
+                              - CACcTextInputContainer:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    Height: =50
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    LayoutMinHeight: =40
+                                    LayoutMinWidth: =10
+                                  Children:
+                                    - CACcTextInput:
+                                        Control: TextInput@0.0.53
+                                        Properties:
+                                          FillPortions: =1
+                                          Height: =40
+                              - CATagsContainer:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    BorderColor: =RGBA(231, 175, 65, 1)
+                                    DropShadow: =DropShadow.None
+                                    Fill: =RGBA(255, 255, 255, 1)
+                                    FillPortions: =0
+                                    Height: =50
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    LayoutMinHeight: =10
+                                  Children:
+                                    - CATagsContainer1:
+                                        Control: GroupContainer@1.3.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          DropShadow: =DropShadow.None
+                                          FillPortions: =0
+                                          LayoutAlignItems: =LayoutAlignItems.Center
+                                          LayoutDirection: =LayoutDirection.Horizontal
+                                          LayoutJustifyContent: =LayoutJustifyContent.Center
+                                          LayoutMinHeight: =40
+                                          PaddingBottom: =5
+                                          PaddingLeft: =5
+                                          PaddingRight: =5
+                                          PaddingTop: =5
+                                          Width: =100
+                                        Children:
+                                          - CATagsLabel:
+                                              Control: Text@0.0.50
+                                              Properties:
+                                                Align: ='TextCanvas.Align'.Center
+                                                AlignInContainer: =AlignInContainer.Center
+                                                BorderColor: =RGBA(40, 42, 126, 1)
+                                                BorderRadius: =10
+                                                BorderStyle: =BorderStyle.Solid
+                                                BorderThickness: =2
+                                                Height: =30
+                                                Size: =16
+                                                Text: ="Tags"
+                                                Width: =70
+                                    - CATagsDropdownContainer:
+                                        Control: GroupContainer@1.3.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          Height: =50
+                                          LayoutDirection: =LayoutDirection.Horizontal
+                                          LayoutMinHeight: =40
+                                          LayoutMinWidth: =10
+                                        Children:
+                                          - CATagsDropdownCanvas:
+                                              Control: ComboBox@0.0.49
+                                              Properties:
+                                                Height: =40
+                                                Items: =AnnouncementTags
+                                                SelectMultiple: =true
+                                                Width: =400
+                                              Children:
+                                                - AnnouncementTagName3:
+                                                    Control: ComboBoxDataField@1.5.0
+                                                    Variant: textualColumn
+                                                    IsLocked: true
+                                                    Properties:
+                                                      FieldDisplayName: ="AnnouncementTagName"
+                                                      FieldName: ="crb40_announcementtag"
+                                                      FieldType: ="s"
+                                                      Order: =1
+                        - CASubjectContainer:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              BorderColor: =RGBA(231, 175, 65, 1)
+                              DropShadow: =DropShadow.None
+                              Fill: =RGBA(255, 255, 255, 1)
+                              FillPortions: =0
+                              Height: =50
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              LayoutMinHeight: =10
+                              PaddingBottom: =5
+                              PaddingLeft: =5
+                              PaddingRight: =5
+                              PaddingTop: =5
+                            Children:
+                              - CASubjectContainer1:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    DropShadow: =DropShadow.None
+                                    FillPortions: =0
+                                    LayoutAlignItems: =LayoutAlignItems.Center
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    LayoutJustifyContent: =LayoutJustifyContent.Center
+                                    LayoutMinHeight: =40
+                                    PaddingBottom: =5
+                                    PaddingLeft: =5
+                                    PaddingRight: =5
+                                    PaddingTop: =5
+                                    Width: =100
+                                  Children:
+                                    - CASubjectLabel:
+                                        Control: Text@0.0.50
+                                        Properties:
+                                          Align: ='TextCanvas.Align'.Center
+                                          AlignInContainer: =AlignInContainer.Center
+                                          BorderColor: =RGBA(40, 42, 126, 1)
+                                          BorderRadius: =10
+                                          BorderStyle: =BorderStyle.Solid
+                                          BorderThickness: =2
+                                          Height: =30
+                                          Size: =16
+                                          Text: ="Subject"
+                                          Width: =70
+                              - CASubjectTextInputContainer:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    Height: =50
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    LayoutMinHeight: =40
+                                    LayoutMinWidth: =10
+                                  Children:
+                                    - CASubjectTextInput:
+                                        Control: TextInput@0.0.53
+                                        Properties:
+                                          FillPortions: =1
+                                          Height: =40
+                        - CABodyContainer:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              FillPortions: =0
+                              Height: =270
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              LayoutMinHeight: =80
+                              LayoutMinWidth: =300
+                              PaddingBottom: =10
+                              PaddingLeft: =5
+                              PaddingRight: =5
+                              PaddingTop: =5
+                            Children:
+                              - CABodyContainer1:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    DropShadow: =DropShadow.None
+                                    FillPortions: =0
+                                    LayoutAlignItems: =LayoutAlignItems.Stretch
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    LayoutMinHeight: =150
+                                    Width: =1255
+                                  Children:
+                                    - CABodyTextInput:
+                                        Control: TextInput@0.0.53
+                                        Properties:
+                                          FillPortions: =1
+                                          Height: =250
+                                          Mode: ='TextInputCanvas.Mode'.Multiline
+                        - CASendContainer:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              FillPortions: =0
+                              Height: =50
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              LayoutGap: =10
+                              LayoutJustifyContent: =LayoutJustifyContent.End
+                              LayoutMinHeight: =40
+                            Children:
+                              - CASchedSendButton:
+                                  Control: Button@0.0.44
+                                  Properties:
+                                    BasePaletteColor: =RGBA(231, 175, 65, 1)
+                                    Font: =Font.Lato
+                                    FontSize: =16
+                                    Height: =40
+                                    OnSelect: |+
+                                      =Set(
+                                          varScheduledAnnouncement, 
+                                          {
+                                              Recipient: CARecipientTextInput.Value,
+                                              CC: CACcTextInput.Value,
+                                              SubjectName: CASubjectTextInput.Value,
+                                              Body: CABodyTextInput.Value,
+                                              Tags: If(IsEmpty(CATagsDropdownCanvas.SelectedItems),
+                                                      "",
+                                                      Concat(CATagsDropdownCanvas.SelectedItems, AnnouncementTagName, ", ")
+                                                      )
+                                          }
+                                      );
+
+                                    Text: ="Schedule Send"
+                                    Width: =130
+                              - CASendButton_6:
+                                  Control: Button@0.0.44
+                                  Properties:
+                                    BasePaletteColor: =RGBA(231, 175, 65, 1)
+                                    Font: =Font.Lato
+                                    FontSize: =16
+                                    Height: =40
+                                    OnSelect: "=If(\r\n    !IsBlank(CARecipientTextInput.Value) && \r\n    !IsBlank(CACcTextInput.Value) && \r\n    !IsBlank(CASubjectTextInput.Value) && \r\n    !IsBlank(CABodyTextInput.Value),\r\n    \r\n    // Save data to the Announcements collection as 'Sent'\r\n    Collect(\r\n        Announcements,\r\n        {\r\n            Recipient: CARecipientTextInput.Value,\r\n            CC: CACcTextInput.Value,\r\n            SubjectName: CASubjectTextInput.Value,\r\n            Body: CABodyTextInput.Value, // Ensure Body is treated as text\r\n            Tags: If(IsEmpty(CATagsDropdownCanvas.SelectedItems),\r\n                    \"\",\r\n                    Concat(CATagsDropdownCanvas.SelectedItems, AnnouncementTagName, \", \")\r\n                    ),\r\n            \r\n            // Set the status as 'Sent'\r\n            'Announcement Status': LookUp(Choices(Announcements.'Announcement Status'), Value = 100).Value\r\n        }\r\n    );\r\n\r\n    // Clear input fields\r\n    Reset(CARecipientTextInput);\r\n    Reset(CACcTextInput);\r\n    Reset(CASubjectTextInput);\r\n    Reset(CABodyTextInput);\r\n    Reset(CATagsDropdownCanvas);\r\n\r\n    // Show confirmation message\r\n    Notify(\"Announcement successfully sent!\", NotificationType.Success);\r\n\r\n    // Navigate back to the dashboard\r\n    Navigate(RegistrarDashboardScreen, ScreenTransition.None),\r\n    \r\n    // Handle missing fields\r\n    Notify(\"Please fill in all required fields.\", NotificationType.Error)\r\n);"
+                                    Text: ="Send"
