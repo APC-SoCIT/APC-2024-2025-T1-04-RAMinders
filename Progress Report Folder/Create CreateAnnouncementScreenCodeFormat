@@ -1,0 +1,216 @@
+- CreateAnnouncementScreen:
+    Control: Screen
+    Children:
+    - ScheduleSendContainer:
+        Control: GroupContainer
+        Variant: manualLayoutContainer
+        Properties:
+          ContentLanguage: =
+          BorderColor: =If(ShowScheduleSendContainer, Color.Blue, Color.SkyBlue)
+          DropShadow: =DropShadow.Bold
+          Fill: =RGBA(143, 146, 217, 1)
+          Visible: =ShowScheduleSendContainer
+          X: =469
+          Y: =254
+        Children:
+        - DatePickerCanvas1:
+            Control: DatePicker
+            Properties:
+              OnChange: |-
+                =UpdateContext({SelectedScheduleDate: DatePickerCanvas1.SelectedDate})
+              Height: =39
+              Width: =377
+              X: =60
+              Y: =56
+        - ScheduleSendButton2:
+            Control: Button
+            Properties:
+              OnSelect: |-
+                =If(
+                    !IsBlank(SelectedScheduleDate),
+                    Collect(
+                        Announcements,
+                        {
+                            Recipient: Recipient.Value,
+                            CC: CC.Value,
+                            Subject: Subject.Value,
+                            Body: Body.Value,
+                            ScheduledDate: SelectedScheduleDate
+                        }
+                    );
+                    Notify("Announcement scheduled for " & Text(SelectedScheduleDate, "yyyy-mm-dd hh:mm"), NotificationType.Success);
+                    UpdateContext({ShowScheduleSendContainer: false, SelectedScheduleDate: Blank()})
+                )
+              Text: ="Send"
+              DisplayMode: =If(IsBlank(SelectedScheduleDate), DisplayMode.Disabled, DisplayMode.Edit)
+              X: =277
+              Y: =148
+        - CancelButton:
+            Control: Button
+            Properties:
+              OnSelect: |-
+                =UpdateContext({ShowScheduleSendContainer: false, SelectedScheduleDate: Blank()})
+              Text: ="Cancel"
+              X: =386
+              Y: =148
+    - Back:
+        Control: Classic/Icon
+        Variant: BackArrow
+        Properties:
+          OnSelect: =Back();
+          Height: =54
+          Icon: =Icon.BackArrow
+          Width: =55
+          X: =25
+          Y: =30
+    - Header Container:
+        Control: GroupContainer
+        Variant: manualLayoutContainer
+        Properties:
+          Fill: =RGBA(39, 113, 194, 1)
+          Height: =54
+          Width: =1239
+          X: =100
+          Y: =30
+        Children:
+        - Header:
+            Control: Header
+            Properties:
+              IsLogoVisible: =false
+              Style: ='Header.Style'.Primary
+              Title: ="Create Announcement"
+              Height: =54
+              Width: =1254
+    - Announcement Details:
+        Control: GroupContainer
+        Variant: manualLayoutContainer
+        Properties:
+          Height: =628
+          Width: =1312
+          X: =25
+          Y: =109
+        Children:
+        - RecipientText:
+            Control: Text
+            Properties:
+              Align: ='TextCanvas.Align'.Center
+              BorderColor: =RGBA(214, 221, 224, 1)
+              BorderRadius: =25
+              BorderStyle: =BorderStyle.Solid
+              Text: ="To"
+              VerticalAlign: ='TextCanvas.VerticalAlign'.Middle
+              Height: =31
+              Width: =69
+              X: =35
+              Y: =30
+        - Recipient:
+            Control: TextInput
+            Properties:
+              Type: ="Email"
+              Width: =1149
+              X: =138
+              Y: =29
+        - CCText:
+            Control: Text
+            Properties:
+              Align: ='TextCanvas.Align'.Center
+              BorderColor: =RGBA(214, 221, 224, 1)
+              BorderRadius: =25
+              BorderStyle: =BorderStyle.Solid
+              Text: ="CC"
+              VerticalAlign: ='TextCanvas.VerticalAlign'.Middle
+              Height: =31
+              Width: =69
+              X: =35
+              Y: =80
+        - CC:
+            Control: TextInput
+            Properties:
+              Type: ="Email"
+              Height: =31
+              Width: =808
+              X: =138
+              Y: =80
+        - SubjectText:
+            Control: Text
+            Properties:
+              Align: ='TextCanvas.Align'.Center
+              BorderColor: =RGBA(214, 221, 224, 1)
+              BorderRadius: =25
+              BorderStyle: =BorderStyle.Solid
+              Text: ="Subject"
+              VerticalAlign: ='TextCanvas.VerticalAlign'.Middle
+              Height: =31
+              Width: =69
+              X: =35
+              Y: =135
+        - Subject:
+            Control: TextInput
+            Properties:
+              Width: =1147
+              X: =138
+              Y: =134
+        - Body:
+            Control: TextInput
+            Properties:
+              Align: ='TextInputCanvas.Align'.Start
+              Mode: ='TextInputCanvas.Mode'.Multiline
+              Height: =359
+              Width: =1250
+              X: =37
+              Y: =197
+        - SendButton:
+            Control: Button
+            Properties:
+              OnSelect: |-
+                =Collect(
+                    Announcements,
+                    {Recipient:Recipient.Value,
+                    CC:CC.Value,
+                    Subject:Subject.Value,
+                    Body:Body.Value,
+                    Tags:Concat(Tags.SelectedItems, Value, ", ") 
+                }
+                );
+              Align: =Align.Center
+              Text: ="Send"
+              X: =1189
+              Y: =570
+        - Tags:
+            Control: DropDown
+            Variant: pcfdataset
+            Properties:
+              Items: =["Enrollment", "Grades Submission", "Grades Consultation", "Class Suspension", "Midterm Exam Week", "Final Exam Week"]
+              X: =967
+              Y: =79
+        - SaveAsDraftButton:
+            Control: Button
+            Properties:
+              OnSelect: =
+              Align: =Align.Center
+              Text: ="Save as Draft"
+              VerticalAlign: =VerticalAlign.Middle
+              Width: =118
+              X: =907
+              Y: =570
+        - ScheduleSendButton1:
+            Control: Button
+            Properties:
+              OnSelect: |-
+                =UpdateContext({ShowScheduleSendContainer: true})
+              Align: =Align.Center
+              Text: ="Schedule Send"
+              Width: =120
+              X: =1047
+              Y: =570
+        - ScheduleSendLabel:
+            Control: Label
+            Properties:
+              Text: |+
+                =If(ShowScheduleSendContainer = false && !IsBlank(DatePickerCanvas1.SelectedDate), "Announcement scheduled successfully!", "")
+              Color: =RGBA(40, 134, 222, 1)
+              Height: =50
+              Visible: =!IsBlank(DatePickerCanvas1.SelectedDate)
+              Width: =406
+              X: =37
+              Y: =556
