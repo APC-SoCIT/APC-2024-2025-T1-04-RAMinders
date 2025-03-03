@@ -1,0 +1,147 @@
+- CASendContainer_6:
+    Control: GroupContainer@1.3.0
+    Variant: AutoLayout
+    Properties:
+      AlignInContainer: =AlignInContainer.End
+      DropShadow: =DropShadow.None
+      FillPortions: =0
+      Height: =50
+      LayoutDirection: =LayoutDirection.Horizontal
+      LayoutGap: =10
+      LayoutJustifyContent: =LayoutJustifyContent.End
+      LayoutMinHeight: =20
+      PaddingBottom: =5
+      PaddingTop: =5
+      Width: =750
+    Children:
+      - Container30:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            DropShadow: =DropShadow.None
+            FillPortions: =0
+            LayoutDirection: =LayoutDirection.Horizontal
+            LayoutGap: =10
+            LayoutMinHeight: =1
+            LayoutMinWidth: =1
+            Visible: =false
+            Width: =520
+          Children:
+            - Container31:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  FillPortions: =0
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutMinHeight: =1
+                  LayoutMinWidth: =310
+                  PaddingTop: =7
+                  Width: =310
+                Children:
+                  - TextCanvas3:
+                      Control: Text@0.0.50
+                      Properties:
+                        Font: =Font.Verdana
+                        Height: =Parent.Height
+                        LayoutMinWidth: =1
+                        PaddingTop: =0
+                        Size: =18
+                        Text: ="Do you want to delete this event?"
+                        Width: =318
+            - Container31_2:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  FillPortions: =0
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutMinHeight: =1
+                  LayoutMinWidth: =1
+                  Width: =96
+                Children:
+                  - CASendButton_19:
+                      Control: Button@0.0.44
+                      Properties:
+                        BasePaletteColor: =RGBA(231, 175, 65, 1)
+                        Font: =Font.Lato
+                        FontSize: =16
+                        Height: =40
+                        OnSelect: =Set(varDeleteClicked, false);
+                        Text: ="Cancel"
+                        Visible: =varDeleteClicked
+            - Container31_1:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  FillPortions: =0
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutMinHeight: =1
+                  LayoutMinWidth: =1
+                  Width: =96
+                Children:
+                  - CASendButton_18:
+                      Control: Button@0.0.44
+                      Properties:
+                        BasePaletteColor: =RGBA(231, 175, 65, 1)
+                        Font: =Font.Lato
+                        FontSize: =16
+                        Height: =40
+                        OnSelect: |-
+                          =Remove(EventTests, varSelectedEvent);
+                          Refresh(EventTests);
+                          Navigate(RegistrarDashboardScreen, ScreenTransition.Fade);
+                          Set(showDeleteConfirmationMessage_EVN, true);
+                          UpdateContext({startTimer_EVN:true})
+                        Text: ="Confirm"
+                        Visible: =varDeleteClicked
+      - CASendButton_17:
+          Control: Button@0.0.44
+          Properties:
+            BasePaletteColor: =RGBA(231, 175, 65, 1)
+            Font: =Font.Lato
+            FontSize: =16
+            Height: =40
+            OnSelect: =Set(varDeleteClicked, true);
+            Text: ="Delete"
+            Visible: |+
+              =varPreviousScreen = RegistrarDashboardScreen && !varDeleteClicked && !varEditClicked
+      - CASendButton_10:
+          Control: Button@0.0.44
+          Properties:
+            BasePaletteColor: =RGBA(231, 175, 65, 1)
+            Font: =Font.Lato
+            FontSize: =16
+            Height: =40
+            OnSelect: |+
+              =Set(varEditClicked, true);
+              Set(varUpdateClicked, false);
+              Set(varFormMode, FormMode.Edit)
+
+
+            Text: ="Edit"
+            Visible: |+
+              =varPreviousScreen = RegistrarDashboardScreen && !varDeleteClicked && !varEditClicked
+      - CASendButton_12:
+          Control: Button@0.0.44
+          Properties:
+            BasePaletteColor: =RGBA(231, 175, 65, 1)
+            Font: =Font.Lato
+            FontSize: =16
+            Height: =40
+            OnSelect: |+
+              =SubmitForm(Form14);
+              SubmitForm(Form22);
+              SubmitForm(Form17_1);
+              SubmitForm(Form20);
+              SubmitForm(Form21);
+              SubmitForm(Form12);
+              Refresh(EventTests);
+              Navigate(RegistrarDashboardScreen, ScreenTransition.Fade);
+              Set(varEditClicked, false);
+              Set(varUpdateClicked, false);
+
+            Text: ="Update"
+            Visible: |+
+              =varEditClicked
