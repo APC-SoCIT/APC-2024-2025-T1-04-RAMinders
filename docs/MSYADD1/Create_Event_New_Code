@@ -1,0 +1,616 @@
+- CreateEventsContainer_6:
+    Control: GroupContainer@1.3.0
+    Variant: AutoLayout
+    Properties:
+      DropShadow: =DropShadow.None
+      Height: =722
+      LayoutDirection: =LayoutDirection.Vertical
+      Width: =1321
+      X: =20
+      Y: =23
+    Children:
+      - CEHeaderContainer_12:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            DropShadow: =DropShadow.None
+            Fill: =RGBA(231, 175, 65, 1)
+            FillPortions: =0
+            Height: =183
+            LayoutDirection: =LayoutDirection.Vertical
+            RadiusBottomLeft: =0
+            RadiusBottomRight: =0
+            RadiusTopLeft: =0
+            RadiusTopRight: =0
+          Children:
+            - CEHeaderContainer_13:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  Fill: =RGBA(231, 175, 65, 1)
+                  FillPortions: =0
+                  Height: =90
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                Children:
+                  - CEBackButtonContainer_6:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        LayoutAlignItems: =LayoutAlignItems.Center
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutJustifyContent: =LayoutJustifyContent.Center
+                        LayoutMinHeight: =90
+                        PaddingLeft: =10
+                        PaddingRight: =10
+                        Width: =80
+                      Children:
+                        - CEBackButton_6:
+                            Control: Button@0.0.44
+                            Properties:
+                              Appearance: ='ButtonCanvas.Appearance'.Transparent
+                              FontColor: =RGBA(255, 255, 255, 1)
+                              FontSize: =30
+                              Icon: ="ArrowLeft"
+                              Layout: ='ButtonCanvas.Layout'.IconOnly
+                              OnSelect: |-
+                                =Reset(CETagInput_2);
+                                Reset(CEStartDateInput_2);
+                                Reset(CEEndDateInput_2);
+                                Reset(CETitleTextInput_4);
+                                Reset(CEBodyTextInput_2);
+                                Reset(CELegendColorInput_2);
+                                Reset(Dropdown_StartHours);
+                                Reset(Dropdown_StartMinutes);
+                                Reset(Dropdown_EndHours);
+                                Reset(Dropdown_EndMinutes);
+                                Set(showcreateevent,false)
+                              PaddingLeft: =0
+                              PaddingRight: =0
+                              Width: =73
+                  - CERegistrarContainer_6:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutMinHeight: =90
+                        LayoutMinWidth: =2
+                        PaddingBottom: =20
+                        PaddingLeft: =20
+                        PaddingRight: =20
+                        PaddingTop: =25
+                      Children:
+                        - CERegistrarLabel_6:
+                            Control: Text@0.0.50
+                            Properties:
+                              Font: =Font.Lato
+                              FontColor: =RGBA(255, 255, 255, 1)
+                              Height: =40
+                              Size: =25
+                              Text: ="Create Events"
+                              Weight: ='TextCanvas.Weight'.Semibold
+                              Width: =500
+                  - CEDraftsContainer_6:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        LayoutAlignItems: =LayoutAlignItems.End
+                        LayoutDirection: =LayoutDirection.Vertical
+                        LayoutMinHeight: =90
+                        LayoutMinWidth: =2
+                        PaddingBottom: =20
+                        PaddingLeft: =20
+                        PaddingRight: =20
+                        PaddingTop: =25
+            - CETabs_6:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  Fill: =RGBA(231, 206, 124, 1)
+                  FillPortions: =0
+                  Height: =40
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  PaddingLeft: =10
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+            - CERibbon_6:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  Fill: =RGBA(255, 255, 255, 1)
+                  FillPortions: =0
+                  Height: =55
+                  LayoutDirection: =LayoutDirection.Horizontal
+      - CEContentSectionBG_6:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            DropShadow: =DropShadow.None
+            Fill: =RGBA(40, 42, 126, 1)
+            LayoutDirection: =LayoutDirection.Vertical
+            PaddingBottom: =20
+            PaddingLeft: =20
+            PaddingRight: =20
+            PaddingTop: =20
+          Children:
+            - CEContentSection1_5:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  Fill: =RGBA(255, 255, 255, 1)
+                  FillPortions: =0
+                  Height: =490
+                  LayoutDirection: =LayoutDirection.Vertical
+                  LayoutGap: =2
+                  LayoutMinWidth: =1100
+                  PaddingBottom: =10
+                  PaddingLeft: =10
+                  PaddingRight: =10
+                  PaddingTop: =10
+                Children:
+                  - CETitleContainer_5:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        BorderColor: =RGBA(231, 175, 65, 1)
+                        DropShadow: =DropShadow.None
+                        Fill: =RGBA(255, 255, 255, 1)
+                        FillPortions: =0
+                        Height: =50
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutMinHeight: =10
+                        PaddingBottom: =5
+                        PaddingLeft: =5
+                        PaddingRight: =5
+                        PaddingTop: =5
+                      Children:
+                        - CETitleContainer1_5:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              FillPortions: =0
+                              LayoutAlignItems: =LayoutAlignItems.Center
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              LayoutJustifyContent: =LayoutJustifyContent.Center
+                              LayoutMinHeight: =40
+                              PaddingBottom: =5
+                              PaddingLeft: =5
+                              PaddingRight: =5
+                              PaddingTop: =5
+                              Width: =100
+                            Children:
+                              - CETitleLabel_5:
+                                  Control: Text@0.0.50
+                                  Properties:
+                                    Align: ='TextCanvas.Align'.Center
+                                    AlignInContainer: =AlignInContainer.Center
+                                    BorderColor: =RGBA(40, 42, 126, 1)
+                                    BorderRadius: =10
+                                    BorderStyle: =BorderStyle.Solid
+                                    BorderThickness: =2
+                                    Height: =30
+                                    Size: =16
+                                    Text: ="Title"
+                                    Weight: ='TextCanvas.Weight'.Regular
+                                    Width: =70
+                        - CETitleTextInputContainer_5:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              Height: =50
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              LayoutMinHeight: =40
+                              LayoutMinWidth: =10
+                            Children:
+                              - CETitleTextInput_4:
+                                  Control: TextInput@0.0.53
+                                  Properties:
+                                    BorderRadius: =4
+                                    FillPortions: =1
+                                    Height: =40
+                  - CEDateTagsCont_5:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        BorderColor: =RGBA(231, 175, 65, 1)
+                        DropShadow: =DropShadow.None
+                        Fill: =RGBA(255, 255, 255, 1)
+                        FillPortions: =0
+                        Height: =50
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutMinHeight: =10
+                        PaddingBottom: =5
+                        PaddingLeft: =5
+                        PaddingRight: =5
+                        PaddingTop: =5
+                      Children:
+                        - CESTARTCONT_5:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              FillPortions: =0
+                              LayoutAlignItems: =LayoutAlignItems.Center
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              LayoutJustifyContent: =LayoutJustifyContent.Center
+                              LayoutMinHeight: =40
+                              PaddingBottom: =5
+                              PaddingLeft: =5
+                              PaddingRight: =5
+                              PaddingTop: =5
+                              Width: =100
+                            Children:
+                              - CESTARTLABEL_5:
+                                  Control: Text@0.0.50
+                                  Properties:
+                                    Align: ='TextCanvas.Align'.Center
+                                    AlignInContainer: =AlignInContainer.Center
+                                    BorderColor: =RGBA(40, 42, 126, 1)
+                                    BorderRadius: =10
+                                    BorderStyle: =BorderStyle.Solid
+                                    BorderThickness: =2
+                                    Height: =30
+                                    Size: =16
+                                    Text: ="Start"
+                                    Weight: ='TextCanvas.Weight'.Regular
+                                    Width: =70
+                        - StartDatePickerContainer_9:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              FillPortions: =0
+                              Height: =50
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              LayoutMinHeight: =40
+                              LayoutMinWidth: =10
+                              Width: =150
+                            Children:
+                              - CEStartDateInput_2:
+                                  Control: DatePicker@0.0.42
+                                  Properties:
+                                    Height: =Parent.Height
+                                    Width: =150
+                        - Container12:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              LayoutMinHeight: =1
+                              LayoutMinWidth: =150
+                            Children:
+                              - Dropdown_StartHours:
+                                  Control: DropDown@0.0.44
+                                  Properties:
+                                    FillPortions: =1
+                                    Height: =Parent.Height
+                                    Items: |+
+                                      =ForAll(Sequence(24), Text(Value-1, "00"))
+                                    LayoutMinWidth: =1
+                              - Dropdown_StartMinutes:
+                                  Control: DropDown@0.0.44
+                                  Properties:
+                                    FillPortions: =1
+                                    Height: =Parent.Height
+                                    Items: |+
+                                      =ForAll(Sequence(60), Text(Value-1, "00"))
+                                    LayoutMinWidth: =1
+                        - CEENDCONT_5:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              FillPortions: =0
+                              LayoutAlignItems: =LayoutAlignItems.Center
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              LayoutJustifyContent: =LayoutJustifyContent.Center
+                              LayoutMinHeight: =40
+                              PaddingBottom: =5
+                              PaddingLeft: =5
+                              PaddingRight: =5
+                              PaddingTop: =5
+                              Width: =100
+                            Children:
+                              - CEENDLABEL_5:
+                                  Control: Text@0.0.50
+                                  Properties:
+                                    Align: ='TextCanvas.Align'.Center
+                                    AlignInContainer: =AlignInContainer.Center
+                                    BorderColor: =RGBA(40, 42, 126, 1)
+                                    BorderRadius: =10
+                                    BorderStyle: =BorderStyle.Solid
+                                    BorderThickness: =2
+                                    Height: =30
+                                    Size: =16
+                                    Text: ="End"
+                                    Weight: ='TextCanvas.Weight'.Regular
+                                    Width: =70
+                        - StartDatePickerContainer_10:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              FillPortions: =0
+                              Height: =50
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              LayoutMinHeight: =40
+                              LayoutMinWidth: =10
+                              Width: =150
+                            Children:
+                              - CEEndDateInput_2:
+                                  Control: DatePicker@0.0.42
+                                  Properties:
+                                    Height: =Parent.Height
+                                    Width: =150
+                        - Container12_1:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              LayoutMinHeight: =1
+                              LayoutMinWidth: =150
+                            Children:
+                              - Dropdown_EndHours:
+                                  Control: DropDown@0.0.44
+                                  Properties:
+                                    FillPortions: =1
+                                    Height: =Parent.Height
+                                    Items: |+
+                                      =ForAll(Sequence(24), Text(Value-1, "00"))
+                                    LayoutMinWidth: =1
+                              - Dropdown_EndMinutes:
+                                  Control: DropDown@0.0.44
+                                  Properties:
+                                    FillPortions: =1
+                                    Height: =Parent.Height
+                                    Items: |+
+                                      =ForAll(Sequence(60), Text(Value-1, "00"))
+                                    LayoutMinWidth: =1
+                        - CETagsCONT_10:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              BorderColor: =RGBA(231, 175, 65, 1)
+                              DropShadow: =DropShadow.None
+                              Fill: =RGBA(255, 255, 255, 1)
+                              FillPortions: =0
+                              Height: =50
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              LayoutMinHeight: =10
+                              Width: =250
+                            Children:
+                              - CETagsNameCont_11:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    DropShadow: =DropShadow.None
+                                    FillPortions: =0
+                                    LayoutAlignItems: =LayoutAlignItems.Center
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    LayoutJustifyContent: =LayoutJustifyContent.Center
+                                    LayoutMinHeight: =40
+                                    PaddingBottom: =5
+                                    PaddingLeft: =5
+                                    PaddingRight: =5
+                                    PaddingTop: =5
+                                    Width: =75
+                                  Children:
+                                    - CATagsLabel_15:
+                                        Control: Text@0.0.50
+                                        Properties:
+                                          Align: ='TextCanvas.Align'.Center
+                                          AlignInContainer: =AlignInContainer.Center
+                                          BorderColor: =RGBA(40, 42, 126, 1)
+                                          BorderRadius: =10
+                                          BorderStyle: =BorderStyle.Solid
+                                          BorderThickness: =2
+                                          Height: =30
+                                          Size: =16
+                                          Text: ="Tags"
+                                          Width: =70
+                              - CETagsInputCont_10:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    Height: =50
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    LayoutMinHeight: =40
+                                    LayoutMinWidth: =10
+                                    Width: =350
+                                  Children:
+                                    - CETagInput_2:
+                                        Control: ComboBox@0.0.49
+                                        Properties:
+                                          FillPortions: =1
+                                          Height: =Parent.Height
+                                          Items: =Tags_2
+                                          LayoutMinWidth: =10
+                                          SelectMultiple: =true
+                                          Width: =250
+                                        Children:
+                                          - TagName2_5:
+                                              Control: ComboBoxDataField@1.5.0
+                                              Variant: textualColumn
+                                              IsLocked: true
+                                              Properties:
+                                                FieldDisplayName: ="TagName"
+                                                FieldName: ="crb40_tagname"
+                                                FieldType: ="s"
+                                                Order: =1
+                        - CETagsCONT_11:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              BorderColor: =RGBA(231, 175, 65, 1)
+                              DropShadow: =DropShadow.None
+                              Fill: =RGBA(255, 255, 255, 1)
+                              FillPortions: =0
+                              Height: =50
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              LayoutMinHeight: =10
+                              LayoutMinWidth: =1
+                              Width: =200
+                            Children:
+                              - CETagsNameCont_12:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    DropShadow: =DropShadow.None
+                                    FillPortions: =0
+                                    LayoutAlignItems: =LayoutAlignItems.Center
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    LayoutJustifyContent: =LayoutJustifyContent.Center
+                                    LayoutMinHeight: =40
+                                    PaddingBottom: =5
+                                    PaddingLeft: =5
+                                    PaddingRight: =5
+                                    PaddingTop: =5
+                                    Width: =75
+                                  Children:
+                                    - CATagsLabel_16:
+                                        Control: Text@0.0.50
+                                        Properties:
+                                          Align: ='TextCanvas.Align'.Center
+                                          AlignInContainer: =AlignInContainer.Center
+                                          BorderColor: =RGBA(40, 42, 126, 1)
+                                          BorderRadius: =10
+                                          BorderStyle: =BorderStyle.Solid
+                                          BorderThickness: =2
+                                          Height: =30
+                                          Size: =16
+                                          Text: ="Color"
+                                          Width: =70
+                              - CETagsInputCont_11:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    Height: =50
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    LayoutMinHeight: =40
+                                    LayoutMinWidth: =10
+                                    Width: =350
+                                  Children:
+                                    - CELegendColorInput_2:
+                                        Control: DropDown@0.0.44
+                                        Properties:
+                                          AlignInContainer: =AlignInContainer.Stretch
+                                          FillPortions: =1
+                                          Height: =Parent.Height
+                                          Items: =LegendColors
+                                          LayoutMinWidth: =10
+                                        Children:
+                                          - LegendColorName2_2:
+                                              Control: DropDownDataField@1.5.0
+                                              Variant: textualColumn
+                                              IsLocked: true
+                                              Properties:
+                                                FieldDisplayName: ="LegendColorName"
+                                                FieldName: ="crb40_legendcolorname"
+                                                FieldType: ="s"
+                                                Order: =1
+                  - CABodyContainer_7:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =320
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutMinHeight: =80
+                        PaddingBottom: =10
+                        PaddingLeft: =5
+                        PaddingRight: =5
+                        PaddingTop: =5
+                      Children:
+                        - CABodyContainer1_10:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              LayoutMinHeight: =280
+                            Children:
+                              - CEBodyTextInput_2:
+                                  Control: TextInput@0.0.53
+                                  Properties:
+                                    AlignInContainer: =AlignInContainer.Start
+                                    Height: =Parent.Height
+                                    Mode: ='TextInputCanvas.Mode'.Multiline
+                                    Width: =Parent.Width
+                  - CASendContainer_7:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        AlignInContainer: =AlignInContainer.End
+                        DropShadow: =DropShadow.None
+                        FillPortions: =0
+                        Height: =50
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutJustifyContent: =LayoutJustifyContent.End
+                        LayoutMinHeight: =20
+                        PaddingBottom: =5
+                        PaddingTop: =5
+                      Children:
+                        - CASendButton_11:
+                            Control: Button@0.0.44
+                            Properties:
+                              BasePaletteColor: =RGBA(231, 175, 65, 1)
+                              Font: =Font.Lato
+                              FontSize: =16
+                              Height: =40
+                              OnSelect: |+
+                                =Set(
+                                    varStartDateTime,
+                                    DateValue(CEStartDateInput_2.SelectedDate) + 
+                                    TimeValue(
+                                        Dropdown_StartHours.Selected.Value & ":" & 
+                                        Dropdown_StartMinutes.Selected.Value
+                                    )
+                                ); // combine start date and time
+
+                                Set(
+                                    varEndDateTime,
+                                    DateValue(CEEndDateInput_2.SelectedDate) + 
+                                    TimeValue(
+                                        Dropdown_EndHours.Selected.Value & ":" & 
+                                        Dropdown_EndMinutes.Selected.Value
+                                    )
+                                ); // combine end date and time
+
+                                Collect(
+                                    EventTests,
+                                    {
+                                        EventName: CETitleTextInput_4.Value,
+                                        EventDetail: CEBodyTextInput_2.Value,
+                                        EndDate: varEndDateTime,
+                                        StartDate: varStartDateTime,
+                                        TagsTest: Concat(CETagInput_2.SelectedItems, TagName, ","), 
+                                        Color: CELegendColorInput_2.Selected.LegendColorName
+                                    }
+                                ); // collect events
+
+                                // reset
+                                Reset(CETagInput_2);
+                                Reset(CEStartDateInput_2);
+                                Reset(CEEndDateInput_2);
+                                Reset(CETitleTextInput_4);
+                                Reset(CEBodyTextInput_2);
+                                Reset(CELegendColorInput_2);
+                                Reset(Dropdown_StartHours);
+                                Reset(Dropdown_StartMinutes);
+                                Reset(Dropdown_EndHours);
+                                Reset(Dropdown_EndMinutes);
+
+                                Set(showcreateevent, false);
+                              Text: ="Save"
