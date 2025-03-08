@@ -1,0 +1,456 @@
+ComponentDefinitions:
+  ViewDatePopup:
+    DefinitionType: CanvasComponent
+    AccessAppScope: true
+    Properties:
+      Fill: =RGBA(0, 0, 0, 0.1)
+      Height: =App.Height
+      Width: =App.Width
+    Children:
+      - ViewDateContainer:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            DropShadow: =DropShadow.ExtraBold
+            Height: =671
+            Width: =1270
+            X: =48
+            Y: =51
+          Children:
+            - ViewDateContainer2_4:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  Height: =183
+                  LayoutDirection: =LayoutDirection.Vertical
+                  Width: =1270
+                Children:
+                  - Container13_3:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        LayoutDirection: =LayoutDirection.Vertical
+                      Children:
+                        - CAHeaderContainer2_6:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              Fill: =RGBA(231, 175, 65, 1)
+                              FillPortions: =0
+                              Height: =90
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                            Children:
+                              - CABackButtonContainer1_7:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    DropShadow: =DropShadow.None
+                                    FillPortions: =0
+                                    LayoutAlignItems: =LayoutAlignItems.Center
+                                    LayoutDirection: =LayoutDirection.Vertical
+                                    LayoutJustifyContent: =LayoutJustifyContent.Center
+                                    LayoutMinHeight: =90
+                                    PaddingLeft: =10
+                                    PaddingRight: =10
+                                    Width: =80
+                                  Children:
+                                    - CABackButton2_7:
+                                        Control: Button@0.0.44
+                                        Properties:
+                                          Appearance: ='ButtonCanvas.Appearance'.Transparent
+                                          FontColor: =RGBA(255, 255, 255, 1)
+                                          FontSize: =30
+                                          Icon: ="ArrowLeft"
+                                          Layout: ='ButtonCanvas.Layout'.IconOnly
+                                          OnSelect: =Set(ViewDateVisible, false);
+                                          PaddingLeft: =0
+                                          PaddingRight: =0
+                                          Width: =73
+                              - CARegistrarContainer2_7:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    DropShadow: =DropShadow.None
+                                    LayoutDirection: =LayoutDirection.Vertical
+                                    LayoutMinHeight: =90
+                                    LayoutMinWidth: =2
+                                    PaddingBottom: =20
+                                    PaddingLeft: =20
+                                    PaddingRight: =20
+                                    PaddingTop: =25
+                                  Children:
+                                    - CARegistrarLabel1_7:
+                                        Control: Text@0.0.50
+                                        Properties:
+                                          Font: =Font.Lato
+                                          FontColor: =RGBA(255, 255, 255, 1)
+                                          Height: =40
+                                          Size: =25
+                                          Text: ="View Date"
+                                          Weight: ='TextCanvas.Weight'.Semibold
+                                          Width: =500
+                        - CATabs2_12:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              Fill: =RGBA(231, 206, 124, 1)
+                              FillPortions: =0
+                              Height: =40
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                            Children:
+                              - CATabs2_13:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    DropShadow: =DropShadow.None
+                                    Height: =210
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    LayoutMinHeight: =43
+                                    PaddingLeft: =10
+                        - CARibbon1_8:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              Fill: =RGBA(255, 255, 255, 1)
+                              FillPortions: =0
+                              Height: =53
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              PaddingTop: =7
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                            Children:
+                              - Button4:
+                                  Control: Classic/Button@2.2.0
+                                  Properties:
+                                    BorderStyle: =BorderStyle.None
+                                    Color: =RGBA(15, 84, 140, 1)
+                                    DisplayMode: =DisplayMode.View
+                                    Fill: =RGBA(0, 0, 0, 0)
+                                    Font: =Font.'Segoe UI'
+                                    FontWeight: =FontWeight.Bold
+                                    Size: =17
+                                    Text: =Text(varSelectedDate, "mmmm d, yyyy")
+                                    Width: =Parent.Width
+            - VAContentSectionBG_4:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  Fill: =RGBA(40, 42, 126, 1)
+                  Height: =487
+                  LayoutDirection: =LayoutDirection.Vertical
+                  PaddingBottom: =20
+                  PaddingLeft: =20
+                  PaddingRight: =20
+                  PaddingTop: =20
+                  Width: =1270
+                  Y: =183
+                Children:
+                  - Container3:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        Fill: =RGBA(232, 238, 255, 1)
+                        LayoutDirection: =LayoutDirection.Vertical
+                        PaddingBottom: =15
+                        PaddingLeft: =15
+                        PaddingRight: =15
+                        PaddingTop: =25
+                        RadiusBottomLeft: =12
+                        RadiusBottomRight: =12
+                        RadiusTopLeft: =12
+                        RadiusTopRight: =12
+                      Children:
+                        - EventsList:
+                            Control: Gallery@2.15.0
+                            Variant: Horizontal
+                            Properties:
+                              Height: =Parent.Height
+                              Items: |+
+                                =Sort(
+                                    Filter(
+                                        EventTests, 
+                                        DateValue('StartDate') <= DateValue(varSelectedDate) && 
+                                        DateValue('EndDate') >= DateValue(varSelectedDate)
+                                    ),
+                                    'StartDate',
+                                    SortOrder.Ascending
+                                )
+                              LayoutMinHeight: =255
+                              LayoutMinWidth: =301
+                              Width: =301
+                            Children:
+                              - Container8:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    DropShadow: =DropShadow.Regular
+                                    Fill: =RGBA(255, 255, 255, 1)
+                                    Height: =345
+                                    LayoutDirection: =LayoutDirection.Vertical
+                                    LayoutJustifyContent: =LayoutJustifyContent.Center
+                                    RadiusBottomLeft: =25
+                                    RadiusBottomRight: =25
+                                    RadiusTopLeft: =25
+                                    RadiusTopRight: =25
+                                    Width: =295
+                                    X: =12
+                                  Children:
+                                    - Container9:
+                                        Control: GroupContainer@1.3.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          AlignInContainer: =AlignInContainer.SetByContainer
+                                          DropShadow: =DropShadow.None
+                                          Height: =Parent.Height
+                                          LayoutDirection: =LayoutDirection.Horizontal
+                                          LayoutMinHeight: =60
+                                          PaddingRight: =7
+                                          Width: =Parent.Width
+                                        Children:
+                                          - Container15:
+                                              Control: GroupContainer@1.3.0
+                                              Variant: AutoLayout
+                                              Properties:
+                                                DropShadow: =DropShadow.None
+                                                LayoutDirection: =LayoutDirection.Vertical
+                                                LayoutMinHeight: =5
+                                                LayoutMinWidth: =240
+                                                PaddingLeft: =25
+                                                PaddingTop: =25
+                                              Children:
+                                                - Container18:
+                                                    Control: GroupContainer@1.3.0
+                                                    Variant: AutoLayout
+                                                    Properties:
+                                                      DropShadow: =DropShadow.None
+                                                      Fill: =Color.Transparent
+                                                      Height: =Parent.Height
+                                                      LayoutDirection: =LayoutDirection.Horizontal
+                                                      LayoutMinHeight: =7
+                                                      LayoutMinWidth: =25
+                                                      PaddingBottom: =5
+                                                      Width: =Parent.Width
+                                                    Children:
+                                                      - Rectangle8_1:
+                                                          Control: Rectangle@2.3.0
+                                                          Properties:
+                                                            Fill: |-
+                                                              =Switch(
+                                                                  ThisItem.Color,
+                                                                  "Red",
+                                                                  ColorValue("#ff9999"),
+                                                                  "Blue",
+                                                                  ColorValue("#99bbff"),
+                                                                  "Green",
+                                                                  ColorValue("#a7d97e"),
+                                                                  "Yellow",
+                                                                  ColorValue("#ebd567"),
+                                                                  "Orange",
+                                                                  ColorValue("#de9d4e"),
+                                                                  "Purple",
+                                                                  ColorValue("#9559de"),
+                                                                  "Pink",
+                                                                  ColorValue("#fa7fbc")
+                                                              )
+                                                            Height: =6
+                                                            Width: =65
+                                                - Label8_3:
+                                                    Control: Label@2.5.1
+                                                    Properties:
+                                                      FillPortions: =70
+                                                      Font: =Font.Verdana
+                                                      FontWeight: =FontWeight.Semibold
+                                                      Height: =Parent.Height
+                                                      HoverColor: =RGBA(0, 0, 0, 1)
+                                                      LayoutMinWidth: =160
+                                                      PaddingBottom: =12
+                                                      PaddingLeft: =0
+                                                      PaddingRight: =0
+                                                      Text: =ThisItem.EventName
+                                                      Width: =Parent.Width
+                                          - Container5_1:
+                                              Control: GroupContainer@1.3.0
+                                              Variant: AutoLayout
+                                              Properties:
+                                                DropShadow: =DropShadow.None
+                                                FillPortions: =0
+                                                Height: =Parent.Height
+                                                LayoutDirection: =LayoutDirection.Horizontal
+                                                LayoutMinHeight: =15
+                                                LayoutMinWidth: =65
+                                                PaddingLeft: =1
+                                                PaddingTop: =5
+                                                Width: =55
+                                              Children:
+                                                - ButtonCanvas7_1:
+                                                    Control: Button@0.0.44
+                                                    Properties:
+                                                      Align: =Align.Justify
+                                                      Appearance: ='ButtonCanvas.Appearance'.Transparent
+                                                      FontSize: =32
+                                                      Height: =Parent.Height
+                                                      Icon: ="Open"
+                                                      OnSelect: |-
+                                                        =Set(varSelectedEvent, ThisItem);
+                                                        Set(varPreviousScreen, App.ActiveScreen);
+                                                        Navigate(ViewEventPopup, ScreenTransition.Fade)
+                                                      Text: =
+                                                      Width: =40
+                                    - Container16:
+                                        Control: GroupContainer@1.3.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          DropShadow: =DropShadow.None
+                                          LayoutDirection: =LayoutDirection.Horizontal
+                                          LayoutMinHeight: =45
+                                          LayoutMinWidth: =295
+                                        Children:
+                                          - Container15_1:
+                                              Control: GroupContainer@1.3.0
+                                              Variant: AutoLayout
+                                              Properties:
+                                                AlignInContainer: =AlignInContainer.SetByContainer
+                                                DropShadow: =DropShadow.None
+                                                Height: =Parent.Height
+                                                LayoutDirection: =LayoutDirection.Vertical
+                                                LayoutMinHeight: =55
+                                                LayoutMinWidth: =190
+                                                Width: =Parent.Width
+                                              Children:
+                                                - Label10_1:
+                                                    Control: Label@2.5.1
+                                                    Properties:
+                                                      AlignInContainer: =AlignInContainer.Start
+                                                      Color: =RGBA(166, 172, 173, 1)
+                                                      Font: =Font.Verdana
+                                                      FontWeight: =FontWeight.Semibold
+                                                      Height: =20
+                                                      PaddingBottom: =0
+                                                      PaddingLeft: =25
+                                                      PaddingRight: =25
+                                                      PaddingTop: =7
+                                                      Size: =10
+                                                      Text: =Text(ThisItem.StartDate, "mmm d at h:mm AM/PM")
+                                                      Width: =200
+                                                - Label11_1:
+                                                    Control: Label@2.5.1
+                                                    Properties:
+                                                      Color: =RGBA(166, 172, 173, 1)
+                                                      Font: =Font.Verdana
+                                                      FontWeight: =FontWeight.Semibold
+                                                      Height: =30
+                                                      PaddingBottom: =10
+                                                      PaddingLeft: =25
+                                                      PaddingRight: =25
+                                                      PaddingTop: =0
+                                                      Size: =10
+                                                      Text: |+
+                                                        =Text(ThisItem.EndDate, "mmm d at h:mm AM/PM")
+                                                      Width: =Parent.Width
+                                          - Container17:
+                                              Control: GroupContainer@1.3.0
+                                              Variant: AutoLayout
+                                              Properties:
+                                                DropShadow: =DropShadow.None
+                                                Height: =Parent.Height
+                                                LayoutDirection: =LayoutDirection.Vertical
+                                                LayoutMinHeight: =50
+                                                LayoutMinWidth: =100
+                                                PaddingTop: =7
+                                              Children:
+                                                - Label10_2:
+                                                    Control: Label@2.5.1
+                                                    Properties:
+                                                      Align: =Align.Justify
+                                                      AlignInContainer: =AlignInContainer.Center
+                                                      Color: =RGBA(0, 128, 0, 1)
+                                                      Font: =Font.Verdana
+                                                      FontWeight: =FontWeight.Semibold
+                                                      Height: =30
+                                                      PaddingBottom: =0
+                                                      PaddingRight: =0
+                                                      PaddingTop: =0
+                                                      Size: =10
+                                                      Text: ="Ongoing"
+                                                      Visible: =Now() >= DateTimeValue(ThisItem.StartDate) && Now() <= DateTimeValue(ThisItem.EndDate)
+                                                      Width: =100
+                                    - Container13:
+                                        Control: GroupContainer@1.3.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          AlignInContainer: =AlignInContainer.SetByContainer
+                                          DropShadow: =DropShadow.None
+                                          Height: =Parent.Height
+                                          LayoutDirection: =LayoutDirection.Horizontal
+                                          LayoutMinHeight: =140
+                                          PaddingTop: =3
+                                          Width: =Parent.Width
+                                        Children:
+                                          - Label12:
+                                              Control: Label@2.5.1
+                                              Properties:
+                                                Color: =RGBA(79, 90, 94, 1)
+                                                Font: =Font.Verdana
+                                                PaddingLeft: =25
+                                                PaddingRight: =25
+                                                PaddingTop: =10
+                                                Size: =11
+                                                Text: =ThisItem.EventDetail
+                                                Width: =Parent.Width
+                                    - Container14:
+                                        Control: GroupContainer@1.3.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          AlignInContainer: =AlignInContainer.SetByContainer
+                                          DropShadow: =DropShadow.None
+                                          Height: =Parent.Height
+                                          LayoutDirection: =LayoutDirection.Horizontal
+                                          PaddingBottom: =25
+                                          PaddingLeft: =20
+                                          PaddingRight: =25
+                                          Width: =Parent.Width
+                                        Children:
+                                          - Gallery13:
+                                              Control: Gallery@2.15.0
+                                              Variant: Horizontal
+                                              Properties:
+                                                Height: =Parent.Height
+                                                Items: =Split(ThisItem.TagsTest, ",")
+                                                LayoutMinHeight: =34
+                                                LayoutMinWidth: =43
+                                                TemplatePadding: =7
+                                                TemplateSize: =96
+                                                Width: =Parent.Width
+                                                WrapCount: =2
+                                              Children:
+                                                - Button6:
+                                                    Control: Classic/Button@2.2.0
+                                                    Properties:
+                                                      BorderColor: =RGBA(135, 157, 204, 1)
+                                                      Color: =RGBA(102, 126, 186, 1)
+                                                      DisplayMode: =DisplayMode.View
+                                                      Fill: =RGBA(195, 204, 232, 1)
+                                                      Height: =26
+                                                      OnSelect: =Select(Parent)
+                                                      PaddingBottom: =0
+                                                      PaddingLeft: =0
+                                                      PaddingRight: =0
+                                                      PaddingTop: =0
+                                                      Size: =10
+                                                      Text: =ThisItem.Value
+                                                      Width: =96
