@@ -1,0 +1,2611 @@
+Screens:
+  UserScreenProto_1:
+    Properties:
+      OnVisible: |-
+        =
+        ClearCollect(collectTags, {Value: "All"});
+        Collect(collectTags,  Distinct(Announcements, Tags));
+    Children:
+      - RegistrarDashboard1_11:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            DropShadow: =DropShadow.None
+            Fill: =RGBA(40, 42, 126, 1)
+            Height: =768
+            LayoutDirection: =LayoutDirection.Horizontal
+            LayoutGap: =10
+            PaddingBottom: =24
+            PaddingLeft: =32
+            PaddingRight: =32
+            PaddingTop: =24
+            Width: =1366
+          Children:
+            - SideBarContainer_12:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  Fill: =RGBA(255, 255, 255, 1)
+                  FillPortions: =0
+                  Height: =768
+                  LayoutDirection: =LayoutDirection.Vertical
+                  Width: =SideNavigation_Collapsible_14.Width
+                Children:
+                  - SideNavigation_Collapsible_14:
+                      Control: CanvasComponent
+                      ComponentName: SideNavigation_Collapsible
+                      Properties:
+                        AppColorMode: ="Light"
+                        BaseIconColor: =RGBA(40, 42, 126, 1)
+                        BasedIconColor_Text: ="RGBA(40, 42, 126, 1)"
+                        CurrentMenuID: =1
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =Parent.Height
+                        HoverFill: =RGBA(0, 0, 0, 0.1)
+                        LogoPadding_Percent: =If(SideNavigation_Collapsible_14.MenuExpanded,10%,22%)
+                        Logo_Compact: =RAMindersicon_3
+                        Logo_Expanded: =RAMindersicon_3
+                        MenuContent: "=Table(\r\n    {\r\n        MenuIcon_Selected: \"<svg xmlns='http://www.w3.org/2000/svg' width='16' height='12' fill='currentColor' class='bi bi-megaphone-fill' viewBox='0 0 16 16'>\r\n  <path d='M13 2.5a1.5 1.5 0 0 1 3 0v11a1.5 1.5 0 0 1-3 0zm-1 .724c-2.067.95-4.539 1.481-7 1.656v6.237a25 25 0 0 1 1.088.085c2.053.204 4.038.668 5.912 1.56zm-8 7.841V4.934c-.68.027-1.399.043-2.008.053A2.02 2.02 0 0 0 0 7v2c0 1.106.896 1.996 1.994 2.009l.496.008a64 64 0 0 1 1.51.048m1.39 1.081q.428.032.85.078l.253 1.69a1 1 0 0 1-.983 1.187h-.548a1 1 0 0 1-.916-.599l-1.314-2.48a66 66 0 0 1 1.692.064q.491.026.966.06'/>\r\n</svg>\",\r\n        MenuIcon : \"<svg xmlns='http://www.w3.org/2000/svg' width='16' height='12' fill='currentColor' class='bi bi-megaphone' viewBox='0 0 16 16'>\r\n  <path d='M13 2.5a1.5 1.5 0 0 1 3 0v11a1.5 1.5 0 0 1-3 0v-.214c-2.162-1.241-4.49-1.843-6.912-2.083l.405 2.712A1 1 0 0 1 5.51 15.1h-.548a1 1 0 0 1-.916-.599l-1.85-3.49-.202-.003A2.014 2.014 0 0 1 0 9V7a2.02 2.02 0 0 1 1.992-2.013 75 75 0 0 0 2.483-.075c3.043-.154 6.148-.849 8.525-2.199zm1 0v11a.5.5 0 0 0 1 0v-11a.5.5 0 0 0-1 0m-1 1.35c-2.344 1.205-5.209 1.842-8 2.033v4.233q.27.015.537.036c2.568.189 5.093.744 7.463 1.993zm-9 6.215v-4.13a95 95 0 0 1-1.992.052A1.02 1.02 0 0 0 1 7v2c0 .55.448 1.002 1.006 1.009A61 61 0 0 1 4 10.065m-.657.975 1.609 3.037.01.024h.548l-.002-.014-.443-2.966a68 68 0 0 0-1.722-.082z'/>\r\n</svg>\",\r\n        MenuID: 1,\r\n        MenuName: \"Announcements\",\r\n        PageNavigation: UserScreenProto_1 },\r\n        \r\n        {\r\n        MenuIcon_Selected: \"<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-robot' viewBox='0 0 16 16'>\r\n  <path d='M6 12.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5M3 8.062C3 6.76 4.235 5.765 5.53 5.886a26.6 26.6 0 0 0 4.94 0C11.765 5.765 13 6.76 13 8.062v1.157a.93.93 0 0 1-.765.935c-.845.147-2.34.346-4.235.346s-3.39-.2-4.235-.346A.93.93 0 0 1 3 9.219zm4.542-.827a.25.25 0 0 0-.217.068l-.92.9a25 25 0 0 1-1.871-.183.25.25 0 0 0-.068.495c.55.076 1.232.149 2.02.193a.25.25 0 0 0 .189-.071l.754-.736.847 1.71a.25.25 0 0 0 .404.062l.932-.97a25 25 0 0 0 1.922-.188.25.25 0 0 0-.068-.495c-.538.074-1.207.145-1.98.189a.25.25 0 0 0-.166.076l-.754.785-.842-1.7a.25.25 0 0 0-.182-.135'/>\r\n  <path d='M8.5 1.866a1 1 0 1 0-1 0V3h-2A4.5 4.5 0 0 0 1 7.5V8a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v1a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1v-.5A4.5 4.5 0 0 0 10.5 3h-2zM14 7.5V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.5A3.5 3.5 0 0 1 5.5 4h5A3.5 3.5 0 0 1 14 7.5'/>\r\n</svg>\",\r\n        MenuIcon : \"<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-robot' viewBox='0 0 16 16'>\r\n  <path d='M6 12.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5M3 8.062C3 6.76 4.235 5.765 5.53 5.886a26.6 26.6 0 0 0 4.94 0C11.765 5.765 13 6.76 13 8.062v1.157a.93.93 0 0 1-.765.935c-.845.147-2.34.346-4.235.346s-3.39-.2-4.235-.346A.93.93 0 0 1 3 9.219zm4.542-.827a.25.25 0 0 0-.217.068l-.92.9a25 25 0 0 1-1.871-.183.25.25 0 0 0-.068.495c.55.076 1.232.149 2.02.193a.25.25 0 0 0 .189-.071l.754-.736.847 1.71a.25.25 0 0 0 .404.062l.932-.97a25 25 0 0 0 1.922-.188.25.25 0 0 0-.068-.495c-.538.074-1.207.145-1.98.189a.25.25 0 0 0-.166.076l-.754.785-.842-1.7a.25.25 0 0 0-.182-.135'/>\r\n  <path d='M8.5 1.866a1 1 0 1 0-1 0V3h-2A4.5 4.5 0 0 0 1 7.5V8a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1v1a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1v-.5A4.5 4.5 0 0 0 10.5 3h-2zM14 7.5V13a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V7.5A3.5 3.5 0 0 1 5.5 4h5A3.5 3.5 0 0 1 14 7.5'/>\r\n</svg>\",\r\n        MenuID: 2,\r\n        MenuName: \"Chatbot\",\r\n        PageNavigation: UserScreenProto_2 }\r\n    \r\n)"
+                        NavBG: =RGBA(0, 0, 0, 0)
+                        Pressfill: =RGBA(0, 0, 0, 0.2)
+                        SelectedIconBG: =RGBA(255, 255, 255, 1)
+                        SelectedIconColor: =RGBA(231, 175, 65, 1)
+                        SelectedIconColor_Text: ="RGBA(231, 175, 65, 1)"
+                        TextColor: =RGBA(37, 52, 100, 1)
+                        Width: =If(SideNavigation_Collapsible_14.MenuExpanded,200,70)
+            - PageContentContainer_12:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  Height: =768
+                  LayoutDirection: =LayoutDirection.Vertical
+                  LayoutGap: =10
+                  Width: =1366
+                Children:
+                  - Section3Container_10:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        Height: =768
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutGap: =16
+                        Width: =1366
+                      Children:
+                        - AnnouncementContainer_36:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              Fill: =Color.Transparent
+                              FillPortions: =0
+                              Height: =768
+                              LayoutDirection: =LayoutDirection.Vertical
+                              LayoutGap: =16
+                              RadiusBottomLeft: =20
+                              RadiusBottomRight: =20
+                              RadiusTopLeft: =20
+                              RadiusTopRight: =20
+                              Width: =700
+                            Children:
+                              - Container33:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    Fill: =Color.White
+                                    LayoutDirection: =LayoutDirection.Vertical
+                                    LayoutMinWidth: =100
+                                    RadiusBottomLeft: =20
+                                    RadiusBottomRight: =20
+                                    RadiusTopLeft: =20
+                                    RadiusTopRight: =20
+                                  Children:
+                                    - AnnouncementContainer_40:
+                                        Control: GroupContainer@1.3.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          BorderColor: =RGBA(0, 0, 0, 0)
+                                          DropShadow: =DropShadow.None
+                                          Fill: =RGBA(231, 175, 65, 1)
+                                          FillPortions: =0
+                                          Height: =60
+                                          LayoutDirection: =LayoutDirection.Horizontal
+                                          LayoutMinWidth: =200
+                                          PaddingBottom: =20
+                                          PaddingLeft: =20
+                                          PaddingRight: =20
+                                          PaddingTop: =15
+                                          RadiusBottomLeft: =0
+                                          RadiusBottomRight: =0
+                                          RadiusTopLeft: =0
+                                          RadiusTopRight: =0
+                                          Width: =1366
+                                        Children:
+                                          - AnnouncementLabel_10:
+                                              Control: Text@0.0.50
+                                              Properties:
+                                                AlignInContainer: =AlignInContainer.Start
+                                                BorderRadius: =0
+                                                BorderStyle: =BorderStyle.None
+                                                Font: =Font.Lato
+                                                FontColor: =RGBA(255, 255, 255, 1)
+                                                Height: =40
+                                                LayoutMinHeight: =0
+                                                PaddingBottom: =0
+                                                PaddingLeft: =0
+                                                PaddingRight: =0
+                                                PaddingTop: =0
+                                                Size: =22
+                                                Text: ="Announcements"
+                                                Weight: ='TextCanvas.Weight'.Semibold
+                                                Width: =200
+                                          - AnnouncementContainer_41:
+                                              Control: GroupContainer@1.3.0
+                                              Variant: AutoLayout
+                                              Properties:
+                                                AlignInContainer: =AlignInContainer.SetByContainer
+                                                BorderColor: =RGBA(0, 0, 0, 0)
+                                                DropShadow: =DropShadow.None
+                                                Height: =40
+                                                LayoutAlignItems: =LayoutAlignItems.Center
+                                                LayoutDirection: =LayoutDirection.Horizontal
+                                                LayoutGap: =10
+                                                LayoutJustifyContent: =LayoutJustifyContent.End
+                                                LayoutMinWidth: =150
+                                                PaddingBottom: =5
+                                                RadiusBottomLeft: =10
+                                                RadiusBottomRight: =10
+                                                RadiusTopLeft: =10
+                                                RadiusTopRight: =10
+                                                Width: =1366
+                                              Children:
+                                                - DropdownCanvas4_1:
+                                                    Control: DropDown@0.0.44
+                                                    Properties:
+                                                      DefaultSelectedItems: =["All"]
+                                                      Items: =collectTags
+                                                      Width: =250
+                                                - ViewAllButton_11:
+                                                    Control: Button@0.0.44
+                                                    Properties:
+                                                      Appearance: ='ButtonCanvas.Appearance'.Primary
+                                                      BasePaletteColor: =RGBA(231, 175, 65, 1)
+                                                      BorderRadius: =10
+                                                      Icon: ="ArrowRight"
+                                                      IconStyle: ='ButtonCanvas.IconStyle'.Filled
+                                                      Layout: ='ButtonCanvas.Layout'.IconBefore
+                                                      OnSelect: |+
+                                                        =Set(varUserAncList, true)
+                                                      Text: ="View All"
+                                                      Width: =110
+                                    - AnnouncementContainer_42:
+                                        Control: GroupContainer@1.3.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          BorderColor: =RGBA(0, 0, 0, 0)
+                                          BorderThickness: =1
+                                          DropShadow: =DropShadow.None
+                                          Fill: =RGBA(255, 255, 255, 1)
+                                          Height: =400
+                                          LayoutDirection: =LayoutDirection.Vertical
+                                          LayoutGap: =16
+                                          LayoutMinWidth: =100
+                                          PaddingBottom: =20
+                                          PaddingLeft: =20
+                                          PaddingRight: =20
+                                          PaddingTop: =10
+                                          RadiusBottomLeft: =20
+                                          RadiusBottomRight: =20
+                                          RadiusTopLeft: =20
+                                          RadiusTopRight: =20
+                                          Width: =1366
+                                        Children:
+                                          - Gallery19_3:
+                                              Control: Gallery@2.15.0
+                                              Variant: BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0
+                                              Properties:
+                                                Items: |+
+                                                  =If(
+                                                      DropdownCanvas4_1.Selected.Value = "All",
+                                                      Filter(
+                                                          Announcements,
+                                                          'Announcement Status' <> 102 &&
+                                                          (DateValue(Text('Schedule Date', "[$-en-US]mm/dd/yyyy")) +
+                                                          Time(Hour('Schedule Date'), Minute('Schedule Date'), Second('Schedule Date'))) 
+                                                          <= Now()
+                                                      ),
+                                                      Filter(
+                                                          Announcements,
+                                                          'Announcement Status' <> 102 &&
+                                                          Tags = DropdownCanvas4_1.Selected.Value &&
+                                                          (DateValue(Text('Schedule Date', "[$-en-US]mm/dd/yyyy")) +
+                                                          Time(Hour('Schedule Date'), Minute('Schedule Date'), Second('Schedule Date'))) 
+                                                          <= Now()
+                                                      )
+                                                  )
+
+                                                TemplatePadding: =15
+                                                TemplateSize: =160
+                                              Children:
+                                                - Separator6_2:
+                                                    Control: Rectangle@2.3.0
+                                                    Properties:
+                                                      Fill: =RGBA(255, 255, 255, 1)
+                                                      Height: =8
+                                                      OnSelect: =Select(Parent)
+                                                      Width: =Parent.TemplateWidth
+                                                      Y: =Parent.TemplateHeight - Self.Height
+                                                - AncCardContainer_3:
+                                                    Control: GroupContainer@1.3.0
+                                                    Variant: AutoLayout
+                                                    Properties:
+                                                      BorderColor: =RGBA(231, 175, 65, 1)
+                                                      BorderThickness: =2
+                                                      DropShadow: =DropShadow.None
+                                                      Fill: =RGBA(255, 254, 237, 1)
+                                                      Height: =Parent.TemplateHeight
+                                                      LayoutDirection: =LayoutDirection.Vertical
+                                                      PaddingBottom: =10
+                                                      PaddingLeft: =20
+                                                      PaddingRight: =10
+                                                      PaddingTop: =10
+                                                      RadiusBottomLeft: =25
+                                                      RadiusBottomRight: =25
+                                                      RadiusTopLeft: =25
+                                                      RadiusTopRight: =25
+                                                      Width: =Parent.TemplateWidth
+                                                    Children:
+                                                      - Container37_4:
+                                                          Control: GroupContainer@1.3.0
+                                                          Variant: AutoLayout
+                                                          Properties:
+                                                            DropShadow: =DropShadow.None
+                                                            Fill: =RGBA(255, 254, 237, 1)
+                                                            Height: =50
+                                                            LayoutDirection: =LayoutDirection.Horizontal
+                                                            LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                                                            LayoutMinHeight: =50
+                                                            Width: =Parent.Width
+                                                          Children:
+                                                            - Container38_6:
+                                                                Control: GroupContainer@1.3.0
+                                                                Variant: AutoLayout
+                                                                Properties:
+                                                                  DropShadow: =DropShadow.None
+                                                                  FillPortions: =0
+                                                                  LayoutDirection: =LayoutDirection.Horizontal
+                                                                  LayoutMinHeight: =50
+                                                                  PaddingLeft: =10
+                                                                  PaddingTop: =10
+                                                                  Width: =430
+                                                                Children:
+                                                                  - TextCanvas4_3:
+                                                                      Control: Text@0.0.50
+                                                                      Properties:
+                                                                        AutoHeight: =true
+                                                                        Font: =Font.Lato
+                                                                        FontColor: =RGBA(40, 42, 126, 1)
+                                                                        Height: =40
+                                                                        Size: =22
+                                                                        Text: =If(Len(ThisItem.SubjectName) > 50, Left(ThisItem.SubjectName, 47) & "...", ThisItem.SubjectName)
+                                                                        Weight: ='TextCanvas.Weight'.Bold
+                                                                        Width: =420
+                                                                        Wrap: =false
+                                                            - Container40_3:
+                                                                Control: GroupContainer@1.3.0
+                                                                Variant: ManualLayout
+                                                                Properties:
+                                                                  DropShadow: =DropShadow.None
+                                                                  FillPortions: =0
+                                                                  LayoutMinHeight: =50
+                                                                  PaddingRight: =10
+                                                                  PaddingTop: =10
+                                                                  Width: =200
+                                                                Children:
+                                                                  - Button7_6:
+                                                                      Control: Classic/Button@2.2.0
+                                                                      Properties:
+                                                                        BorderColor: =ColorFade(Self.Fill, -0.15)
+                                                                        Fill: "=\r\n\r\nSwitch(\r\n	Text(ThisItem.'Announcement Status'),\r\n	\"Sent\",\r\n	ColorValue(\"#D3ECBE\"),\r\n\r\n	\"Draft\",\r\n	ColorValue(\"#D6DDE0\"),\r\n\r\n	\"Scheduled\",\r\n	ColorValue(\"#EECEA6\")\r\n    \r\n)"
+                                                                        Height: =32
+                                                                        HoverBorderColor: =Self.BorderColor
+                                                                        HoverColor: =Self.Color
+                                                                        HoverFill: |+
+                                                                          =Self.Fill
+                                                                        Text: =
+                                                                        Width: =130
+                                                                        X: =40
+                                                                        Y: =10
+                                                                  - TextCanvas7_3:
+                                                                      Control: Text@0.0.50
+                                                                      Properties:
+                                                                        FontColor: "=ColorFade(Switch(\r\n	Text(ThisItem.'Announcement Status'),\r\n	\"Sent\",\r\n	ColorValue(\"#000000\"),\r\n\r\n	\"Draft\",\r\n	ColorValue(\"#000000\"),\r\n\r\n	\"Scheduled\",\r\n	ColorValue(\"#000000\")\r\n    \r\n), 0.35)"
+                                                                        PaddingTop: =5
+                                                                        Text: =ThisItem.'Announcement Status'
+                                                                        Weight: ='TextCanvas.Weight'.Semibold
+                                                                        Width: =120
+                                                                        X: =70
+                                                                        Y: =11
+                                                                  - Circle2_3:
+                                                                      Control: Circle@2.3.0
+                                                                      Properties:
+                                                                        Fill: "=ColorFade(Switch(\r\n	Text(ThisItem.'Announcement Status'),\r\n	\"Sent\",\r\n	ColorValue(\"#D3ECBE\"),\r\n\r\n	\"Draft\",\r\n	ColorValue(\"#D6DDE0\"),\r\n\r\n	\"Scheduled\",\r\n	ColorValue(\"#EECEA6\")\r\n    \r\n), 0.5)"
+                                                                        Height: =11
+                                                                        Width: =11
+                                                                        X: =48
+                                                                        Y: =21
+                                                      - Container46_3:
+                                                          Control: GroupContainer@1.3.0
+                                                          Variant: ManualLayout
+                                                          Properties:
+                                                            DropShadow: =DropShadow.None
+                                                            LayoutMinHeight: =25
+                                                            RadiusBottomLeft: =0
+                                                            RadiusBottomRight: =0
+                                                            RadiusTopLeft: =0
+                                                            RadiusTopRight: =0
+                                                          Children:
+                                                            - Button7_7:
+                                                                Control: Classic/Button@2.2.0
+                                                                Properties:
+                                                                  BorderColor: =ColorFade(Self.Fill, -0.15)
+                                                                  Fill: "=Switch(\r\n	Text(ThisItem.'Announcement Status'),\r\n	\"Sent\",\r\n	ColorValue(\"#D3ECBE\"),\r\n\r\n	\"Draft\",\r\n	ColorValue(\"#D6DDE0\"),\r\n\r\n	\"Scheduled\",\r\n	ColorValue(\"#EECEA6\")\r\n    \r\n)"
+                                                                  Height: =Parent.Height
+                                                                  HoverBorderColor: =Self.BorderColor
+                                                                  HoverColor: =Self.Color
+                                                                  HoverFill: =Self.Fill
+                                                                  Text: =
+                                                                  Width: =200
+                                                                  X: =8
+                                                            - TextCanvas6_4:
+                                                                Control: Text@0.0.50
+                                                                Properties:
+                                                                  Font: =Font.Lato
+                                                                  FontColor: "=ColorFade(Switch(\r\n	Text(ThisItem.'Announcement Status'),\r\n	\"Sent\",\r\n	ColorValue(\"#000000\"),\r\n\r\n	\"Draft\",\r\n	ColorValue(\"#000000\"),\r\n\r\n	\"Scheduled\",\r\n	ColorValue(\"#000000\")\r\n    \r\n), 0.35)"
+                                                                  Height: =20
+                                                                  Text: |+
+                                                                    =If(
+                                                                        !IsBlank(ThisItem.'Schedule Date'), 
+                                                                        Text(ThisItem.'Schedule Date', "[$-en-US]mmmm d, yyyy hh:mm AM/PM"),
+                                                                        Text(ThisItem.'Created On', "[$-en-US]mmmm d, yyyy hh:mm AM/PM")
+                                                                    )
+                                                                  Weight: ='TextCanvas.Weight'.Semibold
+                                                                  Width: =200
+                                                                  X: =15
+                                                                  Y: =2.5
+                                                      - Container36_3:
+                                                          Control: GroupContainer@1.3.0
+                                                          Variant: AutoLayout
+                                                          Properties:
+                                                            DropShadow: =DropShadow.None
+                                                            LayoutDirection: =LayoutDirection.Horizontal
+                                                            LayoutGap: =5
+                                                            LayoutMinHeight: =50
+                                                            RadiusBottomLeft: =0
+                                                            RadiusBottomRight: =0
+                                                            RadiusTopLeft: =0
+                                                            RadiusTopRight: =0
+                                                          Children:
+                                                            - Container41_3:
+                                                                Control: GroupContainer@1.3.0
+                                                                Variant: AutoLayout
+                                                                Properties:
+                                                                  DropShadow: =DropShadow.None
+                                                                  FillPortions: =0
+                                                                  LayoutDirection: =LayoutDirection.Horizontal
+                                                                  LayoutMinHeight: =50
+                                                                  RadiusBottomLeft: =0
+                                                                  RadiusBottomRight: =0
+                                                                  RadiusTopLeft: =0
+                                                                  RadiusTopRight: =0
+                                                                  Width: =540
+                                                                Children:
+                                                                  - HtmlText1_3:
+                                                                      Control: HtmlViewer@2.1.0
+                                                                      Properties:
+                                                                        AutoHeight: =true
+                                                                        Fill: =RGBA(0, 0, 0, 0)
+                                                                        Height: =Parent.Height
+                                                                        HtmlText: =If(Len(ThisItem.Body) > 100, Left(ThisItem.Body, 97) & "...", ThisItem.Body)
+                                                                        PaddingLeft: =10
+                                                                        Size: =10
+                                                            - Container44_3:
+                                                                Control: GroupContainer@1.3.0
+                                                                Variant: ManualLayout
+                                                                Properties:
+                                                                  DropShadow: =DropShadow.None
+                                                                  FillPortions: =0
+                                                                  LayoutMinHeight: =50
+                                                                  RadiusBottomLeft: =45
+                                                                  RadiusBottomRight: =45
+                                                                  RadiusTopLeft: =45
+                                                                  RadiusTopRight: =45
+                                                                  Width: =55
+                                                                Children:
+                                                                  - Button9_3:
+                                                                      Control: Classic/Button@2.2.0
+                                                                      Properties:
+                                                                        BorderColor: =ColorFade(Self.Fill, -0.15)
+                                                                        Fill: =RGBA(231, 175, 65, 1)
+                                                                        Height: =50
+                                                                        HoverBorderColor: =ColorFade(Self.Fill, -0.15)
+                                                                        HoverColor: =ColorFade(Self.Fill, -0.15)
+                                                                        OnSelect: |+
+                                                                          =If(!IsBlank(Gallery19_3.Selected), 
+                                                                              Set(varSelectedAncUs, Gallery19_3.Selected);
+                                                                              Set(varUserAncView, true)
+                                                                          );
+
+                                                                          If(
+                                                                              IsEmpty(Filter(AnnouncementData, Email = User().Email && AnnouncementID = varSelectedAncUs.AnnouncementID)), 
+                                                                              // If the user hasn't viewed it, update the ViewCount
+                                                                              Patch(Announcements, varSelectedAncUs, {ViewCount: varSelectedAncUs.ViewCount + 1});
+
+                                                                              // Add a record to ViewCount_DB_TESTS
+                                                                              Patch(AnnouncementData, Defaults(AnnouncementData), 
+                                                                              {
+                                                                                  Email: User().Email, 
+                                                                                  AnnouncementID: varSelectedAncUs.AnnouncementID,
+                                                                                  DateandTimeViewed: Now(),
+                                                                                  DateandTimeViewed_Text: Text( Now(), "mm/dd/yyyy hh:mm:ss" )
+                                                                              })
+                                                                          );
+
+                                                                        Text: =
+                                                                        Width: =55
+                                                                  - Icon2_3:
+                                                                      Control: Icon@0.0.7
+                                                                      Properties:
+                                                                        Icon: ="ArrowRight"
+                                                                        IconColor: =RGBA(255, 255, 255, 1)
+                                                                        IconStyle: =""
+                                                                        X: =11
+                                                                        Y: =10
+                                                      - Container39_6:
+                                                          Control: GroupContainer@1.3.0
+                                                          Variant: AutoLayout
+                                                          Properties:
+                                                            DropShadow: =DropShadow.None
+                                                            LayoutDirection: =LayoutDirection.Horizontal
+                                                            LayoutMinHeight: =30
+                                                            RadiusBottomLeft: =0
+                                                            RadiusBottomRight: =0
+                                                            RadiusTopLeft: =0
+                                                            RadiusTopRight: =0
+                              - ChatbotContainerProto_2:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    DropShadow: =DropShadow.None
+                                    Fill: =RGBA(255, 255, 255, 1)
+                                    FillPortions: =0
+                                    Height: =224
+                                    LayoutDirection: =LayoutDirection.Vertical
+                                    RadiusBottomLeft: =20
+                                    RadiusBottomRight: =20
+                                    RadiusTopLeft: =20
+                                    RadiusTopRight: =20
+                                  Children:
+                                    - ChatbotContainer1_5:
+                                        Control: GroupContainer@1.3.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          DropShadow: =DropShadow.None
+                                          Fill: =RGBA(231, 175, 65, 1)
+                                          FillPortions: =0
+                                          Height: =60
+                                          LayoutDirection: =LayoutDirection.Horizontal
+                                          LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                                          LayoutMinHeight: =50
+                                          PaddingBottom: =20
+                                          PaddingLeft: =20
+                                          PaddingRight: =20
+                                          PaddingTop: =15
+                                          RadiusBottomLeft: =0
+                                          RadiusBottomRight: =0
+                                          RadiusTopLeft: =0
+                                          RadiusTopRight: =0
+                                        Children:
+                                          - ChatbotLabel_5:
+                                              Control: Text@0.0.50
+                                              Properties:
+                                                AlignInContainer: =AlignInContainer.Start
+                                                Font: =Font.Lato
+                                                FontColor: =RGBA(255, 255, 255, 1)
+                                                Size: =22
+                                                Text: ="Chatbot"
+                                                VerticalAlign: =VerticalAlign.Top
+                                                Weight: ='TextCanvas.Weight'.Semibold
+                                                Width: =90
+                                          - NextMonthButton_22:
+                                              Control: Button@0.0.44
+                                              Properties:
+                                                Align: =Align.Center
+                                                Appearance: ='ButtonCanvas.Appearance'.Transparent
+                                                BasePaletteColor: =RGBA(5, 102, 178, 1)
+                                                BorderStyle: =BorderStyle.None
+                                                Font: =Font.'Lato Black'
+                                                FontSize: =35
+                                                FontWeight: =FontWeight.Bold
+                                                Height: =45
+                                                Icon: ="Chat"
+                                                IconStyle: ='ButtonCanvas.IconStyle'.Filled
+                                                Layout: ='ButtonCanvas.Layout'.IconBefore
+                                                OnSelect: =Set(varUserChatbot, true)
+                                                PaddingBottom: =20
+                                                Text: =
+                                                Width: =35
+                                                X: =416
+                                                Y: =45
+                                    - Container19_2:
+                                        Control: GroupContainer@1.3.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          LayoutDirection: =LayoutDirection.Vertical
+                                          PaddingBottom: =20
+                                          PaddingLeft: =20
+                                          PaddingRight: =20
+                                          PaddingTop: =20
+                                        Children:
+                                          - TextInputCanvas5_2:
+                                              Control: TextInput@0.0.53
+                                              Properties:
+                                                Align: =Align.Left
+                                                AlignInContainer: =AlignInContainer.Stretch
+                                                DisplayMode: =DisplayMode.View
+                                                FillPortions: =1
+                                                FontSize: =25
+                                                FontWeight: =FontWeight.Semibold
+                                                Mode: ='TextInputCanvas.Mode'.Multiline
+                                                Value: ="Got something to ask? Try our own chatbot RAMon powered by CoPilot to help you with some inquiries!"
+                                                Width: =500
+                        - CalendarContainerView_1:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              FillPortions: =0
+                              LayoutDirection: =LayoutDirection.Vertical
+                              LayoutGap: =16
+                            Children:
+                              - CalendartContainerProto_1:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    Fill: =RGBA(255, 255, 255, 1)
+                                    Height: =480
+                                    LayoutDirection: =LayoutDirection.Vertical
+                                    LayoutMinWidth: =500
+                                    RadiusBottomLeft: =20
+                                    RadiusBottomRight: =20
+                                    RadiusTopLeft: =20
+                                    RadiusTopRight: =20
+                                  Children:
+                                    - CalendarContainer1_8:
+                                        Control: GroupContainer@1.3.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          DropShadow: =DropShadow.None
+                                          Fill: =RGBA(231, 175, 65, 1)
+                                          FillPortions: =0
+                                          Height: =60
+                                          LayoutDirection: =LayoutDirection.Horizontal
+                                          LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                                          LayoutMinHeight: =50
+                                          LayoutMinWidth: =300
+                                          PaddingBottom: =20
+                                          PaddingLeft: =20
+                                          PaddingRight: =20
+                                          PaddingTop: =15
+                                          RadiusBottomLeft: =0
+                                          RadiusBottomRight: =0
+                                          RadiusTopLeft: =0
+                                          RadiusTopRight: =0
+                                        Children:
+                                          - NextMonthButton_19:
+                                              Control: Button@0.0.44
+                                              Properties:
+                                                Align: =Align.Center
+                                                Appearance: ='ButtonCanvas.Appearance'.Transparent
+                                                BasePaletteColor: =RGBA(5, 102, 178, 1)
+                                                BorderStyle: =BorderStyle.None
+                                                Font: =Font.'Lato Black'
+                                                FontSize: =35
+                                                FontWeight: =FontWeight.Bold
+                                                Height: =45
+                                                Icon: ="Calendar"
+                                                IconStyle: ='ButtonCanvas.IconStyle'.Filled
+                                                Layout: ='ButtonCanvas.Layout'.IconBefore
+                                                OnSelect: |-
+                                                  =Set(
+                                                      varCurrentDate,
+                                                      Date(
+                                                          Year(varCurrentDate),
+                                                          Month(varCurrentDate) + 1,
+                                                          1
+                                                      )
+                                                  )
+                                                PaddingBottom: =20
+                                                Text: =
+                                                Visible: =false
+                                                Width: =35
+                                                X: =416
+                                                Y: =45
+                                          - CalendarLabel_8:
+                                              Control: Text@0.0.50
+                                              Properties:
+                                                Font: =Font.Lato
+                                                FontColor: =RGBA(255, 255, 255, 1)
+                                                Size: =22
+                                                Text: ="Calendar"
+                                                Weight: ='TextCanvas.Weight'.Semibold
+                                    - Container1_11:
+                                        Control: GroupContainer@1.3.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          DropShadow: =DropShadow.None
+                                          LayoutAlignItems: =LayoutAlignItems.Center
+                                          LayoutDirection: =LayoutDirection.Vertical
+                                          PaddingBottom: =20
+                                          PaddingLeft: =20
+                                          PaddingRight: =20
+                                          RadiusBottomLeft: =0
+                                          RadiusBottomRight: =0
+                                          RadiusTopLeft: =0
+                                          RadiusTopRight: =0
+                                        Children:
+                                          - Container7_7:
+                                              Control: GroupContainer@1.3.0
+                                              Variant: AutoLayout
+                                              Properties:
+                                                BorderStyle: =BorderStyle.None
+                                                DropShadow: =DropShadow.None
+                                                FillPortions: =0
+                                                Height: =55
+                                                LayoutDirection: =LayoutDirection.Horizontal
+                                                LayoutMinHeight: =40
+                                                PaddingTop: =15
+                                              Children:
+                                                - Container11_28:
+                                                    Control: GroupContainer@1.3.0
+                                                    Variant: AutoLayout
+                                                    Properties:
+                                                      BorderStyle: =BorderStyle.None
+                                                      DropShadow: =DropShadow.None
+                                                      LayoutDirection: =LayoutDirection.Horizontal
+                                                      LayoutMinHeight: =40
+                                                      LayoutMinWidth: =244
+                                                      PaddingLeft: =22
+                                                    Children:
+                                                      - MonthYear_12:
+                                                          Control: Label@2.5.1
+                                                          Properties:
+                                                            AlignInContainer: =AlignInContainer.Center
+                                                            BorderStyle: =BorderStyle.None
+                                                            FontWeight: =FontWeight.Semibold
+                                                            Height: =38
+                                                            PaddingBottom: =15
+                                                            Size: =16
+                                                            Text: =Text(varCurrentDate, "mmmm yyyy")
+                                                            Width: =214
+                                                            X: =19
+                                                            Y: =37
+                                                - Container11_29:
+                                                    Control: GroupContainer@1.3.0
+                                                    Variant: AutoLayout
+                                                    Properties:
+                                                      DropShadow: =DropShadow.None
+                                                      LayoutDirection: =LayoutDirection.Horizontal
+                                                      LayoutMinHeight: =40
+                                                      LayoutMinWidth: =100
+                                                      PaddingBottom: =12
+                                                      PaddingLeft: =71
+                                                - Container11_30:
+                                                    Control: GroupContainer@1.3.0
+                                                    Variant: AutoLayout
+                                                    Properties:
+                                                      DropShadow: =DropShadow.None
+                                                      LayoutDirection: =LayoutDirection.Horizontal
+                                                      LayoutMinHeight: =40
+                                                      LayoutMinWidth: =33
+                                                      PaddingBottom: =12
+                                                      PaddingLeft: =22
+                                                    Children:
+                                                      - PreviousMonthButton_12:
+                                                          Control: Button@0.0.44
+                                                          Properties:
+                                                            Align: =Align.Center
+                                                            AlignInContainer: =AlignInContainer.Center
+                                                            Appearance: ='ButtonCanvas.Appearance'.Transparent
+                                                            BasePaletteColor: =RGBA(5, 102, 178, 1)
+                                                            BorderStyle: =BorderStyle.None
+                                                            Font: =Font.'Lato Black'
+                                                            FontSize: =35
+                                                            FontWeight: =FontWeight.Bold
+                                                            Height: =23
+                                                            Icon: ="ChevronLeft"
+                                                            IconStyle: ='ButtonCanvas.IconStyle'.Filled
+                                                            Layout: ='ButtonCanvas.Layout'.IconBefore
+                                                            OnSelect: |+
+                                                              =Set(
+                                                                  varCurrentDate,
+                                                                  Date(
+                                                                      Year(varCurrentDate),
+                                                                      Month(varCurrentDate) - 1,
+                                                                      1
+                                                                  )
+                                                              );
+                                                              ClearCollect(
+                                                                  colFilteredEvents,
+                                                                  {
+                                                                      EventName: "Day with Classes",
+                                                                      Color: "Yellow",
+                                                                      IsCustom: true, // Identifies it as a custom item
+                                                                      StartDate: Date(1900, 1, 1) // Ensures it appears first when sorting
+                                                                  }
+                                                              );
+                                                              Collect(
+                                                                  colFilteredEvents,
+                                                                  Sort(
+                                                                      Filter(
+                                                                          EventTests,
+                                                                          StartDate >= Date(Year(varCurrentDate), Month(varCurrentDate), 1) &&
+                                                                          StartDate < Date(Year(varCurrentDate), Month(varCurrentDate) + 1, 1)
+                                                                      ),
+                                                                      StartDate,
+                                                                      SortOrder.Ascending
+                                                                  )
+                                                              );
+                                                            Text: =
+                                                            VerticalAlign: =VerticalAlign.Middle
+                                                            Width: =23
+                                                            X: =380
+                                                            Y: =45
+                                                - Container11_31:
+                                                    Control: GroupContainer@1.3.0
+                                                    Variant: AutoLayout
+                                                    Properties:
+                                                      DropShadow: =DropShadow.None
+                                                      LayoutDirection: =LayoutDirection.Horizontal
+                                                      LayoutMinHeight: =40
+                                                      LayoutMinWidth: =33
+                                                      PaddingBottom: =12
+                                                      PaddingLeft: =1
+                                                    Children:
+                                                      - NextMonthButton_20:
+                                                          Control: Button@0.0.44
+                                                          Properties:
+                                                            Align: =Align.Center
+                                                            AlignInContainer: =AlignInContainer.Center
+                                                            Appearance: ='ButtonCanvas.Appearance'.Transparent
+                                                            BasePaletteColor: =RGBA(5, 102, 178, 1)
+                                                            BorderStyle: =BorderStyle.None
+                                                            Font: =Font.'Lato Black'
+                                                            FontSize: =35
+                                                            FontWeight: =FontWeight.Bold
+                                                            Height: =23
+                                                            Icon: ="ChevronRight"
+                                                            IconStyle: ='ButtonCanvas.IconStyle'.Filled
+                                                            Layout: ='ButtonCanvas.Layout'.IconBefore
+                                                            OnSelect: |+
+                                                              =Set(
+                                                                  varCurrentDate,
+                                                                  Date(
+                                                                      Year(varCurrentDate),
+                                                                      Month(varCurrentDate) + 1,
+                                                                      1
+                                                                  )
+                                                              );
+                                                              ClearCollect(
+                                                                  colFilteredEvents,
+                                                                  {
+                                                                      EventName: "Day with Classes",
+                                                                      Color: "Yellow",
+                                                                      IsCustom: true, // Identifies it as a custom item
+                                                                      StartDate: Date(1900, 1, 1) // Ensures it appears first when sorting
+                                                                  }
+                                                              );
+                                                              Collect(
+                                                                  colFilteredEvents,
+                                                                  Sort(
+                                                                      Filter(
+                                                                          EventTests,
+                                                                          StartDate >= Date(Year(varCurrentDate), Month(varCurrentDate), 1) &&
+                                                                          StartDate < Date(Year(varCurrentDate), Month(varCurrentDate) + 1, 1)
+                                                                      ),
+                                                                      StartDate,
+                                                                      SortOrder.Ascending
+                                                                  )
+                                                              );
+                                                            Text: =
+                                                            Width: =23
+                                                            X: =416
+                                                            Y: =45
+                                          - Container1_12:
+                                              Control: GroupContainer@1.3.0
+                                              Variant: AutoLayout
+                                              Properties:
+                                                DropShadow: =DropShadow.None
+                                                FillPortions: =0
+                                                Height: =45
+                                                LayoutAlignItems: =LayoutAlignItems.Center
+                                                LayoutDirection: =LayoutDirection.Vertical
+                                                LayoutJustifyContent: =LayoutJustifyContent.Center
+                                                LayoutMinHeight: =40
+                                                RadiusBottomLeft: =12
+                                                RadiusBottomRight: =12
+                                                RadiusTopLeft: =12
+                                                RadiusTopRight: =12
+                                                Width: =
+                                              Children:
+                                                - Gallery2_7:
+                                                    Control: Gallery@2.15.0
+                                                    Variant: BrowseLayout_Horizontal_TwoTextOneImageVariant_ver5.0
+                                                    Properties:
+                                                      AlignInContainer: =AlignInContainer.Center
+                                                      Fill: =RGBA(214, 221, 224, 1)
+                                                      FillPortions: =0
+                                                      Height: =45
+                                                      Items: =Calendar.WeekdaysShort()
+                                                      LayoutMinHeight: =30
+                                                      LayoutMinWidth: =250
+                                                      ShowScrollbar: =false
+                                                      TemplatePadding: =1
+                                                      TemplateSize: =65
+                                                      Width: =Parent.Width
+                                                    Children:
+                                                      - Label5_7:
+                                                          Control: Label@2.5.1
+                                                          Properties:
+                                                            Align: =Align.Center
+                                                            FontWeight: =FontWeight.Semibold
+                                                            Height: =43
+                                                            OnSelect: =Select(Parent)
+                                                            PaddingLeft: =0
+                                                            PaddingRight: =0
+                                                            PaddingTop: =0
+                                                            Text: =ThisItem.Value
+                                                            Width: =65
+                                                            Wrap: =false
+                                          - Container10_7:
+                                              Control: GroupContainer@1.3.0
+                                              Variant: AutoLayout
+                                              Properties:
+                                                BorderColor: =RGBA(0, 0, 0, 0)
+                                                BorderThickness: =2
+                                                DropShadow: =DropShadow.None
+                                                Height: =300
+                                                LayoutDirection: =LayoutDirection.Vertical
+                                                LayoutGap: =7
+                                                LayoutMinHeight: =300
+                                                PaddingBottom: =5
+                                                RadiusBottomLeft: =0
+                                                RadiusBottomRight: =0
+                                                RadiusTopLeft: =0
+                                                RadiusTopRight: =0
+                                              Children:
+                                                - Gallery8_7:
+                                                    Control: Gallery@2.15.0
+                                                    Variant: BrowseLayout_Vertical_OneTextVariant_ver5.0
+                                                    Properties:
+                                                      AlignInContainer: =AlignInContainer.Center
+                                                      BorderColor: =Color.White
+                                                      BorderThickness: =5
+                                                      FillPortions: =0
+                                                      Height: =300
+                                                      Items: =ForAll(Sequence(42),Value+varCurrentDate-Weekday(varCurrentDate))
+                                                      LayoutMinHeight: =300
+                                                      TemplateSize: =50
+                                                      Width: =Parent.Width
+                                                      WrapCount: =7
+                                                    Children:
+                                                      - Button2_10:
+                                                          Control: Classic/Button@2.2.0
+                                                          Properties:
+                                                            BorderColor: =RGBA(214, 221, 224, 1)
+                                                            BorderStyle: =BorderStyle.None
+                                                            Color: |-
+                                                              =If(
+                                                                  ThisItem.Value = Today(), 
+                                                                  RGBA(108, 0, 180, 1), 
+                                                                  If(
+                                                                      Month(ThisItem.Value) <> Month(varCurrentDate), 
+                                                                      Color.LightGray, // faded gray for days outside the current month
+                                                                      If(
+                                                                          Weekday(ThisItem.Value, StartOfWeek.Sunday) = 1, 
+                                                                          RGBA(255, 0, 0, 1), // red for Sundays
+                                                                          RGBA(0, 0, 0, 1) // black for other days
+                                                                      )
+                                                                  )
+                                                              )
+                                                            Fill: |-
+                                                              =If(
+                                                                  Weekday(ThisItem.Value) = 1, 
+                                                                  Color.Transparent, // Sundays transparent
+                                                                  If(
+                                                                      CountRows(
+                                                                          Filter(
+                                                                              EventTests,
+                                                                              !IsBlank(StartDate) && !IsBlank(EndDate) &&
+                                                                              StartDate <= Coalesce(ThisItem.Value, Date(1900,1,1)) + Time(23,59,59) &&
+                                                                              EndDate >= Coalesce(ThisItem.Value, Date(1900,1,1)) &&
+                                                                              (TagsTest in ["Exam Week", "Grade Submission Day", "Grade Consultation Day", "Holiday", "No Classes"])
+                                                                          )
+                                                                      ) > 0,
+                                                                      ColorFade(
+                                                                          Switch(
+                                                                              First(
+                                                                                  Filter(
+                                                                                      EventTests,
+                                                                                      !IsBlank(StartDate) && !IsBlank(EndDate) &&
+                                                                                      StartDate <= Coalesce(ThisItem.Value, Date(1900,1,1)) + Time(23,59,59) &&
+                                                                                      EndDate >= Coalesce(ThisItem.Value, Date(1900,1,1)) &&
+                                                                                      (TagsTest in ["Exam Week", "Grade Submission Day", "Grade Consultation Day", "Holiday"]) // EXCLUDES "No Classes"
+                                                                                  )
+                                                                              ).Color,
+                                                                              "Transparent", Color.Transparent,
+                                                                              "Black", Color.Black,
+                                                                              "Red", ColorValue("#ff9999"),
+                                                                              "Blue", ColorValue("#99bbff"),
+                                                                              "Green", ColorValue("#a7d97e"),
+                                                                              "Yellow", ColorValue("#ebd567"),
+                                                                              "Orange", ColorValue("#de9d4e"),
+                                                                              "Purple", ColorValue("#9559de"),
+                                                                              "Pink", ColorValue("#fa7fbc"),
+                                                                              RGBA(255, 253, 208, 0.8) // Default fallback color
+                                                                          ),
+                                                                          50% // Transparency
+                                                                      ),
+                                                                      RGBA(255, 253, 208, 0.8) // Default color when no matching event
+                                                                  )
+                                                              )
+                                                            HoverFill: =RGBA(174, 208, 221, 1)
+                                                            OnSelect: |-
+                                                              =Set(varSelectedDate, DateValue(ThisItem.Value));
+                                                              Set(ViewDateVisible, true);
+                                                              Refresh(EventTests);
+                                                            RadiusBottomLeft: =70
+                                                            RadiusBottomRight: =70
+                                                            RadiusTopLeft: =70
+                                                            RadiusTopRight: =70
+                                                            Size: =13
+                                                            Text: =Day(ThisItem.Value)
+                                                            VerticalAlign: =VerticalAlign.Top
+                                                            Width: =47
+                                                            X: =7
+                                                            Y: =4
+                                                      - Gallery7_6:
+                                                          Control: Gallery@2.15.0
+                                                          Variant: BrowseLayout_Horizontal_TwoTextOneImageVariant_ver5.0
+                                                          Properties:
+                                                            Height: =25
+                                                            Items: |+
+                                                              =If(
+                                                                  CountRows(
+                                                                      Filter(
+                                                                          EventTests,
+                                                                          !IsBlank(StartDate) && !IsBlank(EndDate) &&  // Ensure dates are not NULL
+                                                                          StartDate <= Coalesce(ThisItem.Value, Date(1900,1,1)) + Time(23,59,59) &&
+                                                                          EndDate >= Coalesce(ThisItem.Value, Date(1900,1,1)) &&
+                                                                          (TagsTest <> "Exam Week" &&  
+                                                                           TagsTest <> "Grade Submission Day" &&  
+                                                                           TagsTest <> "Grade Consultation Day" &&  
+                                                                           TagsTest <> "Holiday" &&  
+                                                                           TagsTest <> "No Classes")  // Avoid using `Not()`
+                                                                      )
+                                                                  ) > 0,
+                                                                  If(
+                                                                      CountRows(
+                                                                          Filter(
+                                                                              EventTests,
+                                                                              !IsBlank(StartDate) && !IsBlank(EndDate) &&
+                                                                              StartDate <= Coalesce(ThisItem.Value, Date(1900,1,1)) + Time(23,59,59) &&
+                                                                              EndDate >= Coalesce(ThisItem.Value, Date(1900,1,1)) &&
+                                                                              (TagsTest <> "Exam Week" &&  
+                                                                               TagsTest <> "Grade Submission Day" &&  
+                                                                               TagsTest <> "Grade Consultation Day" &&  
+                                                                               TagsTest <> "Holiday" &&  
+                                                                               TagsTest <> "No Classes")  
+                                                                          )
+                                                                      ) > 1,
+                                                                      Table({ Color: "Black" }),  // Multiple valid events → Black
+                                                                      Table({ 
+                                                                          Color: First(
+                                                                              Filter(
+                                                                                  EventTests,
+                                                                                  !IsBlank(StartDate) && !IsBlank(EndDate) &&
+                                                                                  StartDate <= Coalesce(ThisItem.Value, Date(1900,1,1)) + Time(23,59,59) &&
+                                                                                  EndDate >= Coalesce(ThisItem.Value, Date(1900,1,1)) &&
+                                                                                  (TagsTest <> "Exam Week" &&  
+                                                                                   TagsTest <> "Grade Submission Day" &&  
+                                                                                   TagsTest <> "Grade Consultation Day" &&  
+                                                                                   TagsTest <> "Holiday" &&  
+                                                                                   TagsTest <> "No Classes")  
+                                                                              )
+                                                                          ).Color
+                                                                      })  // One valid event → Use its color
+                                                                  ),
+                                                                  Table({ Color: "Transparent" })  // No valid events → Transparent
+                                                              )
+                                                            TemplateSize: =0
+                                                            Width: =66.57142857142856
+                                                            Y: =25
+                                                          Children:
+                                                            - Circle1_6:
+                                                                Control: Circle@2.3.0
+                                                                Properties:
+                                                                  Fill: |+
+                                                                    =Switch(
+                                                                        ThisItem.Color,
+                                                                        "Transparent", Color.Transparent,
+                                                                        "Black", Color.Black,
+                                                                        "Red", ColorValue("#ff9999"),
+                                                                        "Blue", ColorValue("#99bbff"),
+                                                                        "Green", ColorValue("#a7d97e"),
+                                                                        "Yellow", ColorValue("#ebd567"),
+                                                                        "Orange", ColorValue("#de9d4e"),
+                                                                        "Purple", ColorValue("#9559de"),
+                                                                        "White", Color.White,
+                                                                        "Pink", ColorValue("#fa7fbc"),
+                                                                        Color.Transparent // Default fallback
+                                                                    )
+                                                                  Height: =5
+                                                                  OnSelect: =Select(Parent)
+                                                                  Width: =5
+                                                                  X: =28
+                                                                  Y: =8
+                                                - Container22_2:
+                                                    Control: GroupContainer@1.3.0
+                                                    Variant: AutoLayout
+                                                    Properties:
+                                                      Fill: =RGBA(214, 221, 224, 1)
+                                                      FillPortions: =0
+                                                      Height: =45
+                                                      LayoutDirection: =LayoutDirection.Horizontal
+                                                      LayoutMinHeight: =1
+                                                      RadiusBottomLeft: =16
+                                                      RadiusBottomRight: =16
+                                                      RadiusTopLeft: =16
+                                                      RadiusTopRight: =16
+                                                    Children:
+                                                      - Label7_2:
+                                                          Control: Label@2.5.1
+                                                          Properties:
+                                                            Align: =Align.Center
+                                                            FontWeight: =FontWeight.Semibold
+                                                            Height: =Parent.Height
+                                                            Text: ="Events for the Month"
+                                                            Width: =Parent.Width
+                                                - Gallery17_3:
+                                                    Control: Gallery@2.15.0
+                                                    Variant: BrowseLayout_Vertical_OneTextVariant_ver5.0
+                                                    Properties:
+                                                      Items: |-
+                                                        =Sort(
+                                                            colFilteredEvents,
+                                                            StartDate,
+                                                            SortOrder.Ascending
+                                                        )
+                                                      LayoutMinHeight: =180
+                                                      TemplatePadding: =1
+                                                      TemplateSize: =50
+                                                      Width: =Parent.Width
+                                                    Children:
+                                                      - Title2_2:
+                                                          Control: Label@2.5.1
+                                                          Properties:
+                                                            BorderColor: =RGBA(0, 0, 0, 1)
+                                                            Color: =RGBA(50, 49, 48, 1)
+                                                            FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                                                            Height: =29
+                                                            OnSelect: =Select(Parent)
+                                                            PaddingBottom: =0
+                                                            PaddingLeft: =0
+                                                            PaddingRight: =0
+                                                            PaddingTop: =0
+                                                            Size: =14
+                                                            Text: =ThisItem.EventName
+                                                            VerticalAlign: =VerticalAlign.Top
+                                                            Width: =354
+                                                            X: =33
+                                                            Y: =10.5
+                                                      - NextArrow2_2:
+                                                          Control: Classic/Icon@2.5.0
+                                                          Properties:
+                                                            AccessibleLabel: =Self.Tooltip
+                                                            Color: =RGBA(166, 166, 166, 1)
+                                                            Height: =50
+                                                            Icon: =Icon.ChevronRight
+                                                            OnSelect: |-
+                                                              =Set(varSelectedEvent, ThisItem);
+                                                              Set(varPreviousScreen, App.ActiveScreen);
+                                                              Navigate(ViewEventPopup, ScreenTransition.Fade)
+                                                            PaddingBottom: =12
+                                                            PaddingLeft: =12
+                                                            PaddingRight: =12
+                                                            PaddingTop: =12
+                                                            Tooltip: ="View item details"
+                                                            Visible: =ThisItem.EventName <> "Day with Classes"
+                                                            Width: =43
+                                                            X: =387
+                                                      - Separator3_2:
+                                                          Control: Rectangle@2.3.0
+                                                          Properties:
+                                                            Fill: =RGBA(255, 255, 255, 1)
+                                                            Height: =8
+                                                            OnSelect: =Select(Parent)
+                                                            Width: =Parent.TemplateWidth
+                                                            Y: =Parent.TemplateHeight - Self.Height
+                                                      - Rectangle2_3:
+                                                          Control: Rectangle@2.3.0
+                                                          Properties:
+                                                            Fill: =ColorValue(ThisItem.Color)
+                                                            Height: =42
+                                                            OnSelect: =Select(Parent)
+                                                            Width: =4
+      - ViewDatePopup_9:
+          Control: CanvasComponent
+          ComponentName: ViewDatePopup
+          Properties:
+            Fill: =RGBA(0, 0, 0, 0.1)
+            Height: =App.Height
+            Visible: =ViewDateVisible
+            Width: =App.Width
+      - UserAncList_1:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            Fill: =RGBA(0, 0, 0, 0.1)
+            Height: =768
+            Visible: =varUserAncList
+            Width: =1366
+          Children:
+            - AncListContainer1_7:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  DropShadow: =DropShadow.ExtraBold
+                  Height: =724
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                  Width: =1313
+                  X: =25
+                  Y: =20
+                Children:
+                  - ViewAnnouncementContainer2_12:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        Height: =183
+                        LayoutDirection: =LayoutDirection.Vertical
+                        Width: =1313
+                      Children:
+                        - Container13_14:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              LayoutDirection: =LayoutDirection.Vertical
+                            Children:
+                              - CAHeaderContainer2_18:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    Fill: =RGBA(231, 175, 65, 1)
+                                    FillPortions: =0
+                                    Height: =90
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                  Children:
+                                    - CABackButtonContainer1_21:
+                                        Control: GroupContainer@1.3.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          DropShadow: =DropShadow.None
+                                          FillPortions: =0
+                                          LayoutAlignItems: =LayoutAlignItems.Center
+                                          LayoutDirection: =LayoutDirection.Vertical
+                                          LayoutJustifyContent: =LayoutJustifyContent.Center
+                                          LayoutMinHeight: =90
+                                          PaddingLeft: =10
+                                          PaddingRight: =10
+                                          Width: =80
+                                        Children:
+                                          - CABackButton2_21:
+                                              Control: Button@0.0.44
+                                              Properties:
+                                                Appearance: ='ButtonCanvas.Appearance'.Transparent
+                                                FontColor: =RGBA(255, 255, 255, 1)
+                                                FontSize: =30
+                                                Icon: ="ArrowLeft"
+                                                Layout: ='ButtonCanvas.Layout'.IconOnly
+                                                OnSelect: |+
+                                                  =Set(varUserAncList, false)
+                                                PaddingLeft: =0
+                                                PaddingRight: =0
+                                                Width: =73
+                                    - CARegistrarContainer2_21:
+                                        Control: GroupContainer@1.3.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          DropShadow: =DropShadow.None
+                                          LayoutDirection: =LayoutDirection.Vertical
+                                          LayoutMinHeight: =90
+                                          LayoutMinWidth: =2
+                                          PaddingBottom: =20
+                                          PaddingLeft: =20
+                                          PaddingRight: =20
+                                          PaddingTop: =25
+                                        Children:
+                                          - CARegistrarLabel1_21:
+                                              Control: Text@0.0.50
+                                              Properties:
+                                                Font: =Font.Lato
+                                                FontColor: =RGBA(255, 255, 255, 1)
+                                                Height: =40
+                                                Size: =25
+                                                Text: ="View List of Announcements"
+                                                Weight: ='TextCanvas.Weight'.Semibold
+                                                Width: =500
+                              - CATabs2_42:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    DropShadow: =DropShadow.None
+                                    Fill: =RGBA(231, 206, 124, 1)
+                                    FillPortions: =0
+                                    Height: =40
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                  Children:
+                                    - CATabs2_43:
+                                        Control: GroupContainer@1.3.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          DropShadow: =DropShadow.None
+                                          LayoutDirection: =LayoutDirection.Horizontal
+                                          LayoutMinHeight: =20
+                                          PaddingLeft: =10
+                                        Children:
+                                          - DropdownCanvas4_2:
+                                              Control: DropDown@0.0.44
+                                              Properties:
+                                                DefaultSelectedItems: =["All"]
+                                                Height: =Parent.Height
+                                                Items: =collectTags
+                                                Width: =250
+                              - CARibbon1_19:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    DropShadow: =DropShadow.None
+                                    Fill: =RGBA(255, 255, 255, 1)
+                                    FillPortions: =0
+                                    Height: =50
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                  - VAContentSectionBG_14:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        Fill: =RGBA(40, 42, 126, 1)
+                        Height: =552
+                        LayoutDirection: =LayoutDirection.Vertical
+                        PaddingBottom: =20
+                        PaddingLeft: =20
+                        PaddingRight: =20
+                        PaddingTop: =20
+                        Width: =1313
+                        Y: =172
+                      Children:
+                        - Container2_8:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              Fill: =RGBA(255, 255, 255, 1)
+                              Height: =430
+                              LayoutDirection: =LayoutDirection.Horizontal
+                              PaddingBottom: =20
+                              PaddingLeft: =20
+                              PaddingRight: =20
+                              PaddingTop: =20
+                              Width: =1230
+                              X: =70
+                              Y: =260
+                            Children:
+                              - Gallery19_4:
+                                  Control: Gallery@2.15.0
+                                  Variant: BrowseLayout_Vertical_TwoTextOneImageVariant_ver5.0
+                                  Properties:
+                                    Items: |+
+                                      =If(
+                                          DropdownCanvas4_2.Selected.Value = "All",
+                                          Filter(
+                                              Announcements,
+                                              'Announcement Status' <> 102 &&
+                                              (DateValue(Text('Schedule Date', "[$-en-US]mm/dd/yyyy")) +
+                                              Time(Hour('Schedule Date'), Minute('Schedule Date'), Second('Schedule Date'))) 
+                                              <= Now()
+                                          ),
+                                          Filter(
+                                              Announcements,
+                                              'Announcement Status' <> 102 &&
+                                              Tags = DropdownCanvas4_2.Selected.Value &&
+                                              (DateValue(Text('Schedule Date', "[$-en-US]mm/dd/yyyy")) +
+                                              Time(Hour('Schedule Date'), Minute('Schedule Date'), Second('Schedule Date'))) 
+                                              <= Now()
+                                          )
+                                      )
+                                    TemplatePadding: =15
+                                    TemplateSize: =160
+                                  Children:
+                                    - Separator6_3:
+                                        Control: Rectangle@2.3.0
+                                        Properties:
+                                          Fill: =RGBA(255, 255, 255, 1)
+                                          Height: =8
+                                          OnSelect: =Select(Parent)
+                                          Width: =Parent.TemplateWidth
+                                          Y: =Parent.TemplateHeight - Self.Height
+                                    - AncCardContainer_4:
+                                        Control: GroupContainer@1.3.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          BorderColor: =RGBA(231, 175, 65, 1)
+                                          BorderThickness: =2
+                                          DropShadow: =DropShadow.None
+                                          Fill: =RGBA(255, 254, 237, 1)
+                                          Height: =Parent.TemplateHeight
+                                          LayoutDirection: =LayoutDirection.Vertical
+                                          PaddingBottom: =10
+                                          PaddingLeft: =20
+                                          PaddingRight: =10
+                                          PaddingTop: =10
+                                          RadiusBottomLeft: =25
+                                          RadiusBottomRight: =25
+                                          RadiusTopLeft: =25
+                                          RadiusTopRight: =25
+                                          Width: =Parent.TemplateWidth
+                                        Children:
+                                          - Container37_5:
+                                              Control: GroupContainer@1.3.0
+                                              Variant: AutoLayout
+                                              Properties:
+                                                DropShadow: =DropShadow.None
+                                                Fill: =RGBA(255, 254, 237, 1)
+                                                Height: =50
+                                                LayoutDirection: =LayoutDirection.Horizontal
+                                                LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                                                LayoutMinHeight: =50
+                                                Width: =Parent.Width
+                                              Children:
+                                                - Container38_7:
+                                                    Control: GroupContainer@1.3.0
+                                                    Variant: AutoLayout
+                                                    Properties:
+                                                      DropShadow: =DropShadow.None
+                                                      FillPortions: =0
+                                                      LayoutDirection: =LayoutDirection.Horizontal
+                                                      LayoutMinHeight: =50
+                                                      PaddingLeft: =10
+                                                      PaddingTop: =10
+                                                      Width: =430
+                                                    Children:
+                                                      - TextCanvas4_4:
+                                                          Control: Text@0.0.50
+                                                          Properties:
+                                                            AutoHeight: =true
+                                                            Font: =Font.Lato
+                                                            FontColor: =RGBA(40, 42, 126, 1)
+                                                            Height: =40
+                                                            Size: =22
+                                                            Text: =If(Len(ThisItem.SubjectName) > 50, Left(ThisItem.SubjectName, 47) & "...", ThisItem.SubjectName)
+                                                            Weight: ='TextCanvas.Weight'.Bold
+                                                            Width: =420
+                                                            Wrap: =false
+                                                - Container40_4:
+                                                    Control: GroupContainer@1.3.0
+                                                    Variant: ManualLayout
+                                                    Properties:
+                                                      DropShadow: =DropShadow.None
+                                                      FillPortions: =0
+                                                      LayoutMinHeight: =50
+                                                      PaddingRight: =10
+                                                      PaddingTop: =10
+                                                      Width: =200
+                                                    Children:
+                                                      - Button7_8:
+                                                          Control: Classic/Button@2.2.0
+                                                          Properties:
+                                                            BorderColor: =ColorFade(Self.Fill, -0.15)
+                                                            Fill: "=\r\n\r\nSwitch(\r\n	Text(ThisItem.'Announcement Status'),\r\n	\"Sent\",\r\n	ColorValue(\"#D3ECBE\"),\r\n\r\n	\"Draft\",\r\n	ColorValue(\"#D6DDE0\"),\r\n\r\n	\"Scheduled\",\r\n	ColorValue(\"#EECEA6\")\r\n    \r\n)"
+                                                            Height: =32
+                                                            HoverBorderColor: =Self.BorderColor
+                                                            HoverColor: =Self.Color
+                                                            HoverFill: |+
+                                                              =Self.Fill
+                                                            Text: =
+                                                            Width: =130
+                                                            X: =40
+                                                            Y: =10
+                                                      - TextCanvas7_4:
+                                                          Control: Text@0.0.50
+                                                          Properties:
+                                                            FontColor: "=ColorFade(Switch(\r\n	Text(ThisItem.'Announcement Status'),\r\n	\"Sent\",\r\n	ColorValue(\"#000000\"),\r\n\r\n	\"Draft\",\r\n	ColorValue(\"#000000\"),\r\n\r\n	\"Scheduled\",\r\n	ColorValue(\"#000000\")\r\n    \r\n), 0.35)"
+                                                            PaddingTop: =5
+                                                            Text: =ThisItem.'Announcement Status'
+                                                            Weight: ='TextCanvas.Weight'.Semibold
+                                                            Width: =120
+                                                            X: =70
+                                                            Y: =11
+                                                      - Circle2_4:
+                                                          Control: Circle@2.3.0
+                                                          Properties:
+                                                            Fill: "=ColorFade(Switch(\r\n	Text(ThisItem.'Announcement Status'),\r\n	\"Sent\",\r\n	ColorValue(\"#D3ECBE\"),\r\n\r\n	\"Draft\",\r\n	ColorValue(\"#D6DDE0\"),\r\n\r\n	\"Scheduled\",\r\n	ColorValue(\"#EECEA6\")\r\n    \r\n), 0.5)"
+                                                            Height: =11
+                                                            Width: =11
+                                                            X: =48
+                                                            Y: =21
+                                          - Container46_4:
+                                              Control: GroupContainer@1.3.0
+                                              Variant: ManualLayout
+                                              Properties:
+                                                DropShadow: =DropShadow.None
+                                                LayoutMinHeight: =25
+                                                RadiusBottomLeft: =0
+                                                RadiusBottomRight: =0
+                                                RadiusTopLeft: =0
+                                                RadiusTopRight: =0
+                                              Children:
+                                                - Button7_9:
+                                                    Control: Classic/Button@2.2.0
+                                                    Properties:
+                                                      BorderColor: =ColorFade(Self.Fill, -0.15)
+                                                      Fill: "=Switch(\r\n	Text(ThisItem.'Announcement Status'),\r\n	\"Sent\",\r\n	ColorValue(\"#D3ECBE\"),\r\n\r\n	\"Draft\",\r\n	ColorValue(\"#D6DDE0\"),\r\n\r\n	\"Scheduled\",\r\n	ColorValue(\"#EECEA6\")\r\n    \r\n)"
+                                                      Height: =Parent.Height
+                                                      HoverBorderColor: =Self.BorderColor
+                                                      HoverColor: =Self.Color
+                                                      HoverFill: =Self.Fill
+                                                      Text: =
+                                                      Width: =200
+                                                      X: =8
+                                                - TextCanvas6_5:
+                                                    Control: Text@0.0.50
+                                                    Properties:
+                                                      Font: =Font.Lato
+                                                      FontColor: "=ColorFade(Switch(\r\n	Text(ThisItem.'Announcement Status'),\r\n	\"Sent\",\r\n	ColorValue(\"#000000\"),\r\n\r\n	\"Draft\",\r\n	ColorValue(\"#000000\"),\r\n\r\n	\"Scheduled\",\r\n	ColorValue(\"#000000\")\r\n    \r\n), 0.35)"
+                                                      Height: =20
+                                                      Text: |+
+                                                        =If(
+                                                            !IsBlank(ThisItem.'Schedule Date'), 
+                                                            Text(ThisItem.'Schedule Date', "[$-en-US]mmmm d, yyyy hh:mm AM/PM"),
+                                                            Text(ThisItem.'Created On', "[$-en-US]mmmm d, yyyy hh:mm AM/PM")
+                                                        )
+                                                      Weight: ='TextCanvas.Weight'.Semibold
+                                                      Width: =200
+                                                      X: =15
+                                                      Y: =2.5
+                                          - Container36_4:
+                                              Control: GroupContainer@1.3.0
+                                              Variant: AutoLayout
+                                              Properties:
+                                                DropShadow: =DropShadow.None
+                                                LayoutDirection: =LayoutDirection.Horizontal
+                                                LayoutGap: =5
+                                                LayoutMinHeight: =50
+                                                RadiusBottomLeft: =0
+                                                RadiusBottomRight: =0
+                                                RadiusTopLeft: =0
+                                                RadiusTopRight: =0
+                                              Children:
+                                                - Container41_4:
+                                                    Control: GroupContainer@1.3.0
+                                                    Variant: AutoLayout
+                                                    Properties:
+                                                      DropShadow: =DropShadow.None
+                                                      FillPortions: =0
+                                                      LayoutDirection: =LayoutDirection.Horizontal
+                                                      LayoutMinHeight: =50
+                                                      RadiusBottomLeft: =0
+                                                      RadiusBottomRight: =0
+                                                      RadiusTopLeft: =0
+                                                      RadiusTopRight: =0
+                                                      Width: =1100
+                                                    Children:
+                                                      - HtmlText1_4:
+                                                          Control: HtmlViewer@2.1.0
+                                                          Properties:
+                                                            AutoHeight: =true
+                                                            Fill: =RGBA(0, 0, 0, 0)
+                                                            Height: =Parent.Height
+                                                            HtmlText: =If(Len(ThisItem.Body) > 100, Left(ThisItem.Body, 97) & "...", ThisItem.Body)
+                                                            PaddingLeft: =10
+                                                            Size: =10
+                                                - Container44_4:
+                                                    Control: GroupContainer@1.3.0
+                                                    Variant: ManualLayout
+                                                    Properties:
+                                                      DropShadow: =DropShadow.None
+                                                      FillPortions: =0
+                                                      LayoutMinHeight: =50
+                                                      RadiusBottomLeft: =45
+                                                      RadiusBottomRight: =45
+                                                      RadiusTopLeft: =45
+                                                      RadiusTopRight: =45
+                                                      Width: =55
+                                                    Children:
+                                                      - Button9_4:
+                                                          Control: Classic/Button@2.2.0
+                                                          Properties:
+                                                            BorderColor: =ColorFade(Self.Fill, -0.15)
+                                                            Fill: =RGBA(231, 175, 65, 1)
+                                                            Height: =50
+                                                            HoverBorderColor: =ColorFade(Self.Fill, -0.15)
+                                                            HoverColor: =ColorFade(Self.Fill, -0.15)
+                                                            OnSelect: |+
+                                                              =If(!IsBlank(Gallery19_4.Selected), 
+                                                                  Set(varSelectedAncUs, Gallery19_4.Selected);
+                                                                  Set(varUserAncView, true)
+                                                              );
+
+                                                              If(
+                                                                  IsEmpty(Filter(AnnouncementData, Email = User().Email && AnnouncementID = varSelectedAncUs.AnnouncementID)), 
+                                                                  // If the user hasn't viewed it, update the ViewCount
+                                                                  Patch(Announcements, varSelectedAncUs, {ViewCount: varSelectedAncUs.ViewCount + 1});
+
+                                                                  // Add a record to ViewCount_DB_TESTS
+                                                                  Patch(AnnouncementData, Defaults(AnnouncementData), 
+                                                                  {
+                                                                      Email: User().Email, 
+                                                                      AnnouncementID: varSelectedAncUs.AnnouncementID,
+                                                                      DateandTimeViewed: Now(),
+                                                                      DateandTimeViewed_Text: Text( Now(), "mm/dd/yyyy hh:mm:ss" )
+                                                                  })
+                                                              );
+
+                                                            Text: =
+                                                            Width: =55
+                                                      - Icon2_4:
+                                                          Control: Icon@0.0.7
+                                                          Properties:
+                                                            Icon: ="ArrowRight"
+                                                            IconColor: =RGBA(255, 255, 255, 1)
+                                                            IconStyle: =""
+                                                            X: =11
+                                                            Y: =10
+                                          - Container39_7:
+                                              Control: GroupContainer@1.3.0
+                                              Variant: AutoLayout
+                                              Properties:
+                                                DropShadow: =DropShadow.None
+                                                LayoutDirection: =LayoutDirection.Horizontal
+                                                LayoutMinHeight: =30
+                                                RadiusBottomLeft: =0
+                                                RadiusBottomRight: =0
+                                                RadiusTopLeft: =0
+                                                RadiusTopRight: =0
+      - UserAncView_1:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            Fill: =RGBA(0, 0, 0, 0.1)
+            Height: =768
+            Visible: =varUserAncView
+            Width: =1366
+          Children:
+            - AncViewContainer_1:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  Height: =724
+                  Width: =1313
+                  X: =25
+                  Y: =20
+                Children:
+                  - ViewAnnouncementContainer2_14:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        Height: =203
+                        LayoutDirection: =LayoutDirection.Vertical
+                        Width: =1313
+                      Children:
+                        - CAHeaderContainer2_20:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              LayoutDirection: =LayoutDirection.Vertical
+                            Children:
+                              - CAHeaderContainer3_8:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    Fill: =RGBA(231, 175, 65, 1)
+                                    FillPortions: =0
+                                    Height: =90
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                  Children:
+                                    - CABackButtonContainer1_23:
+                                        Control: GroupContainer@1.3.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          DropShadow: =DropShadow.None
+                                          FillPortions: =0
+                                          LayoutAlignItems: =LayoutAlignItems.Center
+                                          LayoutDirection: =LayoutDirection.Vertical
+                                          LayoutJustifyContent: =LayoutJustifyContent.Center
+                                          LayoutMinHeight: =90
+                                          PaddingLeft: =10
+                                          PaddingRight: =10
+                                          Width: =80
+                                        Children:
+                                          - CABackButton2_23:
+                                              Control: Button@0.0.44
+                                              Properties:
+                                                Appearance: ='ButtonCanvas.Appearance'.Transparent
+                                                FontColor: =RGBA(255, 255, 255, 1)
+                                                FontSize: =30
+                                                Icon: ="ArrowLeft"
+                                                Layout: ='ButtonCanvas.Layout'.IconOnly
+                                                OnSelect: =Set(varUserAncView, false)
+                                                PaddingLeft: =0
+                                                PaddingRight: =0
+                                                Width: =73
+                                    - CARegistrarContainer2_23:
+                                        Control: GroupContainer@1.3.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          DropShadow: =DropShadow.None
+                                          LayoutDirection: =LayoutDirection.Vertical
+                                          LayoutMinHeight: =90
+                                          LayoutMinWidth: =2
+                                          PaddingBottom: =20
+                                          PaddingLeft: =20
+                                          PaddingRight: =20
+                                          PaddingTop: =25
+                                        Children:
+                                          - CARegistrarLabel1_39:
+                                              Control: Text@0.0.50
+                                              Properties:
+                                                Font: =Font.Lato
+                                                FontColor: =RGBA(255, 255, 255, 1)
+                                                Height: =40
+                                                Size: =25
+                                                Text: ="View Announcements"
+                                                Weight: ='TextCanvas.Weight'.Semibold
+                                                Width: =500
+                                    - CADraftsContainer_8:
+                                        Control: GroupContainer@1.3.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          DropShadow: =DropShadow.None
+                                          LayoutAlignItems: =LayoutAlignItems.End
+                                          LayoutDirection: =LayoutDirection.Vertical
+                                          LayoutMinHeight: =90
+                                          LayoutMinWidth: =2
+                                          PaddingBottom: =20
+                                          PaddingLeft: =20
+                                          PaddingRight: =20
+                                          PaddingTop: =25
+                              - CATabs2_46:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    DropShadow: =DropShadow.None
+                                    Fill: =RGBA(231, 206, 124, 1)
+                                    FillPortions: =0
+                                    Height: =45
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                  Children:
+                                    - CATabs2_71:
+                                        Control: GroupContainer@1.3.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          DropShadow: =DropShadow.None
+                                          LayoutDirection: =LayoutDirection.Horizontal
+                                          LayoutMinHeight: =20
+                                          PaddingLeft: =10
+                                          PaddingTop: =3
+                                          RadiusBottomLeft: =0
+                                          RadiusBottomRight: =0
+                                          RadiusTopLeft: =0
+                                          RadiusTopRight: =0
+                                        Children:
+                                          - CATabsGallery_10:
+                                              Control: Gallery@2.15.0
+                                              Variant: Horizontal
+                                              Properties:
+                                                AlignInContainer: =AlignInContainer.SetByContainer
+                                                Fill: =Color.Transparent
+                                                FillPortions: =0
+                                                Height: =45
+                                                Items: =["Message", "Insert", "Format Text", "Draw", "Options"]
+                                                TemplateSize: =110
+                                                Visible: =false
+                                                Width: =800
+                                              Children:
+                                                - CATabsButton_10:
+                                                    Control: Button@0.0.44
+                                                    Properties:
+                                                      BasePaletteColor: =RGBA(252, 198, 0, 1)
+                                                      Font: =Font.Lato
+                                                      FontWeight: =FontWeight.Semibold
+                                                      Height: =30
+                                                      Layout: ='ButtonCanvas.Layout'.IconBefore
+                                                      OnSelect: =
+                                                      PaddingBottom: =0
+                                                      PaddingLeft: =0
+                                                      PaddingRight: =0
+                                                      PaddingTop: =0
+                                                      Text: =ThisItem.Value
+                                                      Width: =110
+                              - CARibbon1_21:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    Fill: =RGBA(255, 255, 255, 1)
+                                    FillPortions: =0
+                                    Height: =55
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                  - VAContentSectionBG_24:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        Fill: =RGBA(40, 42, 126, 1)
+                        Height: =578
+                        LayoutDirection: =LayoutDirection.Vertical
+                        PaddingBottom: =20
+                        PaddingLeft: =20
+                        PaddingRight: =20
+                        PaddingTop: =20
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Width: =1313
+                        Y: =146
+                      Children:
+                        - VAContentSection1_7:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              BorderColor: =RGBA(231, 175, 65, 1)
+                              Fill: =RGBA(255, 255, 255, 1)
+                              FillPortions: =0
+                              Height: =530
+                              LayoutDirection: =LayoutDirection.Vertical
+                              LayoutGap: =2
+                              LayoutMinWidth: =1100
+                              PaddingBottom: =10
+                              PaddingLeft: =10
+                              PaddingRight: =10
+                              PaddingTop: =10
+                            Children:
+                              - VARecipientContainer_6:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    BorderColor: =RGBA(231, 175, 65, 1)
+                                    DropShadow: =DropShadow.None
+                                    Fill: =RGBA(255, 255, 255, 1)
+                                    FillPortions: =0
+                                    Height: =50
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    LayoutMinHeight: =10
+                                    PaddingBottom: =5
+                                    PaddingLeft: =5
+                                    PaddingRight: =5
+                                    PaddingTop: =5
+                                  Children:
+                                    - CARecipientContainer1_8:
+                                        Control: GroupContainer@1.3.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          DropShadow: =DropShadow.None
+                                          FillPortions: =0
+                                          LayoutAlignItems: =LayoutAlignItems.Center
+                                          LayoutDirection: =LayoutDirection.Horizontal
+                                          LayoutJustifyContent: =LayoutJustifyContent.Center
+                                          LayoutMinHeight: =40
+                                          PaddingBottom: =5
+                                          PaddingLeft: =5
+                                          PaddingRight: =5
+                                          PaddingTop: =5
+                                          Width: =100
+                                        Children:
+                                          - CAReicpientLabel_8:
+                                              Control: Text@0.0.50
+                                              Properties:
+                                                Align: ='TextCanvas.Align'.Center
+                                                AlignInContainer: =AlignInContainer.Center
+                                                BorderColor: =RGBA(40, 42, 126, 1)
+                                                BorderRadius: =10
+                                                BorderStyle: =BorderStyle.Solid
+                                                BorderThickness: =2
+                                                Height: =30
+                                                Size: =16
+                                                Text: ="To"
+                                                Width: =70
+                                    - CARecipientTextInputContainer_9:
+                                        Control: GroupContainer@1.3.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          Height: =50
+                                          LayoutDirection: =LayoutDirection.Horizontal
+                                          LayoutMinHeight: =40
+                                          LayoutMinWidth: =10
+                                        Children:
+                                          - Form18_8:
+                                              Control: Form@2.4.2
+                                              Layout: Vertical
+                                              Properties:
+                                                DataSource: =Announcements
+                                                Item: =varSelectedAncUs
+                                              Children:
+                                                - SubjectName_DataCard3_6:
+                                                    Control: TypedDataCard@1.0.6
+                                                    Variant: TextualEdit
+                                                    Properties:
+                                                      ContentLanguage: =ThisItem.Recipient
+                                                      DataField: ="crb40_recipient"
+                                                      Default: =ThisItem.Recipient
+                                                      DisplayName: =DataSourceInfo([@Announcements],DataSourceInfo.DisplayName,Recipient)
+                                                      Height: =37
+                                                      MaxLength: =DataSourceInfo([@Announcements], DataSourceInfo.MaxLength, Recipient)
+                                                      Required: =true
+                                                      Update: =DataCardValue97_8.Value
+                                                      Width: =1143
+                                                      Y: =0
+                                                    Children:
+                                                      - DataCardValue97_8:
+                                                          Control: TextInput@0.0.53
+                                                          Properties:
+                                                            AccessibleLabel: =Parent.DisplayName
+                                                            DisplayMode: =Parent.DisplayMode
+                                                            Height: =40
+                                                            Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                                                            Required: =Parent.Required
+                                                            ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                                                            Value: =Parent.Default
+                                                            Width: =1196
+                                                      - StarVisible118_8:
+                                                          Control: Text@0.0.50
+                                                          Properties:
+                                                            Align: ='TextCanvas.Align'.Center
+                                                            Height: =30
+                                                            Text: ="*"
+                                                            Visible: =false
+                                                            Width: =30
+                                                            Y: =DataCardKey118_8.Y
+                                                      - DataCardKey118_8:
+                                                          Control: Text@0.0.50
+                                                          Properties:
+                                                            Height: =22
+                                                            Text: =Parent.DisplayName
+                                                            Visible: =false
+                                                            Weight: ='TextCanvas.Weight'.Semibold
+                                                            Width: =Parent.Width - 48
+                                                            Wrap: =false
+                                                            X: =24
+                                                            Y: =10
+                                                      - ErrorMessage118_8:
+                                                          Control: Text@0.0.50
+                                                          Properties:
+                                                            Height: =30
+                                                            Text: =Parent.Error
+                                                            Visible: =false
+                                                            Width: =Parent.Width - 48
+                                                            X: =24
+                                                            Y: =DataCardValue97_8.Y + DataCardValue97_8.Height
+                              - VACcContainer_6:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    BorderColor: =RGBA(231, 175, 65, 1)
+                                    DropShadow: =DropShadow.None
+                                    Fill: =RGBA(255, 255, 255, 1)
+                                    FillPortions: =0
+                                    Height: =50
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    LayoutMinHeight: =10
+                                    PaddingBottom: =5
+                                    PaddingLeft: =5
+                                    PaddingRight: =5
+                                    PaddingTop: =5
+                                  Children:
+                                    - CACcContainer1_8:
+                                        Control: GroupContainer@1.3.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          DropShadow: =DropShadow.None
+                                          FillPortions: =0
+                                          LayoutAlignItems: =LayoutAlignItems.Center
+                                          LayoutDirection: =LayoutDirection.Horizontal
+                                          LayoutJustifyContent: =LayoutJustifyContent.Center
+                                          LayoutMinHeight: =40
+                                          PaddingBottom: =5
+                                          PaddingLeft: =5
+                                          PaddingRight: =5
+                                          PaddingTop: =5
+                                          Width: =100
+                                        Children:
+                                          - CACcLabel_8:
+                                              Control: Text@0.0.50
+                                              Properties:
+                                                Align: ='TextCanvas.Align'.Center
+                                                AlignInContainer: =AlignInContainer.Center
+                                                BorderColor: =RGBA(40, 42, 126, 1)
+                                                BorderRadius: =10
+                                                BorderStyle: =BorderStyle.Solid
+                                                BorderThickness: =2
+                                                Height: =30
+                                                Size: =16
+                                                Text: ="Cc"
+                                                Width: =70
+                                    - CACcTextInputContainer_8:
+                                        Control: GroupContainer@1.3.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          Height: =50
+                                          LayoutDirection: =LayoutDirection.Horizontal
+                                          LayoutMinHeight: =40
+                                          LayoutMinWidth: =10
+                                        Children:
+                                          - Form18_9:
+                                              Control: Form@2.4.2
+                                              Layout: Vertical
+                                              Properties:
+                                                DataSource: =Announcements
+                                                Item: =varSelectedAncUs
+                                              Children:
+                                                - SubjectName_DataCard3_7:
+                                                    Control: TypedDataCard@1.0.6
+                                                    Variant: TextualEdit
+                                                    Properties:
+                                                      ContentLanguage: =ThisItem.CC
+                                                      DataField: ="crb40_CC"
+                                                      Default: =ThisItem.CC
+                                                      DisplayName: =DataSourceInfo([@Announcements],DataSourceInfo.DisplayName,CC)
+                                                      Height: =37
+                                                      MaxLength: =DataSourceInfo([@Announcements], DataSourceInfo.MaxLength, CC)
+                                                      Required: =true
+                                                      Update: =DataCardValue97_9.Value
+                                                      Width: =643
+                                                      Y: =0
+                                                    Children:
+                                                      - DataCardValue97_9:
+                                                          Control: TextInput@0.0.53
+                                                          Properties:
+                                                            AccessibleLabel: =Parent.DisplayName
+                                                            DisplayMode: =Parent.DisplayMode
+                                                            Height: =40
+                                                            Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                                                            Required: =Parent.Required
+                                                            ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                                                            Value: =Parent.Default
+                                                            Width: =1196
+                                                      - StarVisible118_9:
+                                                          Control: Text@0.0.50
+                                                          Properties:
+                                                            Align: ='TextCanvas.Align'.Center
+                                                            Height: =30
+                                                            Text: ="*"
+                                                            Visible: =false
+                                                            Width: =30
+                                                            Y: =DataCardKey118_9.Y
+                                                      - DataCardKey118_9:
+                                                          Control: Text@0.0.50
+                                                          Properties:
+                                                            Height: =22
+                                                            Text: =Parent.DisplayName
+                                                            Visible: =false
+                                                            Weight: ='TextCanvas.Weight'.Semibold
+                                                            Width: =Parent.Width - 48
+                                                            Wrap: =false
+                                                            X: =24
+                                                            Y: =10
+                                                      - ErrorMessage118_9:
+                                                          Control: Text@0.0.50
+                                                          Properties:
+                                                            Height: =30
+                                                            Text: =Parent.Error
+                                                            Visible: =false
+                                                            Width: =Parent.Width - 48
+                                                            X: =24
+                                                            Y: =DataCardValue97_9.Y + DataCardValue97_9.Height
+                                    - CATagsContainer_8:
+                                        Control: GroupContainer@1.3.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          BorderColor: =RGBA(231, 175, 65, 1)
+                                          DropShadow: =DropShadow.None
+                                          Fill: =RGBA(255, 255, 255, 1)
+                                          FillPortions: =0
+                                          Height: =50
+                                          LayoutDirection: =LayoutDirection.Horizontal
+                                          LayoutMinHeight: =10
+                                        Children:
+                                          - CATagsContainer1_8:
+                                              Control: GroupContainer@1.3.0
+                                              Variant: AutoLayout
+                                              Properties:
+                                                DropShadow: =DropShadow.None
+                                                FillPortions: =0
+                                                LayoutAlignItems: =LayoutAlignItems.Center
+                                                LayoutDirection: =LayoutDirection.Horizontal
+                                                LayoutJustifyContent: =LayoutJustifyContent.Center
+                                                LayoutMinHeight: =40
+                                                PaddingBottom: =5
+                                                PaddingLeft: =5
+                                                PaddingRight: =5
+                                                PaddingTop: =5
+                                                Width: =100
+                                              Children:
+                                                - CATagsLabel_20:
+                                                    Control: Text@0.0.50
+                                                    Properties:
+                                                      Align: ='TextCanvas.Align'.Center
+                                                      AlignInContainer: =AlignInContainer.Center
+                                                      BorderColor: =RGBA(40, 42, 126, 1)
+                                                      BorderRadius: =10
+                                                      BorderStyle: =BorderStyle.Solid
+                                                      BorderThickness: =2
+                                                      Height: =30
+                                                      Size: =16
+                                                      Text: ="Tags"
+                                                      Width: =70
+                                          - CATagsTextInput_7:
+                                              Control: GroupContainer@1.3.0
+                                              Variant: AutoLayout
+                                              Properties:
+                                                Height: =50
+                                                LayoutDirection: =LayoutDirection.Horizontal
+                                                LayoutMinHeight: =40
+                                                LayoutMinWidth: =10
+                                              Children:
+                                                - Form18_10:
+                                                    Control: Form@2.4.2
+                                                    Layout: Vertical
+                                                    Properties:
+                                                      DataSource: =Announcements
+                                                      Item: =varSelectedAncUs
+                                                    Children:
+                                                      - Tags_DataCard3_3:
+                                                          Control: TypedDataCard@1.0.6
+                                                          Variant: TextualEdit
+                                                          Properties:
+                                                            ContentLanguage: =ThisItem.Tags
+                                                            DataField: ="crb40_tags"
+                                                            Default: =ThisItem.Tags
+                                                            DisplayName: =DataSourceInfo([@Announcements],DataSourceInfo.DisplayName,Tags)
+                                                            Height: =37
+                                                            MaxLength: =DataSourceInfo([@Announcements], DataSourceInfo.MaxLength, Tags)
+                                                            Required: =true
+                                                            Update: =DataCardValue97_10.Value
+                                                            Width: =400
+                                                            Y: =0
+                                                          Children:
+                                                            - DataCardValue97_10:
+                                                                Control: TextInput@0.0.53
+                                                                Properties:
+                                                                  AccessibleLabel: =Parent.DisplayName
+                                                                  DisplayMode: =Parent.DisplayMode
+                                                                  Height: =40
+                                                                  Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                                                                  Required: =Parent.Required
+                                                                  ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                                                                  Value: =Parent.Default
+                                                                  Width: =400
+                                                            - StarVisible118_10:
+                                                                Control: Text@0.0.50
+                                                                Properties:
+                                                                  Align: ='TextCanvas.Align'.Center
+                                                                  Height: =30
+                                                                  Text: ="*"
+                                                                  Visible: =false
+                                                                  Width: =30
+                                                                  Y: =DataCardKey118_10.Y
+                                                            - DataCardKey118_10:
+                                                                Control: Text@0.0.50
+                                                                Properties:
+                                                                  Height: =22
+                                                                  Text: =Parent.DisplayName
+                                                                  Visible: =false
+                                                                  Weight: ='TextCanvas.Weight'.Semibold
+                                                                  Width: =Parent.Width - 48
+                                                                  Wrap: =false
+                                                                  X: =24
+                                                                  Y: =10
+                                                            - ErrorMessage118_10:
+                                                                Control: Text@0.0.50
+                                                                Properties:
+                                                                  Height: =30
+                                                                  Text: =Parent.Error
+                                                                  Visible: =false
+                                                                  Width: =Parent.Width - 48
+                                                                  X: =24
+                                                                  Y: =DataCardValue97_10.Y + DataCardValue97_10.Height
+                              - VASubjectContainer_6:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    BorderColor: =RGBA(231, 175, 65, 1)
+                                    DropShadow: =DropShadow.None
+                                    Fill: =RGBA(255, 255, 255, 1)
+                                    FillPortions: =0
+                                    Height: =50
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    LayoutMinHeight: =10
+                                    PaddingBottom: =5
+                                    PaddingLeft: =5
+                                    PaddingRight: =5
+                                    PaddingTop: =5
+                                  Children:
+                                    - CASubjectContainer1_8:
+                                        Control: GroupContainer@1.3.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          DropShadow: =DropShadow.None
+                                          FillPortions: =0
+                                          LayoutAlignItems: =LayoutAlignItems.Center
+                                          LayoutDirection: =LayoutDirection.Horizontal
+                                          LayoutJustifyContent: =LayoutJustifyContent.Center
+                                          LayoutMinHeight: =40
+                                          PaddingBottom: =5
+                                          PaddingLeft: =5
+                                          PaddingRight: =5
+                                          PaddingTop: =5
+                                          Width: =100
+                                        Children:
+                                          - CASubjectLabel_8:
+                                              Control: Text@0.0.50
+                                              Properties:
+                                                Align: ='TextCanvas.Align'.Center
+                                                AlignInContainer: =AlignInContainer.Center
+                                                BorderColor: =RGBA(40, 42, 126, 1)
+                                                BorderRadius: =10
+                                                BorderStyle: =BorderStyle.Solid
+                                                BorderThickness: =2
+                                                Height: =30
+                                                Size: =16
+                                                Text: ="Subject"
+                                                Width: =70
+                                    - CASubjectTextInputContainer_8:
+                                        Control: GroupContainer@1.3.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          Height: =50
+                                          LayoutDirection: =LayoutDirection.Horizontal
+                                          LayoutMinHeight: =40
+                                          LayoutMinWidth: =10
+                                        Children:
+                                          - Form18_11:
+                                              Control: Form@2.4.2
+                                              Layout: Vertical
+                                              Properties:
+                                                DataSource: =Announcements
+                                                Item: =varSelectedAncUs
+                                              Children:
+                                                - SubjectName_DataCard3_8:
+                                                    Control: TypedDataCard@1.0.6
+                                                    Variant: TextualEdit
+                                                    Properties:
+                                                      ContentLanguage: =ThisItem.SubjectName
+                                                      DataField: ="crb40_subjectname"
+                                                      Default: =ThisItem.SubjectName
+                                                      DisplayName: =DataSourceInfo([@Announcements],DataSourceInfo.DisplayName,SubjectName)
+                                                      Height: =37
+                                                      MaxLength: =DataSourceInfo([@Announcements], DataSourceInfo.MaxLength, SubjectName)
+                                                      Required: =true
+                                                      Update: =DataCardValue97_11.Value
+                                                      Width: =1143
+                                                      Y: =0
+                                                    Children:
+                                                      - DataCardValue97_11:
+                                                          Control: TextInput@0.0.53
+                                                          Properties:
+                                                            AccessibleLabel: =Parent.DisplayName
+                                                            DisplayMode: =Parent.DisplayMode
+                                                            Height: =40
+                                                            Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                                                            Required: =Parent.Required
+                                                            ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                                                            Value: =Parent.Default
+                                                            Width: =1196
+                                                      - StarVisible118_11:
+                                                          Control: Text@0.0.50
+                                                          Properties:
+                                                            Align: ='TextCanvas.Align'.Center
+                                                            Height: =30
+                                                            Text: ="*"
+                                                            Visible: =false
+                                                            Width: =30
+                                                            Y: =DataCardKey118_11.Y
+                                                      - DataCardKey118_11:
+                                                          Control: Text@0.0.50
+                                                          Properties:
+                                                            Height: =22
+                                                            Text: =Parent.DisplayName
+                                                            Visible: =false
+                                                            Weight: ='TextCanvas.Weight'.Semibold
+                                                            Width: =Parent.Width - 48
+                                                            Wrap: =false
+                                                            X: =24
+                                                            Y: =10
+                                                      - ErrorMessage118_11:
+                                                          Control: Text@0.0.50
+                                                          Properties:
+                                                            Height: =30
+                                                            Text: =Parent.Error
+                                                            Visible: =false
+                                                            Width: =Parent.Width - 48
+                                                            X: =24
+                                                            Y: =DataCardValue97_11.Y + DataCardValue97_11.Height
+                              - VABodyContainer_7:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    DropShadow: =DropShadow.None
+                                    FillPortions: =0
+                                    Height: =300
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    LayoutMinHeight: =80
+                                    LayoutMinWidth: =500
+                                    Width: =1300
+                                  Children:
+                                    - CABodyContainer1_13:
+                                        Control: GroupContainer@1.3.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          DropShadow: =DropShadow.None
+                                          FillPortions: =0
+                                          Height: =300
+                                          LayoutAlignItems: =LayoutAlignItems.Stretch
+                                          LayoutDirection: =LayoutDirection.Horizontal
+                                          LayoutMinHeight: =150
+                                          Width: =1300
+                                        Children:
+                                          - Form9_2:
+                                              Control: Form@2.4.2
+                                              Layout: Vertical
+                                              Properties:
+                                                DataSource: =Announcements
+                                                DefaultMode: =FormMode.View
+                                                Height: =Parent.Height
+                                                Item: =varSelectedAncUs
+                                                Width: =
+                                              Children:
+                                                - Body_DataCard2_2:
+                                                    Control: TypedDataCard@1.0.6
+                                                    Variant: TextualMultilineEdit
+                                                    Properties:
+                                                      BorderColor: =RGBA(255, 255, 255, 0)
+                                                      BorderStyle: =BorderStyle.None
+                                                      ContentLanguage: |+
+                                                        =ThisItem.Body
+                                                      DataField: ="crb40_body"
+                                                      Default: =ThisItem.Body
+                                                      DisplayName: =DataSourceInfo([@Announcements],DataSourceInfo.DisplayName,Body)
+                                                      Fill: =RGBA(255, 255, 255, 1)
+                                                      Height: =300
+                                                      Required: =true
+                                                      Update: =DataCardValue41_2.Value
+                                                      Width: =1300
+                                                      Y: =0
+                                                    Children:
+                                                      - DataCardKey47_2:
+                                                          Control: Text@0.0.50
+                                                          Properties:
+                                                            Height: =22
+                                                            Text: =Parent.DisplayName
+                                                            Visible: =false
+                                                            Weight: ='TextCanvas.Weight'.Semibold
+                                                            Width: =Parent.Width - 48
+                                                            Wrap: =false
+                                                            X: =24
+                                                            Y: =10
+                                                      - DataCardValue41_2:
+                                                          Control: TextInput@0.0.53
+                                                          Properties:
+                                                            AccessibleLabel: =Parent.DisplayName
+                                                            DisplayMode: =Parent.DisplayMode
+                                                            Height: =301
+                                                            Mode: ='TextInputCanvas.Mode'.Multiline
+                                                            Required: =Parent.Required
+                                                            ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                                                            Value: =Parent.Default
+                                                            Visible: =false
+                                                            Width: =1253
+                                                      - ErrorMessage47_2:
+                                                          Control: Text@0.0.50
+                                                          Properties:
+                                                            Height: =30
+                                                            Text: =false
+                                                            Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                                                            Width: =Parent.Width - 48
+                                                            X: =24
+                                                            Y: =DataCardValue41_2.Y + DataCardValue41_2.Height
+                                                      - StarVisible47_2:
+                                                          Control: Text@0.0.50
+                                                          Properties:
+                                                            Align: ='TextCanvas.Align'.Center
+                                                            Height: =30
+                                                            Text: ="*"
+                                                            Visible: =false
+                                                            Width: =30
+                                                            Y: =DataCardKey47_2.Y
+                                                      - RichTextEditor2_2:
+                                                          Control: RichTextEditor@2.7.0
+                                                          Properties:
+                                                            BorderColor: =
+                                                            Default: =Parent.Default
+                                                            DisplayMode: =DisplayMode.View
+                                                            Height: =Parent.Height
+                                                            Width: =1253
+                              - VASendContainer_7:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    DropShadow: =DropShadow.None
+                                    FillPortions: =0
+                                    Height: =50
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    LayoutGap: =10
+                                    LayoutJustifyContent: =LayoutJustifyContent.End
+                                    LayoutMinHeight: =40
+                                  Children:
+                                    - PositiveFB_2:
+                                        Control: Classic/Icon@2.5.0
+                                        Properties:
+                                          Height: =Parent.Height
+                                          Icon: =Icon.ThumbsUp
+                                          OnSelect: |-
+                                            =Patch(AnnouncementFeedbacks, Defaults(AnnouncementFeedbacks), 
+                                                {
+                                                    AnnouncementID: Gallery19_3.Selected.AnnouncementID,
+                                                    AncFeedbackType_Number: 1,
+                                                    UserEmail: User().Email,
+                                                    UserName: User().FullName
+                                                });
+
+
+                                            Set(varUserFeedback, { Value: If(varUserFeedback.Value = 1, 1, 0) })
+                                          Visible: |+
+                                            =IsBlank(varUserFeedback)
+                                    - NegativeFB_2:
+                                        Control: Classic/Icon@2.5.0
+                                        Properties:
+                                          Height: =Parent.Height
+                                          Icon: =Icon.ThumbsDown
+                                          OnSelect: |-
+                                            =Patch(AnnouncementFeedbacks, Defaults(AnnouncementFeedbacks), 
+                                                {
+                                                    AnnouncementID: Gallery19_3.Selected.AnnouncementID,
+                                                    AncFeedbackType_Number: 0,
+                                                    UserEmail: User().Email,
+                                                    UserName: User().FullName
+                                                });
+
+
+                                            Set(varUserFeedback, { Value: If(varUserFeedback.Value = 1, 1, 0) })
+                                          Visible: =IsBlank(varUserFeedback)
+      - ChatbotContainerView_1:
+          Control: GroupContainer@1.3.0
+          Variant: ManualLayout
+          Properties:
+            Fill: =RGBA(0, 0, 0, 0.1)
+            Height: =768
+            Visible: |+
+              =varUserChatbot
+            Width: =1366
+          Children:
+            - Container24_1:
+                Control: GroupContainer@1.3.0
+                Variant: ManualLayout
+                Properties:
+                  Height: =724
+                  Width: =1313
+                  X: =25
+                  Y: =20
+                Children:
+                  - ChatbotContainer_2:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        Height: =724
+                        LayoutDirection: =LayoutDirection.Vertical
+                        Width: =1313
+                      Children:
+                        - CBHeaderContainer_18:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              Fill: =RGBA(231, 175, 65, 1)
+                              FillPortions: =0
+                              Height: =183
+                              LayoutDirection: =LayoutDirection.Vertical
+                              RadiusBottomLeft: =0
+                              RadiusBottomRight: =0
+                              RadiusTopLeft: =0
+                              RadiusTopRight: =0
+                              Width: =250
+                            Children:
+                              - CBHeaderContainer_19:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    DropShadow: =DropShadow.None
+                                    Fill: =RGBA(231, 175, 65, 1)
+                                    FillPortions: =0
+                                    Height: =90
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                  Children:
+                                    - CEBackButtonContainer_9:
+                                        Control: GroupContainer@1.3.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          DropShadow: =DropShadow.None
+                                          FillPortions: =0
+                                          LayoutAlignItems: =LayoutAlignItems.Center
+                                          LayoutDirection: =LayoutDirection.Vertical
+                                          LayoutJustifyContent: =LayoutJustifyContent.Center
+                                          LayoutMinHeight: =90
+                                          PaddingLeft: =10
+                                          PaddingRight: =10
+                                          Width: =80
+                                        Children:
+                                          - CEBackButton_9:
+                                              Control: Button@0.0.44
+                                              Properties:
+                                                Appearance: ='ButtonCanvas.Appearance'.Transparent
+                                                FontColor: =RGBA(255, 255, 255, 1)
+                                                FontSize: =30
+                                                Icon: ="ArrowLeft"
+                                                Layout: ='ButtonCanvas.Layout'.IconOnly
+                                                OnSelect: =Set(varUserChatbot,false)
+                                                PaddingLeft: =0
+                                                PaddingRight: =0
+                                                Width: =73
+                                    - CBNameContainer_9:
+                                        Control: GroupContainer@1.3.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          DropShadow: =DropShadow.None
+                                          LayoutDirection: =LayoutDirection.Vertical
+                                          LayoutMinHeight: =90
+                                          LayoutMinWidth: =2
+                                          PaddingBottom: =20
+                                          PaddingLeft: =20
+                                          PaddingRight: =20
+                                          PaddingTop: =25
+                                        Children:
+                                          - CBNameLabel_2:
+                                              Control: Text@0.0.50
+                                              Properties:
+                                                Font: =Font.Lato
+                                                FontColor: =RGBA(255, 255, 255, 1)
+                                                Height: =40
+                                                Size: =25
+                                                Text: ="RAMon!"
+                                                Weight: ='TextCanvas.Weight'.Semibold
+                                                Width: =500
+                                    - CEDraftsContainer_9:
+                                        Control: GroupContainer@1.3.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          DropShadow: =DropShadow.None
+                                          LayoutAlignItems: =LayoutAlignItems.End
+                                          LayoutDirection: =LayoutDirection.Vertical
+                                          LayoutMinHeight: =90
+                                          LayoutMinWidth: =2
+                                          PaddingBottom: =20
+                                          PaddingLeft: =20
+                                          PaddingRight: =20
+                                          PaddingTop: =25
+                              - CETabs_9:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    DropShadow: =DropShadow.None
+                                    Fill: =RGBA(231, 206, 124, 1)
+                                    FillPortions: =0
+                                    Height: =40
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    PaddingLeft: =10
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                              - CERibbon_9:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    DropShadow: =DropShadow.None
+                                    Fill: =RGBA(255, 255, 255, 1)
+                                    FillPortions: =0
+                                    Height: =55
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                        - CEContentSectionBG_9:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              Fill: =RGBA(40, 42, 126, 1)
+                              LayoutDirection: =LayoutDirection.Vertical
+                              PaddingBottom: =20
+                              PaddingLeft: =20
+                              PaddingRight: =20
+                              PaddingTop: =20
+                            Children:
+                              - CEContentSection1_8:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    Fill: =RGBA(255, 255, 255, 1)
+                                    FillPortions: =0
+                                    Height: =490
+                                    LayoutDirection: =LayoutDirection.Vertical
+                                    LayoutGap: =2
+                                    LayoutMinWidth: =1100
+                                    PaddingBottom: =10
+                                    PaddingLeft: =10
+                                    PaddingRight: =10
+                                    PaddingTop: =10
+                                  Children:
+                                    - Copilot5_2:
+                                        Control: Copilot@0.0.567
+                                        Properties:
+                                          Height: =Parent.Height
+                                          Items: =FAQses
+                                          Width: =Parent.Width
+                                          X: =152
+                                          Y: =148
+                                        Children:
+                                          - Inquiry1_2:
+                                              Control: CopilotDataField@1.5.0
+                                              Variant: textualColumn
+                                              Properties:
+                                                FieldDisplayName: ="Inquiry"
+                                                FieldName: ="crb40_inquiry"
+                                                FieldType: ="s"
+                                                Order: =1
+                                          - Answer1_2:
+                                              Control: CopilotDataField@1.5.0
+                                              Variant: textualColumn
+                                              Properties:
+                                                FieldDisplayName: ="Answer"
+                                                FieldName: ="crb40_answer"
+                                                FieldType: ="s"
+                                                Order: =2
