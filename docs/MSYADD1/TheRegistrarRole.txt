@@ -1,0 +1,492 @@
+Screens:
+  SuperUserScreen:
+    Children:
+      - RegistrarDashboard1_4:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            DropShadow: =DropShadow.None
+            Fill: =RGBA(40, 42, 126, 1)
+            Height: =768
+            LayoutDirection: =LayoutDirection.Horizontal
+            LayoutGap: =10
+            PaddingBottom: =24
+            PaddingLeft: =32
+            PaddingRight: =32
+            PaddingTop: =24
+            Width: =1366
+          Children:
+            - SideBarContainer_5:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  Fill: =RGBA(255, 255, 255, 1)
+                  FillPortions: =0
+                  Height: =768
+                  LayoutDirection: =LayoutDirection.Vertical
+                  Width: =SideNavigation_Collapsible_7.Width
+                Children:
+                  - SideNavigation_Collapsible_7:
+                      Control: CanvasComponent
+                      ComponentName: SideNavigation_Collapsible
+                      Properties:
+                        AppColorMode: ="Light"
+                        BaseIconColor: =RGBA(40, 42, 126, 1)
+                        BasedIconColor_Text: ="RGBA(40, 42, 126, 1)"
+                        CurrentMenuID: =3
+                        Fill: =RGBA(255, 255, 255, 1)
+                        Height: =Parent.Height
+                        HoverFill: =RGBA(0, 0, 0, 0.1)
+                        LogoPadding_Percent: =If(SideNavigation_Collapsible_7.MenuExpanded,10%,22%)
+                        Logo_Compact: =RAMindersicon_3
+                        Logo_Expanded: =RAMindersicon_3
+                        MenuContent: "=Table(\r\n    {\r\n        MenuIcon_Selected: \"<svg xmlns='http://www.w3.org/2000/svg' width='16' height='12' fill='currentColor' class='bi bi-megaphone-fill' viewBox='0 0 16 16'>\r\n  <path d='M13 2.5a1.5 1.5 0 0 1 3 0v11a1.5 1.5 0 0 1-3 0zm-1 .724c-2.067.95-4.539 1.481-7 1.656v6.237a25 25 0 0 1 1.088.085c2.053.204 4.038.668 5.912 1.56zm-8 7.841V4.934c-.68.027-1.399.043-2.008.053A2.02 2.02 0 0 0 0 7v2c0 1.106.896 1.996 1.994 2.009l.496.008a64 64 0 0 1 1.51.048m1.39 1.081q.428.032.85.078l.253 1.69a1 1 0 0 1-.983 1.187h-.548a1 1 0 0 1-.916-.599l-1.314-2.48a66 66 0 0 1 1.692.064q.491.026.966.06'/>\r\n</svg>\",\r\n        MenuIcon : \"<svg xmlns='http://www.w3.org/2000/svg' width='16' height='12' fill='currentColor' class='bi bi-megaphone' viewBox='0 0 16 16'>\r\n  <path d='M13 2.5a1.5 1.5 0 0 1 3 0v11a1.5 1.5 0 0 1-3 0v-.214c-2.162-1.241-4.49-1.843-6.912-2.083l.405 2.712A1 1 0 0 1 5.51 15.1h-.548a1 1 0 0 1-.916-.599l-1.85-3.49-.202-.003A2.014 2.014 0 0 1 0 9V7a2.02 2.02 0 0 1 1.992-2.013 75 75 0 0 0 2.483-.075c3.043-.154 6.148-.849 8.525-2.199zm1 0v11a.5.5 0 0 0 1 0v-11a.5.5 0 0 0-1 0m-1 1.35c-2.344 1.205-5.209 1.842-8 2.033v4.233q.27.015.537.036c2.568.189 5.093.744 7.463 1.993zm-9 6.215v-4.13a95 95 0 0 1-1.992.052A1.02 1.02 0 0 0 1 7v2c0 .55.448 1.002 1.006 1.009A61 61 0 0 1 4 10.065m-.657.975 1.609 3.037.01.024h.548l-.002-.014-.443-2.966a68 68 0 0 0-1.722-.082z'/>\r\n</svg>\",\r\n        MenuID: 1,\r\n        MenuName: \"Announcements\",\r\n        PageNavigation: SuperUserDashboardScreen },\r\n        \r\n        {\r\n        MenuIcon_Selected: \"<svg xmlns='http://www.w3.org/2000/svg' width='16' height='12' fill='currentColor' class='bi bi-bar-chart-fill' viewBox='0 0 16 16'>\r\n  <path d='M1 11a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z'/>\r\n</svg>\",\r\n        MenuIcon : \"<svg xmlns='http://www.w3.org/2000/svg' width='16' height='12' fill='currentColor' class='bi bi-bar-chart' viewBox='0 0 16 16'>\r\n  <path d='M4 11H2v3h2zm5-4H7v7h2zm5-5v12h-2V2zm-2-1a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM6 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm-5 4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1z'/>\r\n</svg>\",\r\n        MenuID: 2,\r\n        MenuName: \"Analytics\",\r\n        PageNavigation: AdminAnalyticsScreen },\r\n\r\n        {\r\n        MenuIcon_Selected: \"<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-person-fill-gear' viewBox='0 0 16 16'>\r\n  <path d='M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0m-9 8c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4m9.886-3.54c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.045c-.613-.18-.613-1.048 0-1.229l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382zM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0'/>\r\n</svg>\",\r\n        MenuIcon : \"<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-person-gear' viewBox='0 0 16 16'>\r\n  <path d='M11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0M8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m.256 7a4.5 4.5 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10q.39 0 .74.025c.226-.341.496-.65.804-.918Q8.844 9.002 8 9c-5 0-6 3-6 4s1 1 1 1zm3.63-4.54c.18-.613 1.048-.613 1.229 0l.043.148a.64.64 0 0 0 .921.382l.136-.074c.561-.306 1.175.308.87.869l-.075.136a.64.64 0 0 0 .382.92l.149.045c.612.18.612 1.048 0 1.229l-.15.043a.64.64 0 0 0-.38.921l.074.136c.305.561-.309 1.175-.87.87l-.136-.075a.64.64 0 0 0-.92.382l-.045.149c-.18.612-1.048.612-1.229 0l-.043-.15a.64.64 0 0 0-.921-.38l-.136.074c-.561.305-1.175-.309-.87-.87l.075-.136a.64.64 0 0 0-.382-.92l-.148-.045c-.613-.18-.613-1.048 0-1.229l.148-.043a.64.64 0 0 0 .382-.921l-.074-.136c-.306-.561.308-1.175.869-.87l.136.075a.64.64 0 0 0 .92-.382zM14 12.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0'/>\r\n</svg>\",\r\n        MenuID: 3,\r\n        MenuName: \"Users\",\r\n        PageNavigation: SuperUserScreen }\r\n    \r\n)"
+                        NavBG: =RGBA(0, 0, 0, 0)
+                        Pressfill: =RGBA(0, 0, 0, 0.2)
+                        SelectedIconBG: =RGBA(255, 255, 255, 1)
+                        SelectedIconColor: =RGBA(231, 175, 65, 1)
+                        SelectedIconColor_Text: ="RGBA(231, 175, 65, 1)"
+                        TextColor: =RGBA(37, 52, 100, 1)
+                        Width: =If(SideNavigation_Collapsible_7.MenuExpanded,200,70)
+            - PageContentContainer_5:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  Height: =768
+                  LayoutDirection: =LayoutDirection.Vertical
+                  LayoutGap: =10
+                  Width: =1366
+                Children:
+                  - Section3Container_5:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        Height: =768
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutGap: =16
+                        Width: =1366
+                      Children:
+                        - AnnouncementContainer_16:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              Fill: =RGBA(255, 255, 255, 1)
+                              FillPortions: =70
+                              Height: =768
+                              LayoutDirection: =LayoutDirection.Vertical
+                              LayoutGap: =16
+                              LayoutMinWidth: =259
+                              PaddingBottom: =20
+                              PaddingLeft: =20
+                              PaddingRight: =20
+                              PaddingTop: =10
+                              RadiusBottomLeft: =20
+                              RadiusBottomRight: =20
+                              RadiusTopLeft: =20
+                              RadiusTopRight: =20
+                              Width: =700
+                            Children:
+                              - AnnouncementContainer_17:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    DropShadow: =DropShadow.None
+                                    Fill: =RGBA(255, 255, 255, 1)
+                                    FillPortions: =0
+                                    Height: =50
+                                    LayoutDirection: =LayoutDirection.Horizontal
+                                    LayoutMinWidth: =200
+                                    RadiusBottomLeft: =10
+                                    RadiusBottomRight: =10
+                                    RadiusTopLeft: =10
+                                    RadiusTopRight: =10
+                                    Width: =1366
+                                  Children:
+                                    - AnnouncementLabel_4:
+                                        Control: Text@0.0.50
+                                        Properties:
+                                          AlignInContainer: =AlignInContainer.Stretch
+                                          Font: =Font.Lato
+                                          FontColor: =RGBA(40, 42, 126, 1)
+                                          Height: =50
+                                          LayoutMinHeight: =0
+                                          PaddingBottom: =5
+                                          PaddingLeft: =5
+                                          PaddingRight: =5
+                                          PaddingTop: =5
+                                          Size: =22
+                                          Text: ="Users"
+                                          Weight: ='TextCanvas.Weight'.Semibold
+                                          Width: =100
+                                    - AnnouncementContainer_18:
+                                        Control: GroupContainer@1.3.0
+                                        Variant: AutoLayout
+                                        Properties:
+                                          AlignInContainer: =AlignInContainer.SetByContainer
+                                          BorderColor: =RGBA(0, 0, 0, 0)
+                                          DropShadow: =DropShadow.None
+                                          Height: =50
+                                          LayoutAlignItems: =LayoutAlignItems.Center
+                                          LayoutDirection: =LayoutDirection.Horizontal
+                                          LayoutGap: =10
+                                          LayoutJustifyContent: =LayoutJustifyContent.End
+                                          LayoutMinWidth: =150
+                                          PaddingRight: =5
+                                          RadiusBottomLeft: =10
+                                          RadiusBottomRight: =10
+                                          RadiusTopLeft: =10
+                                          RadiusTopRight: =10
+                                          Width: =1366
+                                        Children:
+                                          - TextInput2:
+                                              Control: Classic/TextInput@2.3.2
+                                              Properties:
+                                                Default: =""
+                                                HintText: ="Search"
+                              - AnnouncementContainer_19:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    BorderColor: =RGBA(0, 0, 0, 0)
+                                    BorderThickness: =1
+                                    DropShadow: =DropShadow.None
+                                    Fill: =RGBA(255, 255, 255, 1)
+                                    FillPortions: =2
+                                    Height: =768
+                                    LayoutDirection: =LayoutDirection.Vertical
+                                    LayoutGap: =16
+                                    LayoutMinWidth: =200
+                                    PaddingBottom: =20
+                                    PaddingLeft: =20
+                                    PaddingRight: =20
+                                    PaddingTop: =10
+                                    RadiusBottomLeft: =10
+                                    RadiusBottomRight: =10
+                                    RadiusTopLeft: =10
+                                    RadiusTopRight: =10
+                                    Width: =1366
+                                  Children:
+                                    - Gallery16_4:
+                                        Control: Gallery@2.15.0
+                                        Variant: BrowseLayout_Vertical_OneTextVariant_ver5.0
+                                        Properties:
+                                          Items: =Search([@Users_1S], TextInput2.Text, UserName, UserEmail,UserID,Role)
+                                        Children:
+                                          - Label9:
+                                              Control: Label@2.5.1
+                                              Properties:
+                                                OnSelect: =Select(Parent)
+                                                Text: =ThisItem.UserEmail
+                                                Width: =336
+                                                X: =40
+                                                Y: =40
+                                          - Title7_4:
+                                              Control: Label@2.5.1
+                                              Properties:
+                                                BorderColor: =RGBA(0, 0, 0, 1)
+                                                Color: =RGBA(50, 49, 48, 1)
+                                                FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                                                Height: =Self.Size * 1.8
+                                                OnSelect: =Select(Parent)
+                                                PaddingBottom: =0
+                                                PaddingLeft: =0
+                                                PaddingRight: =0
+                                                PaddingTop: =0
+                                                Size: =14
+                                                Text: =ThisItem.UserName
+                                                VerticalAlign: =VerticalAlign.Top
+                                                Width: =Parent.TemplateWidth - 86
+                                                X: =16
+                                                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                                          - NextArrow6_4:
+                                              Control: Classic/Icon@2.5.0
+                                              Properties:
+                                                AccessibleLabel: =Self.Tooltip
+                                                Color: =RGBA(166, 166, 166, 1)
+                                                Height: =50
+                                                Icon: =Icon.ChevronRight
+                                                OnSelect: =Select(Parent)
+                                                PaddingBottom: =12
+                                                PaddingLeft: =12
+                                                PaddingRight: =12
+                                                PaddingTop: =12
+                                                Tooltip: ="View item details"
+                                                Width: =50
+                                                X: =Parent.TemplateWidth - Self.Width - 12
+                                                Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+                                          - Separator10_4:
+                                              Control: Rectangle@2.3.0
+                                              Properties:
+                                                Fill: =RGBA(255, 255, 255, 1)
+                                                Height: =8
+                                                OnSelect: =Select(Parent)
+                                                Width: =Parent.TemplateWidth
+                                                Y: =Parent.TemplateHeight - Self.Height
+                                          - Rectangle7_4:
+                                              Control: Rectangle@2.3.0
+                                              Properties:
+                                                Fill: =App.Theme.Colors.Darker30
+                                                Height: =Parent.TemplateHeight - Separator10_4.Height
+                                                OnSelect: =Select(Parent)
+                                                Visible: =ThisItem.IsSelected
+                                                Width: =4
+                        - CalendarContainer_4:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              Fill: =RGBA(255, 255, 255, 1)
+                              FillPortions: =30
+                              Height: =768
+                              LayoutDirection: =LayoutDirection.Vertical
+                              LayoutMinWidth: =700
+                              PaddingBottom: =20
+                              PaddingLeft: =20
+                              PaddingRight: =20
+                              PaddingTop: =10
+                              RadiusBottomLeft: =20
+                              RadiusBottomRight: =20
+                              RadiusTopLeft: =20
+                              RadiusTopRight: =20
+                              Width: =1366
+                            Children:
+                              - UserContainer:
+                                  Control: GroupContainer@1.3.0
+                                  Variant: AutoLayout
+                                  Properties:
+                                    BorderStyle: =BorderStyle.None
+                                    DropShadow: =DropShadow.None
+                                    LayoutDirection: =LayoutDirection.Vertical
+                                    RadiusBottomLeft: =0
+                                    RadiusBottomRight: =0
+                                    RadiusTopLeft: =0
+                                    RadiusTopRight: =0
+                                  Children:
+                                    - Form11:
+                                        Control: Form@2.4.2
+                                        Layout: Vertical
+                                        Properties:
+                                          DataSource: =Users_1S
+                                          Item: =Gallery16_4.Selected
+                                        Children:
+                                          - UserEmail_DataCard1:
+                                              Control: TypedDataCard@1.0.6
+                                              Variant: TextualEdit
+                                              IsLocked: true
+                                              Properties:
+                                                DataField: ="crb40_useremail"
+                                                Default: =ThisItem.UserEmail
+                                                DisplayName: =DataSourceInfo([@Users_1S],DataSourceInfo.DisplayName,UserEmail)
+                                                Height: =66
+                                                MaxLength: =DataSourceInfo([@Users_1S], DataSourceInfo.MaxLength, UserEmail)
+                                                Required: =false
+                                                Update: =DataCardValue50.Value
+                                                Width: =Parent.Width
+                                                Y: =0
+                                              Children:
+                                                - DataCardKey57:
+                                                    Control: Text@0.0.50
+                                                    Properties:
+                                                      Height: =30
+                                                      Size: =20
+                                                      Text: =Parent.DisplayName
+                                                      Weight: ='TextCanvas.Weight'.Semibold
+                                                      Width: =Parent.Width - 48
+                                                      Wrap: =false
+                                                      X: =24
+                                                      Y: =10
+                                                - DataCardValue50:
+                                                    Control: TextInput@0.0.53
+                                                    Properties:
+                                                      AccessibleLabel: =Parent.DisplayName
+                                                      DisplayMode: =Parent.DisplayMode
+                                                      Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                                                      Required: =Parent.Required
+                                                      ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                                                      Value: =Parent.Default
+                                                      Width: =Parent.Width - 48
+                                                      X: =24
+                                                      Y: =DataCardKey57.Y + DataCardKey57.Height + 4
+                                                - ErrorMessage57:
+                                                    Control: Text@0.0.50
+                                                    Properties:
+                                                      Height: =30
+                                                      Text: =Parent.Error
+                                                      Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                                                      Width: =Parent.Width - 48
+                                                      X: =24
+                                                      Y: =DataCardValue50.Y + DataCardValue50.Height
+                                                - StarVisible57:
+                                                    Control: Text@0.0.50
+                                                    Properties:
+                                                      Align: ='TextCanvas.Align'.Center
+                                                      Height: =30
+                                                      Text: ="*"
+                                                      Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                                      Width: =30
+                                                      Y: =DataCardKey57.Y
+                                          - UserName_DataCard2:
+                                              Control: TypedDataCard@1.0.6
+                                              Variant: TextualEdit
+                                              IsLocked: true
+                                              Properties:
+                                                DataField: ="crb40_username"
+                                                Default: =ThisItem.UserName
+                                                DisplayName: =DataSourceInfo([@Users_1S],DataSourceInfo.DisplayName,UserName)
+                                                MaxLength: =DataSourceInfo([@Users_1S], DataSourceInfo.MaxLength, UserName)
+                                                Required: =false
+                                                Update: =DataCardValue51.Value
+                                                Width: =Parent.Width
+                                                Y: =1
+                                              Children:
+                                                - DataCardKey58:
+                                                    Control: Text@0.0.50
+                                                    Properties:
+                                                      Height: =30
+                                                      Size: =20
+                                                      Text: =Parent.DisplayName
+                                                      Weight: ='TextCanvas.Weight'.Semibold
+                                                      Width: =Parent.Width - 48
+                                                      Wrap: =false
+                                                      X: =24
+                                                      Y: =10
+                                                - DataCardValue51:
+                                                    Control: TextInput@0.0.53
+                                                    Properties:
+                                                      AccessibleLabel: =Parent.DisplayName
+                                                      DisplayMode: =Parent.DisplayMode
+                                                      Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                                                      Required: =Parent.Required
+                                                      ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                                                      Value: =Parent.Default
+                                                      Width: =Parent.Width - 48
+                                                      X: =24
+                                                      Y: =DataCardKey58.Y + DataCardKey58.Height + 4
+                                                - ErrorMessage58:
+                                                    Control: Text@0.0.50
+                                                    Properties:
+                                                      Height: =30
+                                                      Text: =Parent.Error
+                                                      Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                                                      Width: =Parent.Width - 48
+                                                      X: =24
+                                                      Y: =DataCardValue51.Y + DataCardValue51.Height
+                                                - StarVisible58:
+                                                    Control: Text@0.0.50
+                                                    Properties:
+                                                      Align: ='TextCanvas.Align'.Center
+                                                      Height: =30
+                                                      Text: ="*"
+                                                      Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                                      Width: =30
+                                                      Y: =DataCardKey58.Y
+                                          - Role_DataCard3:
+                                              Control: TypedDataCard@1.0.6
+                                              Variant: TextualEdit
+                                              Properties:
+                                                DataField: ="crb40_roles"
+                                                Default: =ThisItem.Role
+                                                DisplayName: =DataSourceInfo([@Users_1S],DataSourceInfo.DisplayName,Role)
+                                                MaxLength: =DataSourceInfo([@Users_1S], DataSourceInfo.MaxLength, Role)
+                                                Required: =false
+                                                Update: =DataCardValue53.Value
+                                                Width: =Parent.Width
+                                                Y: =2
+                                              Children:
+                                                - DataCardKey60:
+                                                    Control: Text@0.0.50
+                                                    Properties:
+                                                      Height: =30
+                                                      Size: =20
+                                                      Text: =Parent.DisplayName
+                                                      Weight: ='TextCanvas.Weight'.Semibold
+                                                      Width: =Parent.Width - 48
+                                                      Wrap: =false
+                                                      X: =24
+                                                      Y: =10
+                                                - ErrorMessage60:
+                                                    Control: Text@0.0.50
+                                                    Properties:
+                                                      Height: =30
+                                                      Text: =Parent.Error
+                                                      Visible: =And(!IsBlank(Parent.Error), Parent.DisplayMode=DisplayMode.Edit)
+                                                      Width: =Parent.Width - 48
+                                                      X: =24
+                                                      Y: =DataCardValue53.Y + DataCardValue53.Height
+                                                - StarVisible60:
+                                                    Control: Text@0.0.50
+                                                    Properties:
+                                                      Align: ='TextCanvas.Align'.Center
+                                                      Height: =30
+                                                      Text: ="*"
+                                                      Visible: =And(Parent.Required, Parent.DisplayMode=DisplayMode.Edit)
+                                                      Width: =30
+                                                      Y: =DataCardKey60.Y
+                                                - DataCardValue53:
+                                                    Control: TextInput@0.0.53
+                                                    Properties:
+                                                      AccessibleLabel: =Parent.DisplayName
+                                                      DisplayMode: =DisplayMode.View
+                                                      Mode: ="'TextInputCanvas.Mode'.TextInputModeSingleLine"
+                                                      Required: =Parent.Required
+                                                      ValidationState: =If(IsBlank(Parent.Error), "None", "Error")
+                                                      Value: =ComboboxCanvas3.Selected.RoleName
+                                                      Visible: =false
+                                                      Width: =Parent.Width - 48
+                                                      Y: =36
+                                                - ComboboxCanvas3:
+                                                    Control: ComboBox@0.0.49
+                                                    Properties:
+                                                      InputTextPlaceholder: =ThisItem.Role
+                                                      Items: =Roles
+                                                      Width: =Parent.Width - 48
+                                                      X: =24
+                                                      Y: =DataCardKey58.Y + DataCardKey58.Height + 4
+                                                    Children:
+                                                      - RoleName1:
+                                                          Control: ComboBoxDataField@1.5.0
+                                                          Variant: textualColumn
+                                                          IsLocked: true
+                                                          Properties:
+                                                            FieldDisplayName: ="RoleName"
+                                                            FieldName: ="crb40_rolename"
+                                                            FieldType: ="s"
+                                                            Order: =1
+                                                      - Description1:
+                                                          Control: ComboBoxDataField@1.5.0
+                                                          Variant: textualColumn
+                                                          IsLocked: true
+                                                          Properties:
+                                                            FieldDisplayName: ="Description"
+                                                            FieldName: ="crb40_description"
+                                                            FieldType: ="s"
+                                                            Order: =2
+                                                      - Permissions1:
+                                                          Control: ComboBoxDataField@1.5.0
+                                                          Variant: textualColumn
+                                                          IsLocked: true
+                                                          Properties:
+                                                            FieldDisplayName: ="Permissions"
+                                                            FieldName: ="crb40_permissions"
+                                                            FieldType: ="s"
+                                                            Order: =3
+                                    - CreateButton_4:
+                                        Control: Button@0.0.44
+                                        Properties:
+                                          Align: =Align.Left
+                                          AlignInContainer: =AlignInContainer.End
+                                          Appearance: ='ButtonCanvas.Appearance'.Primary
+                                          BasePaletteColor: =RGBA(231, 175, 65, 1)
+                                          BorderRadius: =10
+                                          Icon: =
+                                          IconStyle: ='ButtonCanvas.IconStyle'.Filled
+                                          Layout: =
+                                          OnSelect: =SubmitForm(Form11)
+                                          Text: ="Update"
+                                          Width: =90
