@@ -1,0 +1,22 @@
+- Container22:
+    Control: GroupContainer@1.3.0
+    Variant: AutoLayout
+    Properties:
+      Fill: =RGBA(214, 221, 224, 1)
+      FillPortions: =0
+      Height: =45
+      LayoutDirection: =LayoutDirection.Horizontal
+      LayoutMinHeight: =1
+      RadiusBottomLeft: =16
+      RadiusBottomRight: =16
+      RadiusTopLeft: =16
+      RadiusTopRight: =16
+    Children:
+      - Label7:
+          Control: Label@2.5.1
+          Properties:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Height: =Parent.Height
+            Text: ="Events for the Month"
+            Width: =Parent.Width
