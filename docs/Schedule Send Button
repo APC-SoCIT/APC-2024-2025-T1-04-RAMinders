@@ -1,0 +1,40 @@
+- CASendContainer_12:
+    Control: GroupContainer@1.3.0
+    Variant: AutoLayout
+    Properties:
+      DropShadow: =DropShadow.None
+      FillPortions: =0
+      Height: =50
+      LayoutDirection: =LayoutDirection.Horizontal
+      LayoutGap: =10
+      LayoutJustifyContent: =LayoutJustifyContent.End
+      LayoutMinHeight: =40
+    Children:
+      - CASchedSendButton_5:
+          Control: Button@0.0.44
+          Properties:
+            BasePaletteColor: =RGBA(231, 175, 65, 1)
+            Font: =Font.Lato
+            FontSize: =16
+            Height: =40
+            OnSelect: |+
+              =// Store input values in global variables before opening the Schedule Send Popup
+              Set(varRecipient, CARecipientTextInput_8.Value);
+              Set(varCC, If(IsBlank(CACcTextInput_8.Value), "", CACcTextInput_8.Value)); // Store empty if blank
+              Set(varSubject, CASubjectTextInput_8.Value);
+              Set(varBody, CABodyTextInput_10.Value);
+              Set(varTags, If(IsEmpty(CATagsDropdownCanvas_6.SelectedItems), "", 
+                               Concat(CATagsDropdownCanvas_6.SelectedItems, AnnouncementTagName, ", ")));
+
+              UpdateContext({ShowScheduleSendContainer1_2: true});
+            Text: ="Schedule Send"
+            Width: =130
+      - CASendButton_36:
+          Control: Button@0.0.44
+          Properties:
+            BasePaletteColor: =RGBA(231, 175, 65, 1)
+            Font: =Font.Lato
+            FontSize: =16
+            Height: =40
+            OnSelect: "=If(\r\n    !IsBlank(CARecipientTextInput_8.Value) &&\r\n    !IsBlank(CASubjectTextInput_8.Value) &&\r\n    !IsBlank(RichTextEditor1.HtmlText),\r\n\r\n    // Save the announcement first\r\n    Collect(\r\n        Announcements,\r\n        {\r\n            Recipient: CARecipientTextInput_8.Value,\r\n            CC: If(IsBlank(CACcTextInput_8.Value), \"\", CACcTextInput_8.Value), // Store CC as empty if blank\r\n            SubjectName: CASubjectTextInput_8.Value, // Now supports 500 characters\r\n            Body: Left(RichTextEditor1.HtmlText, 4000),  // Ensures the text does not exceed 4000 characters\r\n            Tags: If( \r\n                IsEmpty(CATagsDropdownCanvas_6.SelectedItems),\r\n                \"\",\r\n                Concat(CATagsDropdownCanvas_6.SelectedItems, AnnouncementTagName, \", \")\r\n            ), // Store tags as empty if blank\r\n            // Set the status as 'Sent'\r\n            'Announcement Status': LookUp(Choices(Announcements.'Announcement Status'), Value = 100).Value\r\n        }\r\n    );\r\n\r\n    // Refresh Announcements data source\r\n    Refresh(Announcements);\r\n    Set(varShowCAContainer, false);\r\n\r\n    // Run Power Automate Flow to Send Emails to Distribution List\r\n    \r\n\r\n    // Verify if the latest record exists in the collection\r\n    If(\r\n        CountIf(Announcements, true) > 0, // Ensures there's data before showing popup\r\n        Set(showCAConfirmPopup, true) // Show confirmation popup  \r\n    );\r\n\r\n    // Clear input fields\r\n    Reset(CARecipientTextInput_8);\r\n    Reset(CACcTextInput_8);\r\n    Reset(CASubjectTextInput_8);\r\n    Reset(RichTextEditor1);\r\n    Reset(CATagsDropdownCanvas_6);\r\n\r\n    // Navigate back to the dashboard\r\n    Navigate(RegistrarDashboardScreen, ScreenTransition.None)\r\n,\r\n    // Handle missing fields\r\n    Notify(\"Please fill in all required fields.\", NotificationType.Error)\r\n);\r\n"
+            Text: ="Send"
