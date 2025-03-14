@@ -1,0 +1,162 @@
+- DraftAnnouncementPopupContainer_4:
+    Control: GroupContainer@1.3.0
+    Variant: AutoLayout
+    Properties:
+      DropShadow: =DropShadow.Bold
+      Fill: =RGBA(231, 175, 65, 1)
+      Height: =180
+      LayoutDirection: =LayoutDirection.Vertical
+      RadiusBottomLeft: =10
+      RadiusBottomRight: =10
+      RadiusTopLeft: =10
+      RadiusTopRight: =10
+      Visible: =showDraftsPopupContainer
+      Width: =600
+      X: =350
+      Y: =280
+    Children:
+      - Container25_12:
+          Control: GroupContainer@1.3.0
+          Variant: AutoLayout
+          Properties:
+            DropShadow: =DropShadow.None
+            Fill: =RGBA(231, 175, 65, 1)
+            LayoutAlignItems: =LayoutAlignItems.Center
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutJustifyContent: =LayoutJustifyContent.Center
+            PaddingBottom: =15
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            RadiusBottomLeft: =10
+            RadiusBottomRight: =10
+            RadiusTopLeft: =10
+            RadiusTopRight: =10
+          Children:
+            - Container29_15:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  Fill: =RGBA(255, 255, 255, 1)
+                  LayoutAlignItems: =LayoutAlignItems.Center
+                  LayoutDirection: =LayoutDirection.Vertical
+                  LayoutGap: =7
+                  LayoutJustifyContent: =LayoutJustifyContent.Center
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                Children:
+                  - Container6_10:
+                      Control: GroupContainer@1.3.0
+                      Variant: AutoLayout
+                      Properties:
+                        DropShadow: =DropShadow.None
+                        Fill: =RGBA(231, 175, 65, 1)
+                        FillPortions: =0
+                        Height: =120
+                        LayoutDirection: =LayoutDirection.Horizontal
+                        LayoutMinHeight: =90
+                        PaddingBottom: =5
+                        PaddingLeft: =15
+                        PaddingRight: =15
+                        PaddingTop: =5
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                      Children:
+                        - Container26_2:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              FillPortions: =0
+                              Height: =50
+                              LayoutDirection: =LayoutDirection.Vertical
+                              LayoutGap: =20
+                              Width: =125
+                            Children:
+                              - DraftWarningIcon_2:
+                                  Control: Icon@0.0.7
+                                  Properties:
+                                    Height: =120
+                                    Icon: ="Warning"
+                                    IconColor: =RGBA(224, 86, 6, 1)
+                                    Width: =120
+                        - Container28_2:
+                            Control: GroupContainer@1.3.0
+                            Variant: AutoLayout
+                            Properties:
+                              DropShadow: =DropShadow.None
+                              LayoutDirection: =LayoutDirection.Vertical
+                              LayoutGap: =4
+                              LayoutJustifyContent: =LayoutJustifyContent.Center
+                            Children:
+                              - DCConfirmationText_24:
+                                  Control: Text@0.0.50
+                                  Properties:
+                                    AutoHeight: =true
+                                    FontColor: =RGBA(224, 86, 6, 1)
+                                    Height: =45
+                                    Size: =35
+                                    Text: ="Save Announcement?"
+                                    Weight: ='TextCanvas.Weight'.Bold
+                                    Width: =400
+                                    X: =42
+                                    Y: =36
+                              - DCConfirmationText_25:
+                                  Control: Text@0.0.50
+                                  Properties:
+                                    AutoHeight: =true
+                                    Font: =Font.Lato
+                                    FontColor: =RGBA(255, 255, 255, 1)
+                                    Height: =50
+                                    Size: =18
+                                    Text: ="You can save the announcement to send later from your drafts."
+                                    Width: =420
+                                    X: =59
+                                    Y: =80
+            - Container27_11:
+                Control: GroupContainer@1.3.0
+                Variant: AutoLayout
+                Properties:
+                  DropShadow: =DropShadow.None
+                  Fill: =RGBA(231, 175, 65, 1)
+                  FillPortions: =0
+                  Height: =37
+                  LayoutDirection: =LayoutDirection.Horizontal
+                  LayoutGap: =10
+                  LayoutJustifyContent: =LayoutJustifyContent.End
+                  PaddingBottom: =10
+                  PaddingLeft: =10
+                  PaddingRight: =10
+                  PaddingTop: =4
+                  RadiusBottomLeft: =0
+                  RadiusBottomRight: =0
+                  RadiusTopLeft: =0
+                  RadiusTopRight: =0
+                Children:
+                  - DraftSaveButton3_2:
+                      Control: Button@0.0.44
+                      Properties:
+                        BasePaletteColor: =RGBA(249, 83, 109, 1)
+                        Font: =Font.Lato
+                        FontSize: =13
+                        Height: =30
+                        OnSelect: "=If(\r\n    !IsBlank(CARecipientTextInput_8.Value) &&\r\n    !IsBlank(CACcTextInput_8.Value) &&\r\n    !IsBlank(RichTextEditor1.HtmlText),\r\n\r\n    // Save the announcement as a draft\r\n    Collect(\r\n        Announcements,\r\n        {\r\n            Recipient: CARecipientTextInput_8.Value,\r\n            CC: CACcTextInput_8.Value,\r\n            SubjectName: CASubjectTextInput_8.Value,\r\n            Body: RichTextEditor1.HtmlText, // Extracts the rich text (HTML)\r\n            Tags: If(\r\n                IsEmpty(CATagsDropdownCanvas_6.SelectedItems),\r\n                \"\",\r\n                Concat(CATagsDropdownCanvas_6.SelectedItems, AnnouncementTagName, \", \")\r\n            ),\r\n            // Set the status as 'Draft'\r\n            'Announcement Status': LookUp(Choices(Announcements.'Announcement Status'), Value = 102).Value\r\n        }\r\n    );\r\n\r\n    // Refresh Announcements data source\r\n    Refresh(Announcements);\r\n    \r\n    Set(varShowCAContainer, false); // To hide the CA Container\r\n\r\n    // Show confirmation popup for saved drafts\r\n    If(\r\n        CountIf(Announcements, true) > 0, // Ensures the draft is saved before showing popup\r\n        Set(showDraftConfirmPopup, true) // Show \"Draft saved\" confirmation popup  \r\n    );\r\n\r\n    // Clear input fields\r\n    Reset(CARecipientTextInput_8);\r\n    Reset(CACcTextInput_8);\r\n    Reset(CASubjectTextInput_8);\r\n    Reset(RichTextEditor1);\r\n    Reset(CATagsDropdownCanvas_6);\r\n\r\n    // Navigate back to the dashboard\r\n    Navigate(RegistrarDashboardScreen, ScreenTransition.None)\r\n,\r\n    // Handle missing fields\r\n    Notify(\"Please fill in all required fields.\", NotificationType.Error)\r\n);\r\n"
+                        Text: ="Save"
+                        Width: =90
+                  - DraftsDiscardButton3_2:
+                      Control: Button@0.0.44
+                      Properties:
+                        BasePaletteColor: =RGBA(231, 175, 65, 1)
+                        Font: =Font.Lato
+                        FontSize: =13
+                        Height: =30
+                        OnSelect: |-
+                          =Set(showDraftsPopupContainer, false);
+                          Set(varShowCAContainer, false)
+                        Text: ="Cancel"
+                        Width: =90
