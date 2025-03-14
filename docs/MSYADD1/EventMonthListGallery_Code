@@ -1,0 +1,79 @@
+- Container34_1:
+    Control: GroupContainer@1.3.0
+    Variant: ManualLayout
+    Properties:
+      DropShadow: =DropShadow.None
+      LayoutMinHeight: =180
+      LayoutMinWidth: =320
+    Children:
+      - Gallery17_2:
+          Control: Gallery@2.15.0
+          Variant: BrowseLayout_Vertical_OneTextVariant_ver5.0
+          Properties:
+            Height: =181
+            Items: |-
+              =Sort(
+                  colFilteredEvents,
+                  StartDate,
+                  SortOrder.Ascending
+              )
+            TemplatePadding: =1
+            TemplateSize: =50
+            Width: =Parent.Width
+            Y: =2
+          Children:
+            - Title2_1:
+                Control: Label@2.5.1
+                Properties:
+                  BorderColor: =RGBA(0, 0, 0, 1)
+                  Color: =RGBA(50, 49, 48, 1)
+                  FontWeight: =If(ThisItem.IsSelected, FontWeight.Semibold, FontWeight.Normal)
+                  Height: =29
+                  OnSelect: =Select(Parent)
+                  PaddingBottom: =0
+                  PaddingLeft: =0
+                  PaddingRight: =0
+                  PaddingTop: =0
+                  Size: =14
+                  Text: =ThisItem.EventName
+                  VerticalAlign: =VerticalAlign.Top
+                  Width: =354
+                  X: =33
+                  Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            - NextArrow2_1:
+                Control: Classic/Icon@2.5.0
+                Properties:
+                  AccessibleLabel: =Self.Tooltip
+                  Color: =RGBA(166, 166, 166, 1)
+                  Height: =50
+                  Icon: =Icon.ChevronRight
+                  OnSelect: |+
+                    =//Set(varSelectedEvent, ThisItem);
+                    //Set(varPreviousScreen, App.ActiveScreen);
+                    //Navigate(ViewEventPopup, ScreenTransition.Fade)
+                    Set(varSelectedEvent, LookUp(EventTests, EventTest = ThisItem.EventTest));
+                    Set(varPreviousScreen, App.ActiveScreen);
+                    Navigate(ViewEventPopup, ScreenTransition.Fade)
+                  PaddingBottom: =12
+                  PaddingLeft: =12
+                  PaddingRight: =12
+                  PaddingTop: =12
+                  Tooltip: ="View item details"
+                  Visible: =ThisItem.EventName <> "Day with Classes"
+                  Width: =43
+                  X: =387
+            - Separator3_1:
+                Control: Rectangle@2.3.0
+                Properties:
+                  Fill: =RGBA(255, 255, 255, 1)
+                  Height: =8
+                  OnSelect: =Select(Parent)
+                  Width: =Parent.TemplateWidth
+                  Y: =Parent.TemplateHeight - Self.Height
+            - Rectangle2_2:
+                Control: Rectangle@2.3.0
+                Properties:
+                  Fill: =ColorValue(ThisItem.Color)
+                  Height: =Parent.TemplateHeight - Separator3_1.Height
+                  OnSelect: =Select(Parent)
+                  Width: =4
